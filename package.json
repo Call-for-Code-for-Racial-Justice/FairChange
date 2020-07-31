@@ -1,0 +1,23 @@
+{
+  "name": "fair-change-backend",
+  "version": "1.0.0",
+  "description": "backend component code for fairchange applicatiom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/embrace-call-for-code/fairchange.git"
+  },
+  "author": "IBM CFC PS1 T2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/embrace-call-for-code/fairchange/issues"
+  },
+  "homepage": "https://github.com/embrace-call-for-code/fairchange#readme",
+  "dependencies": {
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.26"
+  }
+}
