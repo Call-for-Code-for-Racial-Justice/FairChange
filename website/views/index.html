@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+    <title>CFC</title>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='..\css\style.css'>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+
+</head>
+
+<body>
+
+    <div id='controls'>
+        <!--It set the filter for the querys-->
+        <h4>Filters:</h4>
+
+        <label for="country">Country:</label>
+        <select name="country" id="country">
+
+        <label for="state">State:</label>
+        <select name="state" id="state">
+
+        <label for="city">City:</label>
+        <select name="city" id="city">
+
+        <h5>Date:</h5>
+        <label for="from">From:</label>
+        <input type="date" id="from" name="from"> 
+        <label for="to">To:</label>
+        <input type="date" id="to" name="to"> 
+
+        <h5>Time:</h5>
+        <label for="from_time">From:</label>
+        <input type="time" id="from_time" name="from_time"> 
+        <label for="to_time">To:</label>
+        <input type="time" id="to_time" name="to_time"> 
+
+        <button>Search</button>
+
+    </div>
+
+    <div id="mapid">
+        <!--Is where the map will display-->
+    </div>
+
+
+    <div id='data'>
+        <!--It will display data totals-->
+    </div>
+    
+</body>
+
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+
+<script src='..\js\script.js'></script>
+
+
+</html>
