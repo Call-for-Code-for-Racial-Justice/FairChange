@@ -13,6 +13,13 @@ function init() {
 
         get_map = function() {
             return this.created_map;
+        },
+
+        get_markers = function () {
+            let mark = [];
+            mark.push(this.markers);
+
+            return mark;
         }
     }
 
@@ -56,38 +63,39 @@ function init() {
          * the filters, and if so, calls function request_query(), and iterates over the object list
          * to pass values to display_totals() and place_marker() functions*/
 
-        //map_obj.markers.remove();
+        //map_obj.create_map.clearLayers();
+        map_obj.created_map.remove();
+        map(users_location.lat, users_location.lon);
 
     }
 
     function map(lat, lon) {
         /**Creates an empty  Leflet map and return the map object*/
-        var mymap = L.map('mapid').setView([lat, lon], 4);
+        var mymap = L.map('mapid').setView([lat, lon], 5);
 
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        var layer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
             id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoiZGF2ZXp1bmlnYSIsImEiOiJja2Q2azJ1Y20wcWl2MnlvOGoxMDh3NWRoIn0.D3G8f1Y7ZFzaflnCItihgA'
-        }).addTo(mymap);
+        });
 
+        mymap.addLayer(layer);
         map_obj.created_map = mymap;
 
     }
 
-    function place_marker(mymap, lat, lon) {
+    function place_marker(lat, lon) {
         /**Receives a Leflet map object, a latitud and longitud values to place markers on the map*/
-        markers = L.marker([lat, lon])
+        var markers = L.marker([lat, lon])
             .bindPopup('<button id="event">Event reported</button>')
             .openPopup(); 
 
-        map_obj.markers = markers;    
-        map_obj.created_map.addLayer(markers);
-
-
-
+        map_obj.markers = markers;   
+        markers.addTo(map_obj.created_map);
+        //map_obj.created_map.addLayer(markers);
 
     }
 
@@ -99,15 +107,15 @@ function init() {
         /**Initial functions executions*/
         get_location();
         map(39.79160533247704, -100.70268789896711);
-        place_marker(map_obj.created_map, 39.79160533247704, -100.70268789896711);
-        place_marker(map_obj.created_map, 39.99160533247704, -100.10268789896711);
-    
+        place_marker(39.79160533247704, -100.70268789896711);
+        place_marker(39.99160533247704, -100.10268789896711);
+
     }
 
     function map_location(lat, lon) {
         /**Updates the focus zone of the map according to the users
          * location*/
-        map_obj.created_map.flyTo(new L.LatLng(lat , lon));
+        map_obj.created_map.flyTo(new L.LatLng(lat , lon), 5);
 
     }
     function get_location() {
@@ -127,8 +135,10 @@ function init() {
         /**Executes if the Geolocation is succesfull; and calls functions map() and update_map()*/
         var crd = pos.coords;
 
-        map_location(crd.latitude, crd.longitude);
-        update_map();
+        users_location.lat = crd.latitude;
+        users_location.lon =crd.longitude;
+        map_location(users_location.lat, users_location.lon);
+        setTimeout(() => {  update_map(); }, 2000);
     }
     function error(err) {
         /**Executes if the Geoloction request is unssuccesfull. It displays a "Default" location 
