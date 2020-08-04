@@ -21,14 +21,16 @@
         <!--It set the filter for the querys-->
         <h4>Filters:</h4>
 
-        <label for="country">Country:</label>
-        <select name="country" id="country">
-
-        <label for="state">State:</label>
-        <select name="state" id="state">
-
-        <label for="city">City:</label>
-        <select name="city" id="city">
+        <div style='text-align:center;'>
+            <script type= "text/javascript" src = "../js/countries.js"></script>
+           
+            Country: <select id="country" name ="country"></select> 
+            State: <select name ="state" id ="state"></select>  
+        </div>
+        
+        <script language="javascript">
+            populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+        </script>
 
         <h5>Date:</h5>
         <label for="from">From:</label>
@@ -36,13 +38,7 @@
         <label for="to">To:</label>
         <input type="date" id="to" name="to"> 
 
-        <h5>Time:</h5>
-        <label for="from_time">From:</label>
-        <input type="time" id="from_time" name="from_time"> 
-        <label for="to_time">To:</label>
-        <input type="time" id="to_time" name="to_time"> 
-
-        <button>Search</button>
+        <button id='search'> Search</button>
 
     </div>
 

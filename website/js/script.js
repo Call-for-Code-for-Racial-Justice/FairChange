@@ -1,10 +1,9 @@
 
-//Loads init() at startup
+//Loads init() function at startup
 window.addEventListener('load', init, false);
 
 function init() {
     /**Creates a second scope to "hide" code*/
-
     function map_obj(m, markers) {
         /**Stores the Leaflet map object*/
         this.created_map = m,
@@ -23,6 +22,14 @@ function init() {
         }
     }
 
+    function search_req(country, state, date_from, date_to) {
+        this.coutnry = country,
+        this.state = state,
+        this.date_from = date_from,
+        this.date_to = date_to
+
+    }
+
     function users_location() {
         /**Stores user curent location */
         this.lat = 0.0,
@@ -30,7 +37,7 @@ function init() {
         this.raduis = 2.0
     }
 
-    function report(id, lat, lon, description, state, city, country) {
+    function report(id, lat, lon, description, state, city, country, date, time) {
         /**This is where the report information will be stored for later use*/
         this.id = id,
         this.lat = lat,
@@ -38,21 +45,25 @@ function init() {
         this.description = description,
         this.state = state,
         this.city = city,
-        this.country = country
+        this.country = country,
+        this.date = date,
+        this.time = time
     }
 
-    function request_query(country, state, city, from_time, to_time, from_date, to_date) {
+    function request_query(country, state, from_date, to_date) {
         /**Request the document to MongoDB of the requested values by the user, initialize 
          * the object with that information, save it to a list of objects and return the list.
          * It needs to have at least Country and/or date selected to execute**/
         
+        
+
         //Objects list or dictionary
         data.forEach(function(item) {
-            report.id = item.Index;
-            report.lat = item.Lat;
-            report.lon = item.Lon;
-            report.description = item.Description;
-            report.country = item.Country;
+                report.id = item.Index;
+                report.lat = item.Lat;
+                report.lon = item.Lon;
+                report.description = item.Description;
+                report.country = item.Country;
             
         });
 
@@ -60,19 +71,13 @@ function init() {
 
     }
 
-    function display_totals(country, state, city) {
-        /**Iterates over the receive information of the object report for the information totals
-         * by selected City,State, Country and total reported cases if applies*/
-    }
-
     function update_map(search, radius) {
         /**Update the leflet object with the acutal values of the query*/
 
         //map_obj.create_map.clearLayers();
-        map_obj.created_map.remove();
-        map(users_location.lat, users_location.lon);
-        users_location.radius = radius;
 
+        loc = false;
+        get_filters();
         request_query();
 
         lat_max = users_location.lat + users_location.radius;
@@ -82,16 +87,40 @@ function init() {
 
         for(var i in report.lat) {
             if(report.lat[i] <= lat_max && report.lat[i] >= lat_min && (report.lon[i] * -1) > lon_max && (report.lon[i] * -1) < lon_min) {
+                if(loc == false) {
+                    map_obj.created_map.remove();
+                    map(users_location.lat, users_location.lon);
+                    users_location.radius = radius;
+                    loc = true;
+                }
 
-                    place_marker(report.lat[i], report.lon[i], report.description[i]);
+                place_marker(report.lat[i], report.lon[i], report.description[i]);
 
-                } else if(search == false) {
+            } else if(search == false) {
+                if(loc == false) {
+                    map_obj.created_map.remove();
+                    map(users_location.lat, users_location.lon);
+                    loc = true;
+                }
+
+                place_marker(report.lat[i], report.lon[i], report.description[i]);
+
+                } else if(search == true) {
+                    if(report.country[i] == search_req.country) {
+                        if(loc == false) {
+                            map_obj.created_map.remove();
+                            map(report.lat[i], report.lon[i]); 
+                            
+                            loc = true;
+                       }
+
+                    }
+
                     place_marker(report.lat[i], report.lon[i], report.description[i]);
                 }
-            
-        };
+            }
 
-    }
+        }
 
     function map(lat, lon) {
         /**Creates an empty  Leflet map and return the map object*/
@@ -132,7 +161,7 @@ function init() {
         users_location.lat = 39.79160533247704;
         users_location.lon = -100.70268789896711;
 
-        map(39.79160533247704, -100.70268789896711);
+        map(users_location.lat, users_location.lon);
         update_map(false, 6);
         get_location();
     }
@@ -143,6 +172,7 @@ function init() {
         map_obj.created_map.flyTo(new L.LatLng(lat , lon), 6);
 
     }
+
     function get_location() {
         /**Ask the user to allow app to get location to display the correct map location acoording to the users 
          * IP address using Mozilla Geolocation API. Executes only in first time access, and calls sucess and 
@@ -156,6 +186,7 @@ function init() {
         navigator.geolocation.getCurrentPosition(success, error, options);
 
     }
+
     function success(pos) {
         /**Executes if the Geolocation is succesfull; and calls functions map() and update_map()*/
         var crd = pos.coords;
@@ -165,14 +196,31 @@ function init() {
         map_location(users_location.lat, users_location.lon);
         setTimeout(() => {  update_map(true, 6); }, 1500);
     }
+
     function error(err) {
         /**Executes if the Geoloction request is unssuccesfull. It displays a "Default" location 
          * for the user the first time calling functions map() and update_map()*/
 
          console.warn(`Unable to get location: (${err.code}): ${err.message}`);
     }
-    
+
+    function get_filters() {
+        var country = document.getElementById("country");
+        var state = document.getElementById("state");
+
+        search_req.country = country.value;
+        search_req.state = state.value;
+    }
+
+    function search() {
+        update_map(true, 6);
+
+    }
+
+    document.getElementById('search').addEventListener('click', search);
+
     start();
+
 }
 
 
