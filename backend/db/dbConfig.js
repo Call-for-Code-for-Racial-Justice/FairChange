@@ -10,7 +10,7 @@ function startDBConnection() {
       console.log("MongoDB connected....");
     })
     .catch((err) => {
-      console.error("connection failute", err);
+      console.error("connection failure", err);
     });
 }
 
