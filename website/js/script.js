@@ -143,7 +143,7 @@ function init() {
     function place_marker(lat, lon, des) {
         /**Receives a Leflet map object, a latitud and longitud values to place markers on the map*/
         var markers = L.marker([lat, lon])
-            .bindPopup('<button id="event">'+ des +'</button>')
+            .bindPopup('<button class="btn" id="event">'+ des +'</button>')
             .openPopup(); 
 
         map_obj.markers = markers;   

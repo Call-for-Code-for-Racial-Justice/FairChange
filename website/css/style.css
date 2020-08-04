@@ -1,5 +1,15 @@
 #mapid {
-    height: 512px;
-    width:  712px;
+    margin-top: 1%;
+    height: 385px;
+    width:  105%;
+}
+
+.input {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#event:hover {
+    color: aquamarine;
 }
 

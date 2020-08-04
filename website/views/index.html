@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 
-    <title>CFC</title>
+    <title>FairChange</title>
 
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='..\css\style.css'>
@@ -17,46 +17,71 @@
 
 <body>
 
-    <div id='controls'>
-        <!--It set the filter for the querys-->
-        <h4>Filters:</h4>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="../views/index.html">Fairchange</a> 
+        <form class="form-inline">
+          <div class="input-group">
 
-        <div style='text-align:center;'>
             <script type= "text/javascript" src = "../js/countries.js"></script>
-           
-            Country: <select id="country" name ="country"></select> 
-            State: <select name ="state" id ="state"></select>  
-        </div>
-        
+            <div class="input-group-prepend">
+                <select class="nav-link dropdown-toggle" id="country" name ="country"></select> 
+            </div>
+            <div class="input-group-prepend">
+                <select class="nav-link dropdown-toggle" name ="state" id ="state"></select>     
+            </div>
+
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">From</span>
+            </div>
+                <input type="date" class="form-control" aria-describedby="basic-addon1">
+            </div>
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">To</span>
+            </div>
+            <input type="date" class="form-control" aria-describedby="basic-addon1">
+          </div>
+ 
+
+        </form>
+
+        <button id="search" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+
+      </nav>
+
+      <div id='container'>
+
         <script language="javascript">
             populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
         </script>
 
-        <h5>Date:</h5>
-        <label for="from">From:</label>
-        <input type="date" id="from" name="from"> 
-        <label for="to">To:</label>
-        <input type="date" id="to" name="to"> 
-
-        <button id='search'> Search</button>
-
     </div>
 
-    <div id="mapid">
+    <div class="row" id="mapid">
         <!--Is where the map will display-->
     </div>
 
-
-    <div id='data'>
+    <div class="row" id='data'>
         <!--It will display data totals-->
     </div>
+
+
+</div>
     
 </body>
+
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
-
 <script src='..\js\script.js'></script>
 
 
