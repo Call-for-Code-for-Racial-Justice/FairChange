@@ -1,5 +1,34 @@
 #mapid {
-    height: 512px;
-    width:  512px;
+    margin-top: 1%;
+    height: 400px;
+    width:  85%;
 }
 
+.input {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#event:hover {
+    color: blue;
+    border-color: none;
+}
+
+#controls {
+    width: 10%;
+    padding: 7%;
+}
+
+
+input {
+    padding: 1%;
+    margin: 1%;
+}
+
+.field {
+    width: 100%;
+}
+
+#data {
+    border-color: cecece;
+}
