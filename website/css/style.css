@@ -1,7 +1,7 @@
 #mapid {
     margin-top: 1%;
     height: 400px;
-    width:  105%;
+    width:  85%;
 }
 
 .input {
@@ -29,3 +29,6 @@ input {
     width: 100%;
 }
 
+#data {
+    border-color: cecece;
+}
