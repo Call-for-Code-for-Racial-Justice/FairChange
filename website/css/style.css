@@ -1,6 +1,6 @@
 #mapid {
     margin-top: 1%;
-    height: 385px;
+    height: 400px;
     width:  105%;
 }
 
@@ -10,6 +10,22 @@
 }
 
 #event:hover {
-    color: aquamarine;
+    color: blue;
+    border-color: none;
+}
+
+#controls {
+    width: 10%;
+    padding: 7%;
+}
+
+
+input {
+    padding: 1%;
+    margin: 1%;
+}
+
+.field {
+    width: 100%;
 }
 

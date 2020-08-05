@@ -26,7 +26,8 @@ function init() {
         this.coutnry = country,
         this.state = state,
         this.date_from = date_from,
-        this.date_to = date_to
+        this.date_to = date_to,
+        this.total = 0
 
     }
 
@@ -73,9 +74,6 @@ function init() {
 
     function update_map(search, radius) {
         /**Update the leflet object with the acutal values of the query*/
-
-        //map_obj.create_map.clearLayers();
-
         loc = false;
         get_filters();
         request_query();
@@ -85,6 +83,8 @@ function init() {
         lon_max = (users_location.lon * -1) - users_location.radius;
         lon_min = (users_location.lon * -1) + users_location.radius;
 
+        search_req.total = 0;
+
         for(var i in report.lat) {
             if(report.lat[i] <= lat_max && report.lat[i] >= lat_min && (report.lon[i] * -1) > lon_max && (report.lon[i] * -1) < lon_min) {
                 if(loc == false) {
@@ -92,9 +92,11 @@ function init() {
                     map(users_location.lat, users_location.lon);
                     users_location.radius = radius;
                     loc = true;
+                    
                 }
 
                 place_marker(report.lat[i], report.lon[i], report.description[i]);
+                
 
             } else if(search == false) {
                 if(loc == false) {
@@ -104,6 +106,7 @@ function init() {
                 }
 
                 place_marker(report.lat[i], report.lon[i], report.description[i]);
+                
 
                 } else if(search == true) {
                     if(report.country[i] == search_req.country) {
@@ -117,9 +120,11 @@ function init() {
                     }
 
                     place_marker(report.lat[i], report.lon[i], report.description[i]);
+                    
                 }
             }
 
+            console.log(search_req.total);
         }
 
     function map(lat, lon) {
@@ -149,6 +154,7 @@ function init() {
         map_obj.markers = markers;   
         markers.addTo(map_obj.created_map);
         //map_obj.created_map.addLayer(markers);
+        search_req.total++;
 
     }
 

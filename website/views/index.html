@@ -17,36 +17,44 @@
 
 <body>
 
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="../views/index.html">Fairchange</a> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../views/index.html">Filters: </a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          Search <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
         <form class="form-inline">
           <div class="input-group">
 
             <script type= "text/javascript" src = "../js/countries.js"></script>
             <div class="input-group-prepend">
-                <select class="nav-link dropdown-toggle" id="country" name ="country"></select> 
+                <select class="nav-item dropdown-toggle" id="country" name ="country"></select> 
             </div>
             <div class="input-group-prepend">
-                <select class="nav-link dropdown-toggle" name ="state" id ="state"></select>     
+                <select class="nav-item dropdown-toggle" name ="state" id ="state"></select>     
             </div>
 
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">From</span>
             </div>
-                <input type="date" class="form-control" aria-describedby="basic-addon1">
+                <input type="date" class="form-control nav-item" aria-describedby="basic-addon1">
             </div>
 
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">To</span>
+              <span class="input-group-text nav-item" id="basic-addon1">To</span>
             </div>
-            <input type="date" class="form-control" aria-describedby="basic-addon1">
+            <input type="date" class="form-control nav-item" aria-describedby="basic-addon1">
           </div>
  
 
         </form>
 
-        <button id="search" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+        <button id="search" class="nav-item btn btn-outline-success my-2 my-sm-0">Search</button>
+
+      </div>
 
       </nav>
 
