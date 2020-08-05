@@ -1,3 +1,0 @@
-fairchange 
-
-placeholder readme
