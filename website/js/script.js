@@ -134,6 +134,7 @@ function init() {
         var layer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
+            zoomAnimation: false,
             id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1,
@@ -169,7 +170,6 @@ function init() {
 
         map(users_location.lat, users_location.lon);
         update_map(false, 6);
-        get_location();
     }
 
     function map_location(lat, lon) {
@@ -224,6 +224,7 @@ function init() {
     }
 
     document.getElementById('search').addEventListener('click', search);
+    document.getElementById('location_search').addEventListener('click', get_location);
 
     start();
 
