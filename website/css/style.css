@@ -1,34 +1,16 @@
-#mapid {
-    margin-top: 1%;
-    height: 400px;
-    width:  85%;
+.crtl_btns {
+    background-color: #4361b8;
+    color: #c7d0eb;
+    align-self: center;
+    align-content: center;
 }
 
-.input {
-    padding-left: 5%;
-    padding-right: 5%;
+.crtl_btns:hover {
+    color: #c7d0eb;
+    background-color: #002db3;
 }
 
-#event:hover {
-    color: blue;
-    border-color: none;
-}
-
-#controls {
-    width: 10%;
-    padding: 7%;
-}
-
-
-input {
-    padding: 1%;
-    margin: 1%;
-}
-
-.field {
-    width: 100%;
-}
-
-#data {
-    border-color: cecece;
+.drop_down {
+    height: 32px;
+    border-radius: 2px;
 }

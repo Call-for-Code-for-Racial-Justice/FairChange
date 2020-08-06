@@ -1,108 +1,153 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<html class=" js csstransforms3d"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>FariChange</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.40.3">
 
-    <title>FairChange</title>
+<title>FairChange</title>
+<link rel="shortcut icon" href="https://images.g2crowd.com/uploads/product/hd_favicon/1509978331/ibm-infosphere-information-server.png?bust_cache" type="image/x-icon">
 
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='..\css\style.css'>
+<link href="../files/nucleus.css" rel="stylesheet">
+<link href="../files/font-awesome.css" rel="stylesheet">
+<link href="../files/style.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+<link href="../css/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""/>
 
-</head>
+<link rel="stylesheet" href="../files/bootstrap.css">
+<script src="../files/jquery-2.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="">
 
-<body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="../views/index.html">Filters: </a> 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          Search <span class="navbar-toggler-icon"></span>
+  </head>
+  <body data-url="/widgets/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="">
+
+
+
+<div  class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+
+    <img style = "height: 43%; width: 65%;" src="../img/IBM_logo.gif" alt="IBM Logo">
+
+    </div>
+
+  </div>
+
+
+  <p>Search filters:</p>
+
+      <ul class="topics">
+
+        <button class = 'btn crtl_btns' id="location_search" >
+          Search in my current location
         </button>
+
+    <li data-nav-id="/customisation/" class="dd-item" style="display: block;">
+        <span>Location</span>
+    </li>
+
+    <script type= "text/javascript" src = "../js/countries.js"></script>
+    <select class="drop_down" id="country" name ="country"></select> 
+    <select class="drop_down" name ="state" id ="state"></select> 
+
+    <li data-nav-id="/dashboards/" class="dd-item" style="display: block;">
+        <span>Date</span>
+    </li>
+
+    <span class="input-group-text" id="basic-addon1">From</span>
+    <input type="date" class="form-control nav-item" aria-describedby="basic-addon1">
+
+    <span class="input-group-text nav-item" id="basic-addon1">To</span>
+    <input type="date" class="form-control" aria-describedby="basic-addon1">
+
+    <button id="search" class="crtl_btns btn btn-outline-success my-2 my-sm-0">Search</button>
+
+
+        <section id="shortcuts">
+                <li class="" role=""><h3>More</h3><a href="#" target="_blank" rel="noopener"><i class="fa fa-github"></i>&nbsp;&nbsp;Information</a>
+                  <a href="https://github.com/embrace-call-for-code/fairchange/blob/master/readme.txt" target="_blank" rel="noopener"><i class="fa fa-github"></i>&nbsp;&nbsp;About</a></li>
+        </section>
+
+		<hr>
+
+    </ul>
+
+ <section style="background-color: #001a66;" id="footer">
+    </section>
+  </div>
+</nav>
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <form class="form-inline">
-          <div class="input-group">
-
-            <script type= "text/javascript" src = "../js/countries.js"></script>
-            <div class="input-group-prepend">
-                <select class="nav-item dropdown-toggle" id="country" name ="country"></select> 
-            </div>
-          </div>
-            <div class="input-group">
-                <select class="nav-item dropdown-toggle" name ="state" id ="state"></select>     
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">From</span>
-            
-                <input type="date" class="form-control nav-item" aria-describedby="basic-addon1">
-              </div>
-
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text nav-item" id="basic-addon1">To</span>
-            </div>
-            <input type="date" class="form-control nav-item" aria-describedby="basic-addon1">
-          </div>
- 
-
-        </form>
-
-        <button id="search" class="nav-item btn btn-outline-success my-2 my-sm-0">Search</button>
-
-      </div>
-
-      </nav>
-
-      <div id='container'>
-
-        <script language="javascript">
-            populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
-        </script>
-
+    <div id="top-github-link">
+      <a class="github-link highlight" href="https://github.com/embrace-call-for-code/fairchange/blob/master/readme.txt" target="blank">
+        <i class="fa fa-code-fork"></i>
+        "How can you help?"
+      </a>
     </div>
-
-    <div class="row">
-
-      <div class="col-2" id='data'>
-        <!--It will display data totals-->
-        <h4>Display totals</h4>
-
-
-    </div>
-
-      <div class="col-10" id="mapid">
-        <!--Is where the map will display-->
-    </div>
-
     
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="" class="highlight">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i><p class="higlight">Incidents</p></span>
+        <span class="links">
+
+        </span>
+
+        <p class="higlight">Reports</p>
     </div>
+    
+
+  </div>
 
 
+<div id="body-inner">
   
+<div id="mapid" style='height: 450px; width:  100%;'></div>
+  
+<footer class=" footline">
+	<p>IBM Call for Code Challenge - FairChange</p>
+</footer>
 
-
+  </div>
 </div>
-    
-</body>
 
-<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</section>
+
+
+<script language="javascript">
+  populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+</script>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
-<script src='..\js\script.js'></script>
+
+<script src='../js/script.js'></script>
 
 
-</html>
+<div class="autocomplete-suggestions " style="display: none;"></div></body></html>
