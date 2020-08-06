@@ -5,7 +5,7 @@ function startDBConnection() {
     .set("useFindAndModify", false)
     .set("useNewUrlParser", true)
     .set("useUnifiedTopology", true)
-    .connect("mongodb://localhost/fair-change-app")
+    .connect("mongodb://127.0.0.1:27017")
     .then(() => {
       console.log("MongoDB connected....");
     })

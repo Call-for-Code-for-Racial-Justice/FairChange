@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as Location from 'expo-location';
 
 export default function tracking() {
-    const [location, setLocation] = useState({});
+    const [location, setLocation] = useState([]);
     const [errorMsg, setErrorMsg] = useState('');
 
     useEffect(() => {
@@ -12,7 +12,8 @@ export default function tracking() {
                 setErrorMsg('Permission to access location was denied');
             }
 
-            let location = await Location.getCurrentPositionAsync({});
+            let locationList = []
+            locationList.push(await Location.getCurrentPositionAsync({}));
             setLocation(location);
         })();
     });
