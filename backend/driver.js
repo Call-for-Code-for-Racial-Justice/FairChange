@@ -1,13 +1,19 @@
-/*  FOR RUNNING LOCAL:
-    node driver.js (must have mongodb insalled)
-*/
-const dbConfig = require('./db/dbConfig');
-const express = require('express');
+import { CloudantUtil } from './db/Cloudant';
+import express from 'express';
+import { getLogger } from './routing/logging';
+
 const app = express();
 const port = 3000;
+const logger = getLogger();
 
-dbConfig.startDBConnection();
+app.use(express.json());
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-  })
+app.use("/", require("./routing/logging").router);
+app.use("/", require("./routing/routes").router);
+CloudantUtil().then(() =>
+{
+	app.listen(port, () =>
+	{
+		logger.info(`Example app listening at http://localhost:${port}`);
+	});
+});
