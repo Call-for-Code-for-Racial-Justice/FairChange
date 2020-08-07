@@ -16,7 +16,11 @@
 }
 
 #mapid {
-    height: 450px; 
-    width: 100%;
-    position: static;
+    height: 400px; 
+    width: 60%;
+    margin-left: 32%;
+}
+
+.text {
+    color: white;
 }
