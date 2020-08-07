@@ -1,0 +1,10 @@
+node_modules
+.settings
+.project
+.sublime-project
+.tern-project
+beta
+vcap-local.example.json
+__*
+.git
+src
