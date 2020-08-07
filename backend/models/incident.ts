@@ -1,14 +1,18 @@
 
-import { create } from './common';
+import { create, getById } from './common';
 
 export type Incident = {
-	date: string,
+	timestamp: string,
     incidentCategory: string,
-    incidentId: string,
+	incidentId: string,
+	description: string,
+    location: string,
     lat: number,
-    lon: number,
-    state: string,
-    topic: string
+	lon: number,
+	country: string,
+	state: string,
+	city: string,
+	topic: string
 };
 
 export const storeIncident = async (data: Incident): Promise<any> =>
@@ -17,4 +21,9 @@ export const storeIncident = async (data: Incident): Promise<any> =>
 		doc: data,
 		type: "incident"
 	});
+};
+
+export const getIncident = async (id: string): Promise<any> =>
+{
+	return getById(id);
 };

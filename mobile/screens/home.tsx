@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Button } from 'react-native';
+import Axios from 'react-native-axios';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
@@ -11,9 +12,22 @@ function Separator() {
   return <View style={styles.separator} />;
 }
 
+function pushEvent() {
+  let eventObject = {
+    latitude: 0,
+    longitude: 1
+  }
+
+  Axios({
+    method: 'POST',
+    url: 'http://localhost:3000',
+    data: eventObject
+  })
+}
+
 function startRecording() {
   alert('recording')
-  return <CameraPopUp />
+  pushEvent()
 }
 
 export default function home() {

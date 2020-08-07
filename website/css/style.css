@@ -14,3 +14,9 @@
     height: 32px;
     border-radius: 2px;
 }
+
+#mapid {
+    height: 450px; 
+    width: 100%;
+    position: static;
+}

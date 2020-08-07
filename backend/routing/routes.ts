@@ -1,17 +1,19 @@
 import { Router, Response, NextFunction } from "express";
-import { Incident, storeIncident } from '../models/incident';
+import { Incident, storeIncident, getIncident } from '../models/incident';
 import { AugmentedRequest } from "./logging";
 export const router = Router();
 
-router.get("/", (req, res) =>
+// @ts-ignore don't know to get typescript to stop complaining about this
+router.get("/api/getIncident/:id", async (req: AugmentedRequest, res: Response, next: NextFunction) =>
 {
-	// FE/map code should hit this endpooint to get user data which will include mapping coordinates
+	req.log.debug({ incidentId: req.params.id });
+	res.send(await getIncident(req.params.id));
 });
 
 // @ts-ignore don't know to get typescript to stop complaining about this
 router.post("/api/storeIncident", async (req: AugmentedRequest, res: Response, next: NextFunction) =>
 {
-	const result = await storeIncident(req.body);
+	const result = await storeIncident(req.body as Incident);
 	req.log.debug({ result });
 	res.send(result);
 });

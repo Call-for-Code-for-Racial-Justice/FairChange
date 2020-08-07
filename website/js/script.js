@@ -56,8 +56,6 @@ function init() {
          * the object with that information, save it to a list of objects and return the list.
          * It needs to have at least Country and/or date selected to execute**/
         
-        
-
         //Objects list or dictionary
         data.forEach(function(item) {
                 report.id = item.Index;
@@ -117,14 +115,14 @@ function init() {
                             loc = true;
                        }
 
+                       place_marker(report.lat[i], report.lon[i], report.description[i]);
                     }
 
-                    place_marker(report.lat[i], report.lon[i], report.description[i]);
+                    //place_marker(report.lat[i], report.lon[i], report.description[i]);
                     
                 }
             }
 
-            console.log(search_req.total);
         }
 
     function map(lat, lon) {
@@ -138,7 +136,7 @@ function init() {
             id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoiZGF2ZXp1bmlnYSIsImEiOiJja2Q2azJ1Y20wcWl2MnlvOGoxMDh3NWRoIn0.D3G8f1Y7ZFzaflnCItihgA'
+            accessToken: 'pk.eyJ1IjoiZGF2ZXp1bmlnYSIsImEiOiJja2RqZWR2YnQwMGN5MnF0MnlzbzR6N2RkIn0.IbVbFPrE6cCQxt1rNW-bIQ'
         });
 
         mymap.addLayer(layer);
