@@ -267,7 +267,7 @@ function populateStates( countryElementId, stateElementId ){
 	var stateElement = document.getElementById( stateElementId );
 	
 	stateElement.length=0;	// Fixed by Julian Woods
-	stateElement.options[0] = new Option('Select State','');
+	stateElement.options[0] = new Option('State (Optional)','');
 	stateElement.selectedIndex = 0;
 	
 	var state_arr = s_a[selectedCountryIndex].split("|");

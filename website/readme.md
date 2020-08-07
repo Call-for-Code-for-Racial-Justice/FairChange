@@ -11,4 +11,9 @@ Visualization of colected data and location and date search.
 -Responsive website (BootStrap)
 -Use font-awesome icons
 
+Pending:
+-Check user location search function with user form another location
+-Connect application to MongoDB
+-Display search totals
+-Finish responsiveness 
 

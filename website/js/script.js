@@ -83,7 +83,6 @@ function init() {
             var lat_min = users_location.lat - users_location.radius;
             var lon_max = (users_location.lon * -1) - users_location.radius;
             var lon_min = (users_location.lon * -1) + users_location.radius;
-
         } 
 
         search_req.total = 0;
@@ -99,7 +98,6 @@ function init() {
                 }
 
                 place_marker(report.lat[i], report.lon[i], report.description[i]);
-                
 
             } else if(search == false) {
                 if(loc == false) {
@@ -109,7 +107,6 @@ function init() {
                 }
 
                 place_marker(report.lat[i], report.lon[i], report.description[i]);
-                
 
                 } else if(search == true) {
                     if(report.country[i] == search_req.country) {
@@ -124,12 +121,20 @@ function init() {
                        }
 
                        place_marker(report.lat[i], report.lon[i], report.description[i]);
+                       
                     }
 
                     
                 }
             }
+
+            console.log(search_req.total);
   
+            if(search_req.total == 0) {
+                alert('No reports for the selected location');
+            }
+
+            search_req.total = 0;
 
         }
 
@@ -155,7 +160,7 @@ function init() {
     function place_marker(lat, lon, des) {
         /**Receives a Leflet map object, a latitud and longitud values to place markers on the map*/
         var markers = L.marker([lat, lon])
-            .bindPopup('<button class="btn" id="event">'+ des +'</button>')
+            .bindPopup('<a href="#" id="event">'+ des +'</a>')
             .openPopup(); 
 
         map_obj.markers = markers;   
@@ -166,7 +171,7 @@ function init() {
     }
 
     function more_btn() {
-        /**Ecxecutes on click and does a call for a full document information according to the ID*/
+        /**Executes on click and does a call for a full document information according to the ID*/
     }
 
     function start() {
@@ -206,7 +211,7 @@ function init() {
         users_location.lat = crd.latitude;
         users_location.lon =crd.longitude;
         map_location(users_location.lat, users_location.lon);
-        setTimeout(() => {  update_map(true, 6); }, 1500);
+        setTimeout(() => {  update_map(false, 6); }, 1500);
     }
 
     function error(err) {
@@ -265,7 +270,7 @@ function init() {
         get_filters(); 
 
         get_location();
-        update_map(false, 8);
+        //update_map(false, 6);
 
     }
 
