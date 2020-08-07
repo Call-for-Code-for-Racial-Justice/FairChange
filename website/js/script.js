@@ -63,6 +63,7 @@ function init() {
                 report.lon = item.Lon;
                 report.description = item.Description;
                 report.country = item.Country;
+                report.state = item.State;
             
         });
 
@@ -71,7 +72,7 @@ function init() {
     }
 
     function update_map(search, radius) {
-        /**Update the leflet object with the acutal values of the query*/
+        /**Update the leflet object with the actual values of the query*/
         loc = false;
         request_query();
 
@@ -218,13 +219,40 @@ function init() {
 
     function search() {
         /**Does search acoording to elected filters on search button click */
+        var start = true;
+
         get_filters();
-        update_map(true, 6);
+
+        if(search_req.state) {
+            for(var i in report.lat) { 
+                if(search_req.state == report.state[i]) {
+                    if(start == true) {
+                        start = false;
+
+                        document.getElementById("state").selectedIndex = 0;
+
+                        request_query();
+                        map_obj.created_map.remove();
+                        map(report.lat[i], report.lon[i]); 
+
+                    }
+
+                    place_marker(report.lat[i], report.lon[i], report.description[i]);
+
+                }
+            }
+            
+        } else {
+            update_map(true, 6);
+
+        }
+        
 
     }
 
     function location_search() {
         /**Does search by geo-location of the user on locations_search button click */
+        document.getElementById("country").selectedIndex = 0;
         get_location();
         update_map(false, 6);
 
