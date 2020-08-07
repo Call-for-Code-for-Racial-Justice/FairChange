@@ -73,7 +73,6 @@ function init() {
     function update_map(search, radius) {
         /**Update the leflet object with the acutal values of the query*/
         loc = false;
-        get_filters();
         request_query();
 
         lat_max = users_location.lat + users_location.radius;
@@ -209,6 +208,7 @@ function init() {
     }
 
     function get_filters() {
+        /**Get HTML input values for the search*/
         var country = document.getElementById("country");
         var state = document.getElementById("state");
 
@@ -217,14 +217,24 @@ function init() {
     }
 
     function search() {
+        /**Does search acoording to elected filters on search button click */
+        get_filters();
         update_map(true, 6);
 
     }
 
-    document.getElementById('search').addEventListener('click', search);
-    document.getElementById('location_search').addEventListener('click', get_location);
+    function location_search() {
+        /**Does search by geo-location of the user on locations_search button click */
+        get_location();
+        update_map(false, 6);
+
+    }
 
     start();
+
+    document.getElementById('search').addEventListener('click', search);
+    document.getElementById('location_search').addEventListener('click', location_search);
+
 
 }
 

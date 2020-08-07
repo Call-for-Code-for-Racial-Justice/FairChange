@@ -22,34 +22,33 @@
 
 <link rel="stylesheet" href="../files/bootstrap.css">
 <script src="../files/jquery-2.js"></script>
+
 <style type="text/css">
   :root #header + #content > #left > #rlblock_left {
     display:none !important;
   }
 </style>
+
 <meta name="description" content="">
 
-
   </head>
+  
   <body data-url="/widgets/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
 
-
-
 <div  class="highlightable">
   <div id="header-wrapper">
     <div id="header">
 
-    <img style = "height: 40%; width: 62%;" src="../img/IBM_logo.gif" alt="IBM Logo">
+    <img style = "height: 30%; width: 55%;" src="../img/IBM_logo.gif" alt="IBM Logo">
 
     </div>
 
   </div>
 
-
-  <p>Search filters:</p>
+  <p class="text">Search filters:</p>
 
       <ul class="topics">
 
@@ -58,7 +57,7 @@
         </button>
 
     <li data-nav-id="/customisation/" class="dd-item" style="display: block;">
-        <span>Location</span>
+        <span class="text">Location</span>
     </li>
 
     <script type= "text/javascript" src = "../js/countries.js"></script>
@@ -66,13 +65,13 @@
     <select class="drop_down" name ="state" id ="state"></select> 
 
     <li data-nav-id="/dashboards/" class="dd-item" style="display: block;">
-        <span>Date</span>
+        <span class="text">Date</span>
     </li>
 
-    <span class="input-group-text" id="basic-addon1">From</span>
+    <span class="input-group-text text" id="basic-addon1">From</span>
     <input type="date" class="form-control nav-item" aria-describedby="basic-addon1">
 
-    <span class="input-group-text nav-item" id="basic-addon1">To</span>
+    <span class="input-group-text nav-item text" id="basic-addon1">To</span>
     <input type="date" class="form-control" aria-describedby="basic-addon1">
 
     <button id="search" class="crtl_btns btn btn-outline-success my-2 my-sm-0">Search</button>
@@ -124,18 +123,16 @@
 
 
 <div id="body-inner">
-  
-<div id="mapid" style='height: 450px; width:  100%;'></div>
-  
-<footer class=" footline">
-	<p>IBM Call for Code Challenge - FairChange</p>
-</footer>
 
   </div>
 </div>
 
 
+
 </section>
+
+
+<div class="row" id="mapid" class="row"></div>
 
 
 <script language="javascript">
