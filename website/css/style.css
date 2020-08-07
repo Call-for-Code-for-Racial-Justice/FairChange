@@ -1,11 +1,11 @@
-.crtl_btns {
+.ctrl_btns {
     background-color: #4361b8;
     color: #c7d0eb;
     align-self: center;
     align-content: center;
 }
 
-.crtl_btns:hover {
+.ctrl_btns:hover {
     color: #c7d0eb;
     background-color: #002db3;
 }

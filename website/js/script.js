@@ -73,18 +73,23 @@ function init() {
 
     function update_map(search, radius) {
         /**Update the leflet object with the actual values of the query*/
-        loc = false;
+        let loc = false;
         request_query();
 
-        lat_max = users_location.lat + users_location.radius;
-        lat_min = users_location.lat - users_location.radius;
-        lon_max = (users_location.lon * -1) - users_location.radius;
-        lon_min = (users_location.lon * -1) + users_location.radius;
+        users_location.radius = radius;
+
+        if (search == true) {
+            var lat_max = users_location.lat + users_location.radius;
+            var lat_min = users_location.lat - users_location.radius;
+            var lon_max = (users_location.lon * -1) - users_location.radius;
+            var lon_min = (users_location.lon * -1) + users_location.radius;
+
+        } 
 
         search_req.total = 0;
 
         for(var i in report.lat) {
-            if(report.lat[i] <= lat_max && report.lat[i] >= lat_min && (report.lon[i] * -1) > lon_max && (report.lon[i] * -1) < lon_min) {
+            if(report.lat[i] <= lat_max && report.lat[i] >= lat_min && (report.lon[i] * -1) > lon_max && (report.lon[i] * -1) < lon_min && search == false) {
                 if(loc == false) {
                     map_obj.created_map.remove();
                     map(users_location.lat, users_location.lon);
@@ -109,6 +114,9 @@ function init() {
                 } else if(search == true) {
                     if(report.country[i] == search_req.country) {
                         if(loc == false) {
+                            users_location.lon = report.lon[i];
+                            users_location.lat = report.lat[i];
+
                             map_obj.created_map.remove();
                             map(report.lat[i], report.lon[i]); 
                             
@@ -118,10 +126,10 @@ function init() {
                        place_marker(report.lat[i], report.lon[i], report.description[i]);
                     }
 
-                    //place_marker(report.lat[i], report.lon[i], report.description[i]);
                     
                 }
             }
+  
 
         }
 
@@ -219,7 +227,7 @@ function init() {
 
     function search() {
         /**Does search acoording to elected filters on search button click */
-        var start = true;
+        let start = true;
 
         get_filters();
 
@@ -253,8 +261,11 @@ function init() {
     function location_search() {
         /**Does search by geo-location of the user on locations_search button click */
         document.getElementById("country").selectedIndex = 0;
+        document.getElementById("state").selectedIndex = 0;
+        get_filters(); 
+
         get_location();
-        update_map(false, 6);
+        update_map(false, 8);
 
     }
 
