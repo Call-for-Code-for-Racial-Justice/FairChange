@@ -9,7 +9,7 @@ const logger = getLogger();
 app.use(express.json());
 
 app.use("/", require("./routing/logging").router);
-app.use("/", require("./routing/routes").router);
+app.use("/api", require("./routing/routes").router);
 CloudantUtil().then(() =>
 {
 	app.listen(port, () =>

@@ -10,8 +10,7 @@ module.exports =
 	},
 	"plugins": [
 		"sonarjs",
-		"@typescript-eslint",
-		"graphql"
+		"@typescript-eslint"
 	],
 	"extends": [
 		"plugin:@typescript-eslint/eslint-recommended",
