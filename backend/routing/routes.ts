@@ -1,5 +1,5 @@
 import { Router, Response, NextFunction } from "express";
-import { Incident, storeIncident, getIncident } from '../models/incident';
+import { Incident, storeIncident, getIncident, linkVideo } from '../models/incident';
 import { AugmentedRequest } from "./logging";
 import { getBuckets, getUrl, fileUpload } from '../models/objectStorage';
 export const router = Router();
@@ -28,17 +28,25 @@ router.get("/getBuckets", async (req: AugmentedRequest, res: Response, next: Nex
 // @ts-ignore don't know to get typescript to stop complaining about this
 router.post("/upload", async (req: AugmentedRequest, res: Response, next: NextFunction) =>
 {
-	const result = await fileUpload(req, res);
-	// const result = await multiPartUpload(req.body.bucketName, req.body.itemName, req.body.path);
-
-	res.send(result);
+	if (req.query.incident)
+	{
+		const result = await fileUpload(req, res);
+		const result2 = await linkVideo({
+			incidentId: req.query.incident as string,
+			videoName: result.Key
+		});
+		res.send({ result: { ...result, ...result2 } });
+	}
+	else
+	{
+		res.status(400).send({ error: "Incident ID must be provided." });
+	}
 });
 
 // @ts-ignore don't know to get typescript to stop complaining about this
 router.get("/getObject/:key", async (req: AugmentedRequest, res: Response, next: NextFunction) =>
 {
 	const result = await getUrl(req.params.key).catch(err => err);
-
 	res.send(result);
 });
 

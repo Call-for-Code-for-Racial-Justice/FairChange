@@ -27,3 +27,15 @@ export const getIncident = async (id: string): Promise<any> =>
 {
 	return getById(id);
 };
+
+type linkVideoProps = { incidentId: string, videoName: string };
+export const linkVideo = async ({ incidentId, videoName }: linkVideoProps): Promise<any> =>
+{
+	const doc = await getById(incidentId);
+	doc.incidentVideos = doc.incidentVideos ? [...doc.incidentVideos, videoName] : [videoName];
+
+	return create({
+		doc: doc,
+		type: "incident"
+	});
+};
