@@ -22,7 +22,7 @@ This endpoint allows you to retrieve the incident information from the Cloudant 
 
 *method:* POST
 
-This endpoint allows you to create a new incident.  The body of the post should be a JSON object with the forllowing structure:
+This endpoint allows you to create a new incident.  The body of the post should be a JSON object with the following structure:
 
 ```js
 {
@@ -48,6 +48,8 @@ This endpoint allows you to create a new incident.  The body of the post should 
 
 *Content-Type:* multipart/form-data;
 
+*query param:* incident - The ID of the incident record to attach the video to.
+
 *form-data:*
 
 > **key**: incidentVideo, **value**: the video
@@ -59,7 +61,10 @@ This endpoint allows you to create a new incident.  The body of the post should 
     "Location": url,
     "Bucket": "emb-race-fair-change",
     "Key": Object Name in Cloud Object Storage,
-    "ETag": unique tag of uploaded object
+    "ETag": unique tag of uploaded object,
+    "ok": boolean - true indicates incident document successfully updated,
+    "id": id of the incident document in Cloudant,
+    "rev": revision of the incident documnt in Cloudant
 }
 ```
 
