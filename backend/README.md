@@ -1,0 +1,73 @@
+# Backend Node Server
+
+### Getting Started
+
+1) `cd backend`
+2) `npm ci`
+3) `npm run dev`
+
+### Endpoints
+
+#### /api/getIncident/\<incident id\>
+
+*method:* GET
+
+This endpoint allows you to retrieve the incident information from the Cloudant database. 
+
+**incident id** = the unique id of the incident.
+
+**returned value** - incident information in JSON format
+
+#### /api/storeIncident
+
+*method:* POST
+
+This endpoint allows you to create a new incident.  The body of the post should be a JSON object with the forllowing structure:
+
+```js
+{
+    timestamp: string,
+    incidentCategory: string,
+    incidentId: string,
+    description: string,
+    location: string,
+    lat: number,
+    lon: number,
+    country: string,
+    state: string,
+    city: string,
+    topic: string
+}
+```
+
+**returned value** - confirmation of incident record having been created.
+
+#### /api/upload
+
+*method:* POST
+
+*Content-Type:* multipart/form-data;
+
+*form-data:*
+
+> **key**: incidentVideo, **value**: the video
+
+**returned value**
+
+```js
+{
+    "Location": url,
+    "Bucket": "emb-race-fair-change",
+    "Key": Object Name in Cloud Object Storage,
+    "ETag": unique tag of uploaded object
+}
+```
+
+
+#### /api/getObject/\<key\>
+
+*method:* GET
+
+*key* - Object name of the video in Cloud Object Storage
+
+**returned value** - Direct Url to the video.  Url expires in 60 seconds.
