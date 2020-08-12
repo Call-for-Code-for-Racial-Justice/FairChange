@@ -1,0 +1,25 @@
+:root
+{
+	--theme-blue: #17315A;
+}
+
+.registration
+{
+	--font-family: "Helvetica", "Arial", "sans-serif";
+	--form-font-color: #000000;
+	--form-placeholder-color: #727272;
+}
+
+.fix
+{
+	clear: both;
+	display: block;
+}
+
+.blue
+{
+	padding-top: 200px;
+	// position: relative;
+	color: blue;
+	z-index: 9;
+}
