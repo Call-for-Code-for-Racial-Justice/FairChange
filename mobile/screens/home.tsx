@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Button } from 'react-native';
-import Axios from 'react-native-axios';
-
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import Navigation from './navigation';
 
-export default function home() {
-  function startRecording() {
-    alert('recording')
-  }
-
+export default function home({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}> Fairchange </Text>
       <View style={styles.buttonContainer}>
         <Button
-          title="upload"
-          disabled
-        />
-        <Button
-          title="record and alert"
+          title="in a situation"
           color="red"
-          onPress={() => startRecording()}
+          onPress={() => navigation.navigate('incidentScreen')}
         />
       </View>
     </View>
@@ -38,8 +29,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   title: {
-    fontSize: 20,
+    display: 'none',
+    fontSize: 40,
     fontWeight: 'bold',
+    textAlign: 'center'
   },
   separator: {
     marginVertical: 30,

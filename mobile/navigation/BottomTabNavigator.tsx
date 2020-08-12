@@ -6,8 +6,8 @@ import * as React from 'react';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import home from '../screens/home';
-import TabTwoScreen from '../screens/profile';
-import { BottomTabParamList, homeParamList, profileParamList } from '../types';
+import incident from '../screens/incident';
+import { BottomTabParamList, homeParamList, incidentParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -21,13 +21,6 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="home"
         component={TabOneNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
-        name="profile"
-        component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -54,20 +47,25 @@ function TabOneNavigator() {
         component={home}
         options={{ headerTitle: 'home' }}
       />
+      <TabOneStack.Screen
+        name="incidentScreen"
+        component={incident}
+        options={{ headerTitle: 'incident' }}
+      />
     </TabOneStack.Navigator>
   );
 }
 
-const TabTwoStack = createStackNavigator<profileParamList>();
+// const TabTwoStack = createStackNavigator<incidentParamList>();
 
-function TabTwoNavigator() {
-  return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="profileScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'profile' }}
-      />
-    </TabTwoStack.Navigator>
-  );
-}
+// function TabTwoNavigator() {
+//   return (
+//     <TabTwoStack.Navigator>
+//       <TabTwoStack.Screen
+//         name="incidentScreen"
+//         component={incident}
+//         options={{ headerTitle: 'incident' }}
+//       />
+//     </TabTwoStack.Navigator>
+//   );
+// }
