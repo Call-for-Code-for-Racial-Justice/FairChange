@@ -1,9 +1,16 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Pages } from "../pages/Pages";
+import { country, states } from './countries';
 import styles from "./MainContentArea.module.scss";
 
 export const MainContentArea = (): JSX.Element =>
 {
+	const [currentState, setCurrentState] = useState<string[]>([]);
+	const setState = (ev: ChangeEvent<HTMLSelectElement>): void =>
+	{
+		setCurrentState(states[parseInt(ev.target.value, 10)].split("|"));
+	};
+
 	return (
 		<>
 			<div id="headermain"></div>
@@ -30,9 +37,26 @@ export const MainContentArea = (): JSX.Element =>
 							</li>
 						</ul>
 
-						<script type="text/javascript" src="js/countries.js"></script>
-						<select className="drop_down" id="country" name="country" style={{ width: "100%" }}></select>
-						<select className="drop_down" name="state" id="state" style={{ width: "100%" }}></select>
+						<select
+							className="drop_down"
+							id="country"
+							name="country"
+							style={{ width: "100%" }}
+							onChange={setState}
+						>
+							{
+								country.map((item, index) => (
+									<option value={index + 1} key={`country-${index}`}>{item}</option>
+								))
+							}
+						</select>
+						<select className="drop_down" name="state" id="state" style={{ width: "100%" }}>
+							{
+								currentState.map((item, index) => (
+									<option value={index} key={`state-${index}`}>{item}</option>
+								))
+							}
+						</select>
 					</div>
 
 					<section id="shortcuts"style={{ margin: "0 auto", width: "90%" }}>
