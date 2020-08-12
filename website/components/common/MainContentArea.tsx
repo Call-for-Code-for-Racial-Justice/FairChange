@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import { Pages } from "../pages/Pages";
 import { country, states } from './countries';
 import styles from "./MainContentArea.module.scss";
+import { Link } from "react-router-dom";
 
 export const MainContentArea = (): JSX.Element =>
 {
@@ -46,7 +47,7 @@ export const MainContentArea = (): JSX.Element =>
 						>
 							{
 								country.map((item, index) => (
-									<option value={index + 1} key={`country-${index}`}>{item}</option>
+									<option value={index} key={`country-${index}`}>{item}</option>
 								))
 							}
 						</select>
@@ -65,7 +66,8 @@ export const MainContentArea = (): JSX.Element =>
 						<br/>
 						<h3>More</h3>
 						<ul className={styles.list}>
-							<li><a href="#" target="_blank" rel="noopener">Information</a></li>
+							<li><Link to="/incidents">Incident Map</Link></li>
+							<li><Link to="/viewIncident">Information</Link></li>
 							<li><a href="https://github.com/embrace-call-for-code/fairchange/blob/master/readme.txt" target="_blank" rel="noopener">About</a></li>
 						</ul>
 					</section>
