@@ -2,7 +2,21 @@ import React, { useEffect, useState } from "react";
 import styles from "./ViewIncident.module.scss";
 import { useApi } from '../../hooks/useApi';
 import { Loading } from 'carbon-components-react';
-import { Incident } from "../../../backend/models/incident";
+
+type Incident = {
+	timestamp: string,
+    incidentCategory: string,
+	incidentId: string,
+	description: string,
+    location: string,
+    lat: number,
+	lon: number,
+	country: string,
+	state: string,
+	city: string,
+	topic: string,
+	_id?: string
+};
 export const ViewIncident = ():JSX.Element =>
 {
 	const { getData, isLoading, error } = useApi();

@@ -13,7 +13,6 @@ export type Incident = {
 	state: string,
 	city: string,
 	topic: string,
-	_id?: string
 };
 
 export const storeIncident = async (data: Incident): Promise<any> =>

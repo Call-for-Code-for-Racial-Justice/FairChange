@@ -164,7 +164,7 @@ body {
   margin-right: 0.5rem !important; }
 
 #top-bar {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;}
 
 .btn {
@@ -474,7 +474,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #body {
   position: relative;
   margin-left: 300px;
-  min-height: 100%; 
+  min-height: 100%;
   overflow: hidden;}
 
 #body img, #body .video-container {

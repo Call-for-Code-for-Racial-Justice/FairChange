@@ -1,5 +1,6 @@
 import React from "react";
 import { Pages } from "../pages/Pages";
+import styles from "./MainContentArea.module.scss";
 
 export const MainContentArea = (): JSX.Element =>
 {
@@ -34,14 +35,15 @@ export const MainContentArea = (): JSX.Element =>
 						<select className="drop_down" name="state" id="state" style={{ width: "100%" }}></select>
 					</div>
 
-
-					<button id="search" className="ctrl_btns btn btn-outline-success my-2 my-sm-0">Search</button>
-
-
 					<section id="shortcuts"style={{ margin: "0 auto", width: "90%" }}>
-						<li className="" role=""><h3>More</h3></li>
-						<li><a href="#" target="_blank" rel="noopener"><i className="fa fa-github"></i>&nbsp;&nbsp;Information</a></li>
-						<li><a href="https://github.com/embrace-call-for-code/fairchange/blob/master/readme.txt" target="_blank" rel="noopener"><i className="fa fa-github"></i>&nbsp;&nbsp;About</a></li>
+						<button id="search" className="ctrl_btns btn btn-outline-success my-2 my-sm-0">Search</button>
+						<br/>
+						<br/>
+						<h3>More</h3>
+						<ul className={styles.list}>
+							<li><a href="#" target="_blank" rel="noopener">Information</a></li>
+							<li><a href="https://github.com/embrace-call-for-code/fairchange/blob/master/readme.txt" target="_blank" rel="noopener">About</a></li>
+						</ul>
 					</section>
 
 					<hr/>

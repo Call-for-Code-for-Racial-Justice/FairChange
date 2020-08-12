@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./IncidentMap.module.scss";
 
 export const IncidentMap = (): JSX.Element =>
 {
@@ -11,7 +12,6 @@ export const IncidentMap = (): JSX.Element =>
 
 					<div id="top-github-link">
 						<a className="github-link highlight" href="https://github.com/embrace-call-for-code/fairchange/blob/master/readme.txt" target="blank">
-							<i className="fa fa-code-fork"></i>
 							"How can you help?"
 						</a>
 					</div>
@@ -22,7 +22,7 @@ export const IncidentMap = (): JSX.Element =>
 								<i className="fa fa-bars"></i>
 							</a>
 						</span>
-						<span id="toc-menu"><i className="fa fa-list-alt"></i><p className="higlight">Incidents</p></span>
+						<span id="toc-menu"><p className="higlight">Incidents</p></span>
 						<span className="links">
 
 						</span>
