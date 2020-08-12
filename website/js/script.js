@@ -1,3 +1,4 @@
+import { getIncidentFromDb } from './incedent';
 
 //Loads init() function at startup
 window.addEventListener('load', init, false);
