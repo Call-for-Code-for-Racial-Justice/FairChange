@@ -13,3 +13,5 @@ In order to process the information captured, we will investigate the use of AI 
 The Vision.
 
 <img width="479" alt="image" src="https://user-images.githubusercontent.com/22552553/90105423-ca009200-dd3d-11ea-80cc-637b21e6be54.png">
+
+
