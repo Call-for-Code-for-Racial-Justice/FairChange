@@ -4,6 +4,7 @@
   "description": "Fair Change React",
   "scripts": {
     "build": "node_modules/.bin/webpack --config scripts/webpack.prod.config.js",
+    "start": "node_modules/.bin/webpack-dev-server --config scripts/webpack.temp.config.js --host 0.0.0.0",
     "dev": "node_modules/.bin/webpack-dev-server --config scripts/webpack.config.js --host 0.0.0.0",
     "debug": "node_modules/.bin/webpack-dev-server --config scripts/webpack.config.js",
     "devall": "node_modules/.bin/webpack-dev-server --config scripts/webpack.config.js --host 0.0.0.0",
