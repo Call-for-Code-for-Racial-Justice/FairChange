@@ -4,7 +4,7 @@ import { Text, View } from '../components/Themed'
 import { Camera } from 'expo-camera'
 import { Audio } from 'expo-av';
 import * as Location from 'expo-location'
-import MapView from 'react-native-maps'
+import MapView, { Marker, MarkerAnimated } from 'react-native-maps'
 import axios from 'react-native-axios'
 
 export default function incident() {
@@ -16,10 +16,14 @@ export default function incident() {
 
   const [location, setLocation] = useState({})
   const [region, setRegion] = useState({
-    latitude: 40.678177,
-    longitude: -73.944160,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
+    latitude: 0,
+    longitude: -160,
+    latitudeDelta: 0.0022,
+    longitudeDelta: 0.0021,
+  })
+  const [marker, setMarker] = useState({
+    latitude: 0,
+    longitude: -160,
   })
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -38,8 +42,12 @@ export default function incident() {
       setRegion({
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
+        latitudeDelta: 0.0022,
+        longitudeDelta: 0.0021,
+      })
+      setMarker({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
       })
     }
 
@@ -118,7 +126,12 @@ export default function incident() {
           <View style={styles.container}>
             <MapView
               region={region}
-              style={styles.mapStyle} />
+              style={styles.mapStyle} >
+              <Marker coordinate={marker}
+                title="test"
+                description="test"
+              />
+              </MapView>
           </View>
         </View>
       </View>
@@ -164,7 +177,7 @@ export default function incident() {
                 onPress={() => {
                   setModalVisible(!modalVisible);
                 }}
-                title="Close"
+                title="Delete"
               />
               <View style={styles.smallSpacer} />
               <Button onPress={() => {

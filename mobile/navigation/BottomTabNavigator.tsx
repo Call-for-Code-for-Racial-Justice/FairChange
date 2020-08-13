@@ -45,12 +45,12 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="homeScreen"
         component={home}
-        options={{ headerTitle: 'home' }}
+        options={{ headerTitle: 'Fairchange' }}
       />
       <TabOneStack.Screen
         name="incidentScreen"
         component={incident}
-        options={{ headerTitle: 'incident' }}
+        options={{ headerTitle: 'Incident' }}
       />
     </TabOneStack.Navigator>
   );
