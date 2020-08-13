@@ -7,7 +7,14 @@ import https from "https";
 import axios from "axios";
 import omit from "lodash/omit";
 import pick from "lodash/pick";
-config.loadConfig("./configuration.json");
+if (process.env.FC_CONFIG)
+{
+	config.setConfig(JSON.parse(`${process.env.FC_CONFIG}`));
+}
+else
+{
+	config.loadConfig("./configuration.json");
+}
 
 export interface AugmentedRequest extends Request {
 	log: P.Logger,
