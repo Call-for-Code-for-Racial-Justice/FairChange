@@ -14,6 +14,11 @@ export default function home({ navigation }) {
           color="red"
           onPress={() => navigation.navigate('incidentScreen')}
         />
+        <Button
+          title="overserving a situation"
+          color="blue"
+          onPress={() => navigation.navigate('incidentScreen')}
+        />
       </View>
     </View>
   );
