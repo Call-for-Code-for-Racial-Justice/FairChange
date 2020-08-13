@@ -4,7 +4,9 @@
   "description": "backend component code for fairchange applicatiom",
   "main": "driver.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "node_modules/.bin/webpack --config scripts/webpack.prod.config.js",
+		"start": "node ./dist/server.js",
     "dev": "\"node_modules/.bin/concurrently\" --names \"nodemon,webpack\" -c \"blue,green\" \"node_modules/.bin/nodemon -w ./dist/server.js --inspect ./dist/server.js\" \"node_modules/.bin/webpack --config scripts/webpack.config.js --host 0.0.0.0\""
   },
   "repository": {
