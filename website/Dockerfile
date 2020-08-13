@@ -9,4 +9,4 @@ WORKDIR /app
 RUN npm ci
 RUN npm run build
 
-CMD /usr/sbin/nginx -c /app/nginx.conf -g "daemon off;"
+CMD /usr/sbin/nginx -c /app/nginx.conf -g "daemon off; access_log /dev/stdout; error_log /dev/stdout;"
