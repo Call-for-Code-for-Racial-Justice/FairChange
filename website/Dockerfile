@@ -9,4 +9,12 @@ WORKDIR /app
 RUN npm ci
 RUN npm run build
 
-CMD /usr/sbin/nginx -c /app/nginx.conf -g "daemon off; error_log /dev/stdout;"
+RUN mkdir -p /var/log/nginx
+RUN mkdir -p /var/lib/nginx
+
+RUN chmod 777 /var/log/nginx
+RUN chmod 777 /var/lib/nginx
+RUN rm -rf /var/log/nginx/error.log
+RUN rm -rf /var/log/nginx/access.log
+
+CMD /usr/sbin/nginx -c /app/nginx.conf -g "daemon off;"
