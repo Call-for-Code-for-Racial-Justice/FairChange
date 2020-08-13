@@ -89,7 +89,7 @@ export default function incident() {
     }
   }
 
-  async function saveEvent() {
+  async function storeIncident() {
     setModalVisible(false)
     const date = new Date()
     const eventObject = {
@@ -97,19 +97,32 @@ export default function incident() {
       lat: location.coords.latitude,
       lon: location.coords.longitude,
     }
-    const incidentId = await axios({
+    const incidentResponse = await axios({
       method: 'POST',
-      url: 'http://localhost:3000/storeIncident',
+      url: 'http://localhost:3000/api/storeIncident',
       data: eventObject
     })
-    axios({
+
+    const incidentId = incidentResponse.data.id
+    return incidentId
+  }
+
+  async function uploadVideo(incidentId) {
+    console.log("incidentId is:",incidentId)
+    const response = await axios({
       method: 'POST',
-      url: 'https://localhost:3000/upload',
-      param: incidentId,
+      headers: {
+        'content-type': 'multipart/form-data' },
+      url: 'http://localhost:3000/api/upload',
+      params: {
+        incident: incidentId
+      },
       data: {
         incidentVideo: recordedVideo
       }
     })
+    console.log("response is:", response)
+    return response
   }
 
   let locationText = 'Waiting..'
@@ -180,8 +193,10 @@ export default function incident() {
                 title="Delete"
               />
               <View style={styles.smallSpacer} />
-              <Button onPress={() => {
-                saveEvent()
+              <Button onPress={async () => {
+                const id = await storeIncident()
+                console.log(id)
+                uploadVideo(id)
               }}
                 title="Submit"
               />
