@@ -1,4 +1,4 @@
-Call for Code - Police & Judicial Reform and Accountability 
+**Call for Code - Police & Judicial Reform and Accountability**
 
 From traffic stops and arrests to sentencing and parole decisions, use technology to better analyse real-world data, provide insights and make recommendations that will drive racial equality and reform across criminal justice and public safety. 
 
@@ -10,7 +10,7 @@ At the heart of the solution resides an intelligent visualisation system, based 
 
 In order to process the information captured, we will investigate the use of AI (video analytics, speech to text, natural language understanding, sentiment analysis, tone analysis and visual recognition).
 
-The Vision.
+**The Vision:**
 
 <img width="479" alt="image" src="https://user-images.githubusercontent.com/22552553/90105423-ca009200-dd3d-11ea-80cc-637b21e6be54.png">
 
@@ -20,7 +20,7 @@ We are team “Fair Change” and our inspiration came from the lived experience
 
 At the same time we recognised through interviews with police officers and potential users of the solution, that this is a very complex issue. For officers who genuinely want to “serve and protect” the job can be made inherently more difficult based on the actions of their peers and the damage this can do to trust between the police force and members of the public. So we wanted to create something which could act as an aid towards the avoidance and de-escalation of incidents as well as providing visibility and long term education for the purpose of reform.
 
-At a high level the solution aims to do the following:
+**At a high level the solution aims to do the following:**
 
 o	Enable members of the public to record incidents (stop and search, car stop, observing an incident) in a quick, near real time and safe manner (e.g. using voice activation where necessary to avoid reaching into pockets).
 o	The data captured (geo-location, timestamp, incident description / type, video / audio and potentially details like the officer ID number(s)), will be sent to a “back-end system for reporting and longer term, AI based analysis.
@@ -40,7 +40,7 @@ o	The data could be used to help with longer term education for police officers 
 
 Ultimately, if this solution can prevent even one incident from escalating we view that as success.
 
-Solution:
+**Solution:**
 
 The solution itself focuses on the core functionality of being able to take incident alerts and video recordings from the mobile app and post them into the back-end system. Once posted, the incident will appear on the map view and can be clicked in order to reveal more information. Here is a high-level flow:
 
@@ -51,11 +51,11 @@ The solution itself focuses on the core functionality of being able to take inci
 
 <img width="346" alt="image" src="https://user-images.githubusercontent.com/22552553/90105539-fb795d80-dd3d-11ea-8575-a25f0fdc564c.png">
 
-Mobile App:
+**Mobile App:**
 
 The mobile application is built using React Native and will run on either iOS or Android. In the future it would be prudent to include voice activation for the mobile app (see prototype) in order to cater for scenarios where it is not safe or not legal for users to use their mobile device by hand.
 
-Back-end:
+**Back-end:**
 
 The back end is built in Node JS and handles the following:
 
@@ -63,25 +63,25 @@ o	Writing of data from the mobile app to the Cloudant DB.
 o	Writing of video from the mobile app to IBM COS.
 o	Reading of data by the web site in order to populate the map view and also to view further data related to an incident / video URL.
 
-Website:
+**Website:**
 
 The main purpose of the website is to host the map view and search capability. The map is built using Leaflet and the site itself is built using React.
 
-Mobile app recording view:
+**Mobile app recording view:**
 
 <img width="232" alt="image" src="https://user-images.githubusercontent.com/22552553/90105555-ffa57b00-dd3d-11ea-9dc3-0c68cb86cb4f.png">
 
-Map view with one record highlighted:
+**Map view with one record highlighted:**
 
 <img width="451" alt="image" src="https://user-images.githubusercontent.com/22552553/90105569-03d19880-dd3e-11ea-8a46-de4318ade459.png">
 
-The user:
-Citizen X
+**The user:
+Citizen X**
 
 <img width="215" alt="image" src="https://user-images.githubusercontent.com/22552553/90105648-2a8fcf00-dd3e-11ea-856e-315223084a53.png">
 
-Lisa’s user journey:
-AS-IS Experience
+**Lisa’s user journey:
+AS-IS Experience**
 
 <img width="786" alt="image" src="https://user-images.githubusercontent.com/22552553/90106697-b524fe00-dd3f-11ea-81c7-0967dbce6bb2.png">
 
@@ -91,13 +91,13 @@ Lisa’s Use Case Diagram - Scenario: Being followed or stopped by the police
 
 <img width="431" alt="image" src="https://user-images.githubusercontent.com/22552553/90105666-324f7380-dd3e-11ea-8533-79edad900613.png">
 
-The user:
-The Upstander/Observer
+**The user:
+The Upstander/Observer**
 
 <img width="214" alt="image" src="https://user-images.githubusercontent.com/22552553/90105694-3d0a0880-dd3e-11ea-972f-280921e53fac.png">
 
-Sheila’s user journey:
-AS-IS Experience
+**Sheila’s user journey:
+AS-IS Experience**
 
 <img width="746" alt="image" src="https://user-images.githubusercontent.com/22552553/90107219-67f55c00-dd40-11ea-8694-65b7984ea71f.png">
 
@@ -105,24 +105,24 @@ Sheila’s Use Case Diagram - Scenario: Observing someone being followed or stop
 
 <img width="451" alt="image" src="https://user-images.githubusercontent.com/22552553/90105704-42ffe980-dd3e-11ea-9853-f347357bc381.png">
 
-The user:
-The Vulnerable Citizen
+**The user:
+The Vulnerable Citizen**
 
 <img width="215" alt="image" src="https://user-images.githubusercontent.com/22552553/90105728-4e531500-dd3e-11ea-8172-66ad5abf8ea8.png">
 
-AS-IS Experience
+**AS-IS Experience**
 
 <img width="766" alt="image" src="https://user-images.githubusercontent.com/22552553/90107450-bd316d80-dd40-11ea-91e1-ac63d8179d88.png">
 
-Scott’s Use Case Diagram – Scenario: Being stopped by the police
+**Scott’s Use Case Diagram – Scenario: Being stopped by the police**
 
 <img width="417" alt="image" src="https://user-images.githubusercontent.com/22552553/90105739-54e18c80-dd3e-11ea-9722-55e6f0d8f3ae.png">
 
-Wireframes:
+**Wireframes:**
 
 <img width="416" alt="image" src="https://user-images.githubusercontent.com/22552553/90105747-590daa00-dd3e-11ea-9af3-f7b8be165a10.png">
 
-Different scenarios (detailed)
+**Different scenarios (detailed)**
 
 <img width="202" alt="image" src="https://user-images.githubusercontent.com/22552553/90105790-67f45c80-dd3e-11ea-9f34-7ee4a01aa2cb.png">
 
