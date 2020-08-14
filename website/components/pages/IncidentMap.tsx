@@ -7,10 +7,14 @@ import {
 	SET_MARKERS,
 	SET_USER_LOCATION,
 	IMapContextState,
-	IMapContextDispatch
+	IMapContextDispatch,
+	Report
 } from "../../context/MapContext";
 import { data } from '../common/map.data.json';
 import L from 'leaflet';
+import { useApi } from '../../hooks/useApi';
+import { IncidentReport } from '../common/MapUtils';
+import { IncidentResponse } from "../common/types";
 
 const reducer = (state: IMapContextState, action: IMapContextDispatch): IMapContextState =>
 {
@@ -62,6 +66,7 @@ const reducer = (state: IMapContextState, action: IMapContextDispatch): IMapCont
 export const IncidentMap = (): JSX.Element =>
 {
 	// const { dispatch, markers, map: cmap, searchReq, userLocation, report } = useMapContext();
+	const { getData, isLoading, error } = useApi();
 
 	let state: IMapContextState = {
 		map: null,
@@ -94,19 +99,24 @@ export const IncidentMap = (): JSX.Element =>
 		dispatch({ type: SET_MARKERS, value: inMarkers });
 	};
 
-	const reportQuery = () =>
+	const reportQuery = (reportObj?: Report) =>
 	{
-		dispatch({
-			type: SET_REPORT,
-			value: {
-				id: data[0].Index,
-				lat: data[0].Lat,
-				lon: data[0].Lon,
-				description: data[0].Description,
-				country: data[0].Country,
-				state: data[0].State
-			}
-		});
+		if (reportObj)
+		{
+			dispatch({
+				type: SET_REPORT,
+				value: reportObj
+			});
+		}
+		else
+		{
+			dispatch({
+				type: SET_REPORT,
+				value: { ...state.report }
+			});
+		}
+
+		console.log('STATE!!!', state);
 	};
 
 	const map = (lat: number, lon: number) =>
@@ -129,12 +139,13 @@ export const IncidentMap = (): JSX.Element =>
 		});
 	};
 
-	const placeMarker = (lat: number, lon: number, desc: string) =>
+	const placeMarker = (lat: number, lon: number, desc?: string) =>
 	{
+		console.log(lat, lon);
 		dispatch({
 			type: SET_MARKERS,
 			value: L.marker([lat, lon]).
-				bindPopup(`<a href="#" id="event">${desc}</a>`).
+				bindPopup(`<a href="#" id="event">${desc ? desc : 'No Description'}</a>`).
 				openPopup()
 		});
 
@@ -150,7 +161,7 @@ export const IncidentMap = (): JSX.Element =>
 	const updateMap = (search: boolean, radius: number) =>
 	{
 		let loc = false;
-		reportQuery();
+		//reportQuery(reportObj);
 
 		const extremes = {
 			latMax: radius,
@@ -181,56 +192,63 @@ export const IncidentMap = (): JSX.Element =>
 			}
 		});
 
-		Object.keys(report.lat).forEach((valueStr, index) =>
+		Object.keys(report).forEach((valueStr, index) =>
 		{
-			const value = parseInt(valueStr, 10);
-			if (value <= extremes.latMax &&
-				value >= extremes.latMin &&
-				(report.lon[index] * -1) > extremes.lonMax &&
-				(report.lon[index] * -1) < extremes.lonMin)
+			if (valueStr === 'lat')
 			{
-				if (loc == false)
+				for (let geoIndex = 0; geoIndex < report.lat.length; geoIndex++)
 				{
-					cmap.remove();
-					map(userLocation ? userLocation.lat : 0, userLocation ? userLocation.lon : 0);
-					loc = true;
-				}
-				placeMarker(report.lat[index], report.lon[index], report.description[index]);
-			}
-			else if (search == false)
-			{
-				if (loc == false)
-				{
-					cmap.remove();
-					map(userLocation ? userLocation.lat : 0, userLocation ? userLocation.lon : 0);
-					loc = true;
-				}
-
-				placeMarker(report.lat[index], report.lon[index], report.description[index]);
-			}
-			else if (search == true)
-			{
-				if (searchReq && report.country[index] == searchReq.country)
-				{
-					if (loc == false)
+					if (report.lat[geoIndex] <= extremes.latMax &&
+						report.lat[geoIndex] >= extremes.latMin &&
+						(report.lon[geoIndex] * -1) > extremes.lonMax &&
+						(report.lon[geoIndex] * -1) < extremes.lonMin)
 					{
-						dispatch({
-							type: SET_USER_LOCATION,
-							value: {
-								lon: report.lon[index],
-								lat: report.lat[index]
-							}
-						});
-						cmap.remove();
-						map(report.lat[index], report.lon[index]);
-
-						loc = true;
+						// eslint-disable-next-line max-depth
+						if (loc == false)
+						{
+							cmap.remove();
+							map(userLocation ? userLocation.lat : 0, userLocation ? userLocation.lon : 0);
+							loc = true;
+						}
+						placeMarker(report.lat[geoIndex], report.lon[geoIndex], report.description[geoIndex]);
 					}
+					else if (search == false)
+					// eslint-disable-next-line sonarjs/no-duplicated-branches
+					{
+						// eslint-disable-next-line max-depth
+						if (loc == false)
+						{
+							cmap.remove();
+							map(userLocation ? userLocation.lat : 0, userLocation ? userLocation.lon : 0);
+							loc = true;
+						}
+						placeMarker(report.lat[geoIndex], report.lon[geoIndex], report.description[geoIndex]);
+					}
+					else if (search == true)
+					{
+						// eslint-disable-next-line max-depth
+						if (searchReq && report.country[index] == searchReq.country)
+						{
+							// eslint-disable-next-line max-depth
+							if (loc == false)
+							{
+								dispatch({
+									type: SET_USER_LOCATION,
+									value: {
+										lon: report.lon[geoIndex],
+										lat: report.lat[geoIndex]
+									}
+								});
+								cmap.remove();
+								map(report.lat[geoIndex], report.lon[geoIndex]);
 
-					placeMarker(report.lat[index], report.lon[index], report.description[index]);
+								loc = true;
+							}
+							placeMarker(report.lat[geoIndex], report.lon[geoIndex], report.description[geoIndex]);
+						}
+					}
 				}
 			}
-
 		});
 
 		if (searchReq && searchReq.total == 0)
@@ -249,6 +267,7 @@ export const IncidentMap = (): JSX.Element =>
 
 	const start = () =>
 	{
+		console.log('STARTING!!');
 		dispatch({
 			type: SET_USER_LOCATION,
 			value: {
@@ -261,9 +280,26 @@ export const IncidentMap = (): JSX.Element =>
 
 		updateMap(false, 6);
 	};
+
 	useEffect(() =>
 	{
-		start();
+		const getReport = async () =>
+		{
+			console.log('GETTING REPORTS!');
+			const res = await getData({
+				url: "/api/Incidents"
+			});
+			const reportObj = IncidentReport(res as IncidentResponse[]);
+			reportQuery(reportObj);
+			Promise.resolve();
+			//start();
+		};
+		getReport().
+			then((res) =>
+			{
+				start();
+			});
+		//start();
 	}, []);
 
 	return (

@@ -17,6 +17,6 @@ export type IncidentResponse = {
         state?: string,
         city?: string,
         topic?: string,
-        incidentVideos: any
+        incidentVideos?: any
     }
 }
