@@ -1,4 +1,5 @@
 
+import { Incidents } from '../components/common/MapUtils';
 //Loads init() function at startup
 window.addEventListener('load', init, false);
 

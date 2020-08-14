@@ -1,5 +1,5 @@
 import { Router, Response, NextFunction } from "express";
-import { Incident, storeIncident, getIncident, linkVideo } from '../models/incident';
+import { Incident, storeIncident, getIncident, linkVideo, getIncidents } from '../models/incident';
 import { AugmentedRequest } from "./logging";
 import { getBuckets, getUrl, fileUpload } from '../models/objectStorage';
 export const router = Router();
@@ -9,6 +9,13 @@ router.get("/getIncident/:id", async (req: AugmentedRequest, res: Response, next
 {
 	req.log.debug({ incidentId: req.params.id });
 	res.send(await getIncident(req.params.id));
+});
+
+// @ts-ignore don't know to get typescript to stop complaining about this
+router.get("/Incidents", async (req: AugmentedRequest, res: Response, next: NextFunction) =>
+{
+	req.log.debug({ incidentId: req.params.id });
+	res.send(await getIncidents());
 });
 
 // @ts-ignore don't know to get typescript to stop complaining about this

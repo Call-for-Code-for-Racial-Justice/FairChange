@@ -1,5 +1,5 @@
 
-import { create, getById } from './common';
+import { create, getById, getAll } from './common';
 
 export type Incident = {
 	timestamp: string,
@@ -26,6 +26,11 @@ export const storeIncident = async (data: Incident): Promise<any> =>
 export const getIncident = async (id: string): Promise<any> =>
 {
 	return getById(id);
+};
+
+export const getIncidents = async (): Promise<any> =>
+{
+	return getAll();
 };
 
 type linkVideoProps = { incidentId: string, videoName: string };
