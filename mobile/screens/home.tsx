@@ -14,8 +14,9 @@ export default function home({ navigation }) {
           color="red"
           onPress={() => navigation.navigate('incidentScreen')}
         />
+        <View style={styles.smallSpacer} />
         <Button
-          title="overserving a situation"
+          title="observing a situation"
           color="blue"
           onPress={() => navigation.navigate('incidentScreen')}
         />
@@ -48,5 +49,9 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderWidth: 2,
     borderRadius: 5,
-  }
+  },
+  smallSpacer: {
+    height: 10,
+    width: 10
+  },
 });

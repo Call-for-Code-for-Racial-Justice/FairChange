@@ -6,6 +6,7 @@ import { Audio } from 'expo-av';
 import * as Location from 'expo-location'
 import MapView, { Marker, MarkerAnimated } from 'react-native-maps'
 import axios from 'react-native-axios'
+import * as FileSystem from 'expo-file-system';
 
 export default function incident() {
   const [hasCameraPermission, setHasCameraPermission] = useState(false)
@@ -28,7 +29,7 @@ export default function incident() {
 
   const [modalVisible, setModalVisible] = useState(false);
   const [isRecording, setIsRecording] = useState(false)
-  let recordedVideo: object
+  const [video, setVideo] = useState({})
 
   useEffect(() => {
     async function locationTracking() {
@@ -77,7 +78,10 @@ export default function incident() {
   async function startRecording() {
     setIsRecording(true)
     if (cameraRef) {
-      recordedVideo = await cameraRef.recordAsync()
+      const { uri, codec = "mp4" } = await cameraRef.recordAsync()
+      console.log(uri)
+      setVideo({ uri, codec })
+      return { uri, codec }
     }
   }
 
@@ -99,7 +103,7 @@ export default function incident() {
     }
     const incidentResponse = await axios({
       method: 'POST',
-      url: 'http://localhost:3000/api/storeIncident',
+      url: 'https://fairchange-backend-embrace-fair-change.embrace-dev-ocp43-vpc-7ec5d722a0ab3f463fdc90eeb94dbc70-0000.us-east.containers.appdomain.cloud/api/storeIncident',
       data: eventObject
     })
 
@@ -108,21 +112,26 @@ export default function incident() {
   }
 
   async function uploadVideo(incidentId) {
-    console.log("incidentId is:",incidentId)
-    const response = await axios({
-      method: 'POST',
-      headers: {
-        'content-type': 'multipart/form-data' },
-      url: 'http://localhost:3000/api/upload',
-      params: {
-        incident: incidentId
-      },
-      data: {
-        incidentVideo: recordedVideo
-      }
+    console.log("incidentId is:", incidentId)
+
+    const type = `video/${video.codec}`;
+    const uri = video.uri
+    const formData = new FormData();
+    formData.append("incidentVideo", { type, uri, type, name: `video.${video.codec}` });
+
+    const payload = {
+      method: 'post',
+      headers: { 'content-type': 'multipart/form-data' },
+      url: 'https://fairchange-backend-embrace-fair-change.embrace-dev-ocp43-vpc-7ec5d722a0ab3f463fdc90eeb94dbc70-0000.us-east.containers.appdomain.cloud/api/upload',
+      params: { incident: incidentId },
+      data: formData
+    }
+
+    axios(payload).then(r => {
+      console.log("no way", r)
+    }).catch(e => {
+      console.log(e)
     })
-    console.log("response is:", response)
-    return response
   }
 
   let locationText = 'Waiting..'
@@ -144,7 +153,7 @@ export default function incident() {
                 title="test"
                 description="test"
               />
-              </MapView>
+            </MapView>
           </View>
         </View>
       </View>
@@ -184,7 +193,7 @@ export default function incident() {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalTitle}>Submit Incident to Fairchange?</Text>
-            <Text style={styles.modalText}> This incident can blah blah blah blah blah blah blah blah blah</Text>
+            <Text style={styles.modalText}> This incident will be recorded in our database and will be available on our web site for future reference </Text>
             <View style={styles.modalButtonContainer}>
               <Button
                 onPress={() => {
