@@ -23,7 +23,7 @@ type Incident = {
 
 type URL = [unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown];
 
-export const ViewIncident = ({ match }): JSX.Element => {
+export const ViewIncident = (): JSX.Element => {
 	// const incidentId = { match.params.id };
 	const incidentId = "0ea652e8296aef4556e819c889011e05";
 	const { getData, isLoading, error } = useApi();
