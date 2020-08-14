@@ -1,16 +1,37 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, useEffect } from "react";
 import { Pages } from "../pages/Pages";
 import { country, states } from './countries';
 import styles from "./MainContentArea.module.scss";
 import { Link } from "react-router-dom";
+import { IncidentCountries } from './MapUtils';
+import { useApi } from '../../hooks/useApi';
+import { IncidentResponse } from "./types";
 
 export const MainContentArea = (): JSX.Element =>
 {
 	const [currentState, setCurrentState] = useState<string[]>([]);
+	const [countries, setCountries] = useState<string[]>([]);
+	const { getData, isLoading, error } = useApi();
 	const setState = (ev: ChangeEvent<HTMLSelectElement>): void =>
 	{
 		setCurrentState(states[parseInt(ev.target.value, 10)].split("|"));
 	};
+
+	useEffect(() =>
+	{
+		const goGetIt = async () =>
+		{
+			const data = await getData({
+				url: "/api/getIncidents"
+			});
+			console.log(data);
+			const c = IncidentCountries(data as IncidentResponse[]);
+			setCountries(c);
+		};
+
+		goGetIt();
+	}, []);
+
 
 	return (
 		<>
@@ -46,7 +67,7 @@ export const MainContentArea = (): JSX.Element =>
 							onChange={setState}
 						>
 							{
-								country.map((item, index) => (
+								countries.map((item, index) => (
 									<option value={index} key={`country-${index}`}>{item}</option>
 								))
 							}
