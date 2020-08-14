@@ -1,6 +1,6 @@
 
 const path = require('path');
-const apiServer = 'http://localhost:3000';
+const apiServer = 'https://fairchange-backend-embrace-fair-change.embrace-dev-ocp43-vpc-7ec5d722a0ab3f463fdc90eeb94dbc70-0000.us-east.containers.appdomain.cloud/';
 const webpack = require('webpack');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const devConfig = {
