@@ -22,7 +22,7 @@ export const MainContentArea = (): JSX.Element =>
 		const goGetIt = async () =>
 		{
 			const data = await getData({
-				url: "/api/getIncidents"
+				url: "/api/Incidents"
 			});
 			console.log(data);
 			const c = IncidentCountries(data as IncidentResponse[]);

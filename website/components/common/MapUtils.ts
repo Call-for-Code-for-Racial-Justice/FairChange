@@ -19,3 +19,12 @@ export const IncidentCountries = (data: IncidentResponse[]) : string[] =>
 	return countries;
 };
 
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+// export const Incidents = (data: IncidentResponse[]) =>
+// {
+// 	//const incidents = data;
+// 	return data;
+// };
+
+
