@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./ViewIncident.module.scss";
 import { useApi } from '../../hooks/useApi';
 import { Loading } from 'carbon-components-react';
-import { useParams } from "react-router-dom";
 import ReactPlayer from 'react-player';
 
 type Incident = {
