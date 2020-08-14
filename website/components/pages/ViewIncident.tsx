@@ -21,16 +21,20 @@ type Incident = {
 	incidentVideos: Array<string>,
 	_id?: string
 };
-export const ViewIncident = (): JSX.Element => {
-	// const { id } = useParams();
+
+type URL = [unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown]
+
+export const ViewIncident = ({ match }): JSX.Element => {
+	// const incidentId = { match.params.id };
+	const incidentId = "0ea652e8296aef4556e819c889011e05";
 	const { getData, isLoading, error } = useApi();
 	const [incident, setIncident] = useState<Incident | {}>({});
-	const [videos, setVideo] = useState<[]>([]);
+	const [videos, setVideo] = useState<URL | []>([]);
 
 	useEffect(() => {
 		const goGetIt = async () => {
 			const data = await getData({
-				url: "/api/getIncident/0ea652e8296aef4556e819c889011e05"
+				url: "/api/getIncident/" + incidentId
 			});
 			console.log(data);
 			setIncident(data);
@@ -40,13 +44,13 @@ export const ViewIncident = (): JSX.Element => {
 
 		goGetIt().then(async (r) => {
 			const videoIds = r.incidentVideos;
-			const videoUrls = await Promise.all(videoIds.map(async id => {
+			const videoUrls = await Promise.all(videoIds.map(async (id: string) => {
 				const link = "/api/getObject/" + id;
 				return getData({
 					url: link
 				});
 			}));
-			console.log(videoUrls);
+			console.log(videoUrls)
 			setVideo(videoUrls);
 		});
 	}, []);
