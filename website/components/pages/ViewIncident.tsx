@@ -1,10 +1,10 @@
+/* eslint-disable brace-style */
 import React, { useEffect, useState } from "react";
 import styles from "./ViewIncident.module.scss";
 import { useApi } from '../../hooks/useApi';
 import { Loading } from 'carbon-components-react';
 import { useParams } from "react-router-dom";
-import ReactPlayer from 'react-player'
-
+import ReactPlayer from 'react-player';
 
 type Incident = {
 	timestamp: string,
@@ -22,7 +22,7 @@ type Incident = {
 	_id?: string
 };
 
-type URL = [unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown]
+type URL = [unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown];
 
 export const ViewIncident = ({ match }): JSX.Element => {
 	// const incidentId = { match.params.id };
@@ -34,23 +34,23 @@ export const ViewIncident = ({ match }): JSX.Element => {
 	useEffect(() => {
 		const goGetIt = async () => {
 			const data = await getData({
-				url: "/api/getIncident/" + incidentId
+				url: `/api/getIncident/${incidentId}`
 			});
 			console.log(data);
 			setIncident(data);
 
-			return data
+			return data;
 		};
 
 		goGetIt().then(async (r) => {
 			const videoIds = r.incidentVideos;
 			const videoUrls = await Promise.all(videoIds.map(async (id: string) => {
-				const link = "/api/getObject/" + id;
+				const link = `/api/getObject/${id}`;
 				return getData({
 					url: link
 				});
 			}));
-			console.log(videoUrls)
+			console.log(videoUrls);
 			setVideo(videoUrls);
 		});
 	}, []);
@@ -70,33 +70,33 @@ export const ViewIncident = ({ match }): JSX.Element => {
 	}
 
 	// <video autoPlay width="500px" key={url} src={url} type="video/mp4" onClick={(e) => videoClick(e)}></video>
-
-	const videoElements = videos.map(url => {
+	let videoElements = [];
+	videoElements = (videos as Array<string>).map((url: string) => {
 		return (
 			<ReactPlayer key={url} url={url} controls={true}>
 			</ReactPlayer>
-		)
+		);
 	});
 
-return (
-	<div className={styles.main}>
-		<h1>View Incident</h1>
+	return (
+		<div className={styles.main}>
+			<h1>View Incident</h1>
 
-		<div className="video-container">
-			{videoElements}
-		</div>
+			<div className="video-container">
+				{videoElements}
+			</div>
 
-		<div>
-			<ul>
-				<li>ID: {(incident as Incident)._id}</li>
-				<li>Category: {(incident as Incident).incidentCategory}</li>
-				<li>Description: {(incident as Incident).description}</li>
-				<li>Location: {(incident as Incident).location}</li>
-				<li>City: {(incident as Incident).city}</li>
-				<li>State: {(incident as Incident).state}</li>
-				<li>Country: {(incident as Incident).country}</li>
-			</ul>
+			<div>
+				<ul>
+					<li>ID: {(incident as Incident)._id}</li>
+					<li>Category: {(incident as Incident).incidentCategory}</li>
+					<li>Description: {(incident as Incident).description}</li>
+					<li>Location: {(incident as Incident).location}</li>
+					<li>City: {(incident as Incident).city}</li>
+					<li>State: {(incident as Incident).state}</li>
+					<li>Country: {(incident as Incident).country}</li>
+				</ul>
+			</div>
 		</div>
-	</div>
-);
+	);
 };
