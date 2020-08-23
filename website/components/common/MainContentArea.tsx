@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { IncidentCountries } from './MapUtils';
 import { useApi } from '../../hooks/useApi';
 import { IncidentResponse } from "./types";
+import { useMapContext } from "../../context/MapContext";
+import { SET_CENTER } from "../../context/MapContextReducer";
 
 export const MainContentArea = (): JSX.Element =>
 {
@@ -32,6 +34,33 @@ export const MainContentArea = (): JSX.Element =>
 		goGetIt();
 	}, []);
 
+	const { dispatch } = useMapContext();
+	const getLocation = () =>
+	{
+
+		/**Ask the user to allow app to get location to display the correct map location acoording to the users
+         * IP address using Mozilla Geolocation API. Executes only in first time access, and calls sucess and
+         * error functions if aplicable**/
+		const options = {
+			enableHighAccuracy: true,
+			timeout: 5000,
+			maximumAge: 0
+		};
+
+		const setLocation = (pos: Position) =>
+		{
+			dispatch({
+				type: SET_CENTER,
+				value: {
+					lat: pos?.coords?.latitude,
+					lng: pos?.coords?.longitude
+				}
+			});
+		};
+
+		navigator.geolocation.getCurrentPosition(setLocation, (err) => console.warn(`Unable to get location: (${err.code}): ${err.message}`), options);
+
+	};
 
 	return (
 		<>
@@ -47,7 +76,7 @@ export const MainContentArea = (): JSX.Element =>
 					<p className="text">Search filters:</p>
 
 					<div style={{ margin: "0 auto", width: "90%" }}>
-						<button className="btn ctrl_btns" id="location_search">
+						<button className="btn ctrl_btns" id="location_search" onClick={getLocation}>
 							Search in my current location
 						</button>
 					</div>

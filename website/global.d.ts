@@ -5,3 +5,5 @@ declare module '*.module.scss' {
     const value: DocumentNode;
     export = value;
 }
+
+declare module 'googlemaps';

@@ -1,5 +1,4 @@
 import { IncidentResponse } from './types';
-import { Report } from '../../context/MapContext';
 
 export const IncidentCountries = (data: IncidentResponse[]) : string[] =>
 {
@@ -19,16 +18,16 @@ export const IncidentCountries = (data: IncidentResponse[]) : string[] =>
 	return countries;
 };
 
-export const IncidentReport = (data: IncidentResponse[]): Report =>
+export const IncidentReport = (data: IncidentResponse[]): any =>
 {
-	const reportOpj: Report = {
-		id: [],
-		lat: [],
-		lon: [],
-		description: [],
-		country: [],
-		state: []
-	};
+	// const reportOpj: Report = {
+	// 	id: [],
+	// 	lat: [],
+	// 	lon: [],
+	// 	description: [],
+	// 	country: [],
+	// 	state: []
+	// };
 
 	data.filter((incident) =>
 	{
@@ -37,15 +36,15 @@ export const IncidentReport = (data: IncidentResponse[]): Report =>
 	}).
 		forEach((incident) =>
 		{
-			reportOpj.id.push(parseInt(incident.id, 10));
-			reportOpj.lat.push(incident.doc.lat);
-			reportOpj.lon.push(incident.doc.lon);
-			reportOpj.description.push(incident.doc.description ? incident.doc.description : '');
-			reportOpj.country.push(incident.doc.country ? incident.doc.country : '');
-			reportOpj.state.push(incident.doc.state ? incident.doc.state : '');
+			// reportOpj.id.push(parseInt(incident.id, 10));
+			// reportOpj.lat.push(incident.doc.lat);
+			// reportOpj.lon.push(incident.doc.lon);
+			// reportOpj.description.push(incident.doc.description ? incident.doc.description : '');
+			// reportOpj.country.push(incident.doc.country ? incident.doc.country : '');
+			// reportOpj.state.push(incident.doc.state ? incident.doc.state : '');
 
 		});
 
-	return reportOpj;
+	// return reportOpj;
 };
 
