@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { useMapContext, SET_MARKERS, ADD_MARKERS, REMOVE_MARKER } from "../../context/MapContext";
-import { data } from '../common/map.data.json';
+import { useMapContext, SET_MARKERS, ADD_MARKERS, REMOVE_MARKER, SET_CENTER } from "../../context/MapContext";
+import data from '../common/map.dataBetter.json';
 import styles from './IncidentMap.module.scss';
+import { getCenter } from '../common/MapUtils';
 
 export const IncidentMap = () =>
 {
@@ -10,26 +11,16 @@ export const IncidentMap = () =>
 
 	useEffect(() =>
 	{
-		const newMarkers = Object.keys(data[0].Lat).map(key =>
-		{
-			return {
-				lat: (data as any)[0].Lat[key],
-				lon: (data as any)[0].Lon[key],
-				description: (data as any)[0].Description[key],
-				city: (data as any)[0].City[key],
-				country: (data as any)[0].Country[key],
-				dateTime: (data as any)[0]["Date/time"][key],
-				state: (data as any)[0].State[key],
-				url1: (data as any)[0]["URL 1"][key],
-				url2: (data as any)[0]["URL 2"][key],
-				badge: (data as any)[0].Badge[key],
-				icon: "img/bullseye.png"
-			};
+		const center = getCenter(data);
+
+		dispatch({
+			type: SET_CENTER,
+			value: center
 		});
 
 		dispatch({
 			type: SET_MARKERS,
-			value: newMarkers
+			value: data
 		});
 	}, [loaded]);
 

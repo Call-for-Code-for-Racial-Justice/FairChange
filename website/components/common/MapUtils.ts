@@ -48,3 +48,21 @@ export const IncidentReport = (data: IncidentResponse[]): any =>
 	// return reportOpj;
 };
 
+export const getCenter = (data: any[]) =>
+{
+	let latSum = 0;
+	let lngSum = 0;
+
+	data.forEach(item =>
+	{
+		latSum += item.lat;
+		lngSum += item.lon;
+	});
+
+	return { lat: latSum / data.length, lng: lngSum / data.length };
+};
+
+export const searchByCountryState = (data: any[], country: string, state: string): any[] =>
+{
+	return data.filter((item: any) => item.country == country && (state == "" || item.state == state));
+};

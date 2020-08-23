@@ -83,7 +83,6 @@ export const mapContextReducer = (state: IMapContextState, action: IMapContextDi
 
 		case SET_CENTER:
 		{
-			console.log("setting");
 			return {
 				...state,
 				center: action.value

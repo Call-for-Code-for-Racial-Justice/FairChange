@@ -108,7 +108,7 @@ export const MapContextProvider = ({ children, googleMapsApiKey }: props): JSX.E
 					zoomControl: true,
 					// gestureHandling: "greedy",
 					controlSize: 20,
-					center: { lat: 39.79160533247704, lng: -100.70268789896711 },
+					center: state.center || { lat: 39.79160533247704, lng: -100.70268789896711 },
 					// center: center,
 					zoom: 5
 					// ...props.options
@@ -128,7 +128,7 @@ export const MapContextProvider = ({ children, googleMapsApiKey }: props): JSX.E
 
 	useEffect(() =>
 	{
-		if (loaded && state.markers != null)
+		if (state.map && state.markers != null)
 		{
 			let googleMarkers = state.gmarkers;
 			if (state.gmarkers == null)
@@ -176,7 +176,7 @@ export const MapContextProvider = ({ children, googleMapsApiKey }: props): JSX.E
 				value: googleMarkers
 			});
 		}
-	}, [state.markers]);
+	}, [state.markers, state.map]);
 
 	useEffect(() =>
 	{

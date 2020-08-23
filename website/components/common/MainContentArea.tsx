@@ -1,38 +1,27 @@
 import React, { ChangeEvent, useState, useEffect } from "react";
 import { Pages } from "../pages/Pages";
-import { country, states } from './countries';
 import styles from "./MainContentArea.module.scss";
 import { Link } from "react-router-dom";
-import { IncidentCountries } from './MapUtils';
-import { useApi } from '../../hooks/useApi';
-import { IncidentResponse } from "./types";
-import { useMapContext } from "../../context/MapContext";
-import { SET_CENTER } from "../../context/MapContextReducer";
+import data from './map.dataBetter.json';
+import { useMapContext, SET_MARKERS, SET_CENTER } from "../../context/MapContext";
+import { useMapData } from '../../hooks/useMapData';
+import { searchByCountryState, getCenter } from "./MapUtils";
 
 export const MainContentArea = (): JSX.Element =>
 {
-	const [currentState, setCurrentState] = useState<string[]>([]);
-	const [countries, setCountries] = useState<string[]>([]);
-	const { getData, isLoading, error } = useApi();
-	const setState = (ev: ChangeEvent<HTMLSelectElement>): void =>
+	const [selectedState, setSelectedState] = useState<string>("");
+	const [selectedCountry, setSelectedCountry] = useState<string>("");
+
+	const { countries, states } = useMapData(data);
+	const setCountry = (ev: ChangeEvent<HTMLSelectElement>): void =>
 	{
-		setCurrentState(states[parseInt(ev.target.value, 10)].split("|"));
+		setSelectedCountry(ev.target.value);
 	};
 
-	useEffect(() =>
+	const setState = (ev: ChangeEvent<HTMLSelectElement>): void =>
 	{
-		const goGetIt = async () =>
-		{
-			const data = await getData({
-				url: "/api/Incidents"
-			});
-			console.log(data);
-			const c = IncidentCountries(data as IncidentResponse[]);
-			setCountries(c);
-		};
-
-		goGetIt();
-	}, []);
+		setSelectedState(ev.target.value);
+	};
 
 	const { dispatch } = useMapContext();
 	const getLocation = () =>
@@ -60,6 +49,20 @@ export const MainContentArea = (): JSX.Element =>
 
 		navigator.geolocation.getCurrentPosition(setLocation, (err) => console.warn(`Unable to get location: (${err.code}): ${err.message}`), options);
 
+	};
+
+	const search = () =>
+	{
+		const currentMarkers = searchByCountryState(data, selectedCountry, selectedState);
+		dispatch({
+			type: SET_MARKERS,
+			value: currentMarkers
+		});
+
+		dispatch({
+			type: SET_CENTER,
+			value: getCenter(currentMarkers)
+		});
 	};
 
 	return (
@@ -93,25 +96,37 @@ export const MainContentArea = (): JSX.Element =>
 							id="country"
 							name="country"
 							style={{ width: "100%" }}
-							onChange={setState}
+							onChange={setCountry}
 						>
 							{
 								countries.map((item, index) => (
-									<option value={index} key={`country-${index}`}>{item}</option>
+									<option value={item} key={`country-${index}`}>{item}</option>
 								))
 							}
 						</select>
-						<select className="drop_down" name="state" id="state" style={{ width: "100%" }}>
+						<select
+							className="drop_down"
+							name="state"
+							id="state"
+							style={{ width: "100%" }}
+							onChange={setState}
+						>
 							{
-								currentState.map((item, index) => (
-									<option value={index} key={`state-${index}`}>{item}</option>
+								states(selectedCountry).map((item, index) => (
+									<option value={item} key={`state-${index}`}>{item}</option>
 								))
 							}
 						</select>
 					</div>
 
 					<section id="shortcuts"style={{ margin: "0 auto", width: "90%" }}>
-						<button id="search" className="ctrl_btns btn btn-outline-success my-2 my-sm-0">Search</button>
+						<button
+							id="search"
+							className="ctrl_btns btn btn-outline-success my-2 my-sm-0"
+							onClick={search}
+						>
+							Search
+						</button>
 						<br/>
 						<br/>
 						<h3>More</h3>
