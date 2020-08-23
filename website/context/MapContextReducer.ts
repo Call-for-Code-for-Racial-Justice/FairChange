@@ -10,6 +10,7 @@ export const SET_MAP = "Set map";
 
 export const mapContextReducer = (state: IMapContextState, action: IMapContextDispatch): IMapContextState =>
 {
+	console.log(action);
 	switch (action.type)
 	{
 		case SET_MARKERS:
