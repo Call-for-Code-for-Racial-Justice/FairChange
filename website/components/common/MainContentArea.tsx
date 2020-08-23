@@ -9,13 +9,14 @@ import { searchByCountryState, getCenter } from "./MapUtils";
 
 export const MainContentArea = (): JSX.Element =>
 {
-	const [selectedState, setSelectedState] = useState<string>("");
+	const { countries, states } = useMapData(data);
+	const [selectedState, setSelectedState] = useState<string>(countries[0] || "");
 	const [selectedCountry, setSelectedCountry] = useState<string>("");
 
-	const { countries, states } = useMapData(data);
 	const setCountry = (ev: ChangeEvent<HTMLSelectElement>): void =>
 	{
 		setSelectedCountry(ev.target.value);
+		setSelectedState("");
 	};
 
 	const setState = (ev: ChangeEvent<HTMLSelectElement>): void =>
@@ -96,8 +97,10 @@ export const MainContentArea = (): JSX.Element =>
 							id="country"
 							name="country"
 							style={{ width: "100%" }}
+							value={selectedCountry}
 							onChange={setCountry}
 						>
+							<option value="">-- Please Select --</option>
 							{
 								countries.map((item, index) => (
 									<option value={item} key={`country-${index}`}>{item}</option>
@@ -109,8 +112,10 @@ export const MainContentArea = (): JSX.Element =>
 							name="state"
 							id="state"
 							style={{ width: "100%" }}
+							value={selectedState}
 							onChange={setState}
 						>
+							<option value="">-- Please Select --</option>
 							{
 								states(selectedCountry).map((item, index) => (
 									<option value={item} key={`state-${index}`}>{item}</option>
