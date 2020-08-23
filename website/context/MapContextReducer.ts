@@ -7,6 +7,7 @@ export const SET_GOOGLE_MARKERS = "Set Google map markers";
 export const SET_SELECTED_MARKER = "Set selected map markers";
 export const SET_CENTER = "Set map center";
 export const SET_MAP = "Set map";
+export const RESET = "Set contexts to values specified";
 
 export const mapContextReducer = (state: IMapContextState, action: IMapContextDispatch): IMapContextState =>
 {
@@ -86,6 +87,13 @@ export const mapContextReducer = (state: IMapContextState, action: IMapContextDi
 			return {
 				...state,
 				center: action.value
+			};
+		}
+
+		case RESET:
+		{
+			return {
+				...action.value
 			};
 		}
 

@@ -6,8 +6,12 @@ import { getCenter } from '../common/MapUtils';
 
 export const IncidentMap = () =>
 {
-	const { loaded, mapRef, selectedMarker, dispatch } = useMapContext();
+	const { loaded, mapRef, selectedMarker, dispatch, reset } = useMapContext();
 	// const [current, setCurrent] = useState<any>(null);
+	useEffect(() =>
+	{
+		reset();
+	}, []);
 
 	useEffect(() =>
 	{

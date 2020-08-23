@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, Dispatch, Context, ReactNode, useContext, useEffect, useRef, useState } from "react";
 import { useScript } from '../hooks/useScript';
-import { mapContextReducer, SET_MAP, SET_SELECTED_MARKER, SET_GOOGLE_MARKERS } from "./MapContextReducer";
+import { mapContextReducer, SET_MAP, SET_SELECTED_MARKER, SET_GOOGLE_MARKERS, RESET } from "./MapContextReducer";
 import {} from 'googlemaps';
 import find from "lodash/find";
 export {
@@ -45,6 +45,7 @@ export interface IMapContext {
 	error: any,
 	mapRef: React.MutableRefObject<any> | null,
 
+	reset: Function,
 	dispatch: Dispatch<IMapContextDispatch>
 }
 
@@ -56,6 +57,7 @@ const initialContext: IMapContext = {
 	loaded: false,
 	error: null,
 	mapRef: null,
+	reset: () => { /* do nothing because this will be replaced */ },
 	dispatch: () => { /* do nothing because this will be replaced */ }
 };
 
@@ -72,6 +74,14 @@ export const MapContextProvider = ({ children, googleMapsApiKey }: props): JSX.E
 	const { loaded, error } = useScript(mapApiUrl);
 	const [state, dispatch] = useReducer(mapContextReducer, initialState);
 	const mapRef = useRef(null);
+
+	const reset = () =>
+	{
+		dispatch({
+			type: RESET,
+			value: initialState
+		});
+	};
 
 	const buildMarker = (pin: any) =>
 	{
@@ -124,7 +134,7 @@ export const MapContextProvider = ({ children, googleMapsApiKey }: props): JSX.E
 			}
 
 		}
-	}, [loaded]);
+	}, [loaded, mapRef.current]);
 
 	useEffect(() =>
 	{
@@ -195,6 +205,7 @@ export const MapContextProvider = ({ children, googleMapsApiKey }: props): JSX.E
 			loaded,
 			error,
 			mapRef,
+			reset,
 			dispatch
 		}}>
 			{children}
