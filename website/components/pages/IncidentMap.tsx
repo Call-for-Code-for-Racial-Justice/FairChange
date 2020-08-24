@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useMapContext, SET_MARKERS, ADD_MARKERS, REMOVE_MARKER, SET_CENTER } from "../../context/MapContext";
+import { useMapContext, SET_MARKERS, ADD_MARKERS, REMOVE_MARKER, SET_CENTER, MapMarker } from "../../context/MapContext";
 import data from '../common/map.dataBetter.json';
 import styles from './IncidentMap.module.scss';
 import { getCenter } from '../common/MapUtils';
@@ -24,7 +24,7 @@ export const IncidentMap = () =>
 
 		dispatch({
 			type: SET_MARKERS,
-			value: data
+			value: data as MapMarker[]
 		});
 	}, [loaded]);
 

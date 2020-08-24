@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import data from './map.dataBetter.json';
 import { useMapContext, SET_MARKERS, SET_CENTER } from "../../context/MapContext";
 import { useMapData } from '../../hooks/useMapData';
-import { searchByCountryState, getCenter } from "./MapUtils";
+import { searchByCountryState, getCenter, searchRadius } from "./MapUtils";
 
 export const MainContentArea = (): JSX.Element =>
 {
@@ -39,12 +39,19 @@ export const MainContentArea = (): JSX.Element =>
 
 		const setLocation = (pos: Position) =>
 		{
+			const markers = searchRadius(data, pos?.coords?.latitude, pos?.coords?.longitude, 10);
+
 			dispatch({
 				type: SET_CENTER,
 				value: {
 					lat: pos?.coords?.latitude,
 					lng: pos?.coords?.longitude
 				}
+			});
+
+			dispatch({
+				type: SET_MARKERS,
+				value: markers
 			});
 		};
 

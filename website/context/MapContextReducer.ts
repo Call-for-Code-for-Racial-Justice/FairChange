@@ -1,4 +1,4 @@
-import { IMapContextState, IMapContextDispatch } from "./MapContext";
+import { IMapContextState, IMapContextDispatch, MapMarker } from "./MapContext";
 
 export const SET_MARKERS = "Set map markers";
 export const ADD_MARKERS = "Add map markers";
@@ -17,15 +17,22 @@ export const mapContextReducer = (state: IMapContextState, action: IMapContextDi
 		{
 			return {
 				...state,
-				markers: action.value
+				markers: action.value as MapMarker[] | null
 			};
 		}
 
 		case ADD_MARKERS:
 		{
+			if (action.value == null)
+			{
+				return state;
+			}
+
 			return {
 				...state,
-				markers: [...state.markers, ...action.value]
+				markers: state.markers == null
+					? [...action.value as MapMarker[]]
+					: [...state.markers, ...action.value as MapMarker[]]
 			};
 		}
 
@@ -35,9 +42,12 @@ export const mapContextReducer = (state: IMapContextState, action: IMapContextDi
 			{
 				return state;
 			}
-			const newMarkers = state.markers.filter((item: any) =>
+			const newMarkers = state.markers.filter((item: MapMarker) =>
 			{
-				if ((item.lat === action.value.lat) && (item.lon === action.value.lon))
+				if (
+					(item.lat === (action.value as MapMarker).lat) &&
+					(item.lon === (action.value as MapMarker).lon)
+				)
 				{
 					return false;
 				}
@@ -53,15 +63,15 @@ export const mapContextReducer = (state: IMapContextState, action: IMapContextDi
 		{
 			return {
 				...state,
-				gmarkers: action.value
+				gmarkers: action.value as google.maps.Marker[] | null
 			};
 		}
 
 		case SET_SELECTED_MARKER:
 		{
 			if (state.selectedMarker != null &&
-				state.selectedMarker.lat == action.value.lat &&
-				state.selectedMarker.lon == action.value.lon)
+				state.selectedMarker.lat == (action.value as MapMarker).lat &&
+				state.selectedMarker.lon == (action.value as MapMarker).lon)
 			{
 				return {
 					...state,
@@ -70,7 +80,7 @@ export const mapContextReducer = (state: IMapContextState, action: IMapContextDi
 			}
 			return {
 				...state,
-				selectedMarker: action.value
+				selectedMarker: action.value as MapMarker
 			};
 		}
 
@@ -78,7 +88,7 @@ export const mapContextReducer = (state: IMapContextState, action: IMapContextDi
 		{
 			return {
 				...state,
-				map: action.value
+				map: action.value as google.maps.Map | null
 			};
 		}
 
@@ -86,14 +96,14 @@ export const mapContextReducer = (state: IMapContextState, action: IMapContextDi
 		{
 			return {
 				...state,
-				center: action.value
+				center: action.value as { lat: number, lng: number }
 			};
 		}
 
 		case RESET:
 		{
 			return {
-				...action.value
+				...action.value as IMapContextState
 			};
 		}
 

@@ -1,4 +1,5 @@
 import { IncidentResponse } from './types';
+import { MapMarker } from '../../context/MapContext';
 
 export const IncidentCountries = (data: IncidentResponse[]) : string[] =>
 {
@@ -62,7 +63,20 @@ export const getCenter = (data: any[]) =>
 	return { lat: latSum / data.length, lng: lngSum / data.length };
 };
 
-export const searchByCountryState = (data: any[], country: string, state: string): any[] =>
+export const searchByCountryState = (data: MapMarker[], country: string, state: string): MapMarker[] =>
 {
 	return data.filter((item: any) => item.country == country && (state == "" || item.state == state));
+};
+
+export const searchRadius = (data: MapMarker[], lat: number, lng: number, radius: number): MapMarker[] =>
+{
+	const latMin = lat - radius;
+	const latMax = lat + radius;
+	const lngMin = lng - radius;
+	const lngMax = lng + radius;
+	return data.filter((item: MapMarker) => (
+		(latMin <= item.lat) &&
+		(item.lat <= latMax) &&
+		(lngMin <= item.lon) &&
+		(item.lon <= lngMax)));
 };

@@ -1,8 +1,9 @@
-import React, { createContext, useReducer, Dispatch, Context, ReactNode, useContext, useEffect, useRef, useState } from "react";
+import React, { createContext, useReducer, Dispatch, Context, ReactNode, useContext, useEffect, useRef } from "react";
 import { useScript } from '../hooks/useScript';
 import { mapContextReducer, SET_MAP, SET_SELECTED_MARKER, SET_GOOGLE_MARKERS, RESET } from "./MapContextReducer";
 import {} from 'googlemaps';
 import find from "lodash/find";
+
 export {
 	SET_MARKERS,
 	ADD_MARKERS,
@@ -14,13 +15,26 @@ export {
 } from "./MapContextReducer";
 
 // const googleMapsApiKey = "AIzaSyClzMUaK1lMgIQeOTdofdEV_-O9ys1n6j4";
+export type MapMarker = {
+	lat: number,
+	lon: number,
+	description: string,
+	city: string,
+	state: string,
+	country: string,
+	dateTime?: string | null,
+	url1?: string | null,
+	url2?: string | null,
+	badge?: number | null,
+	icon?: string
+}
 
 export interface IMapContextState {
 	map: google.maps.Map | null,
-	markers: any,
+	markers: MapMarker[] | null,
 	gmarkers: google.maps.Marker[] | null,
-	selectedMarker: any
-	center: null
+	selectedMarker: MapMarker | null,
+	center: { lat: number, lng: number } | null
 }
 
 const initialState:IMapContextState = {
@@ -31,16 +45,26 @@ const initialState:IMapContextState = {
 	center: null
 };
 
+type DispatchTypes =
+	google.maps.Marker |
+	google.maps.Map |
+	MapMarker |
+	google.maps.Marker[] |
+	google.maps.Map[] |
+	MapMarker[] |
+	IMapContextState |
+	{ lat: number, lng: number } |
+	null
 export interface IMapContextDispatch {
 	type: string,
-	value: any
+	value: DispatchTypes
 }
 
 export interface IMapContext {
-	map: any,
-	markers: any,
-	gmarkers: any,
-	selectedMarker: any,
+	map: google.maps.Map | null,
+	markers: MapMarker[] | null,
+	gmarkers: google.maps.Marker[] | null,
+	selectedMarker: MapMarker | null,
 	loaded: boolean,
 	error: any,
 	mapRef: React.MutableRefObject<any> | null,
@@ -68,6 +92,10 @@ type props = {
 	googleMapsApiKey: string
 };
 
+interface MapMarkerPlus extends google.maps.Marker {
+	pin?: MapMarker
+}
+
 export const MapContextProvider = ({ children, googleMapsApiKey }: props): JSX.Element =>
 {
 	const mapApiUrl = `https://maps.google.com/maps/api/js?libraries=geometry&key=${googleMapsApiKey}`;
@@ -83,28 +111,24 @@ export const MapContextProvider = ({ children, googleMapsApiKey }: props): JSX.E
 		});
 	};
 
-	const buildMarker = (pin: any) =>
+	const buildMarker = (pin: MapMarker): google.maps.Marker | null =>
 	{
-		if (state.map != null)
+		const marker = new window.google.maps.Marker({
+			position: { lat: pin.lat, lng: pin.lon },
+			map: state.map!,
+			icon: pin.icon,
+			title: pin.description
+		});
+		(marker as MapMarkerPlus).pin = pin;
+		marker.addListener('click', () =>
 		{
-			const marker = new window.google.maps.Marker({
-				position: { lat: pin.lat, lng: pin.lon },
-				map: state.map,
-				icon: pin.icon,
-				title: pin.description
+			dispatch({
+				type: SET_SELECTED_MARKER,
+				value: pin
 			});
-			(marker as any).pin = pin;
-			marker.addListener('click', () =>
-			{
-				dispatch({
-					type: SET_SELECTED_MARKER,
-					value: pin
-				});
-			});
+		});
 
-			return marker;
-		}
-		return null;
+		return marker;
 	};
 
 	useEffect(() =>
@@ -138,16 +162,16 @@ export const MapContextProvider = ({ children, googleMapsApiKey }: props): JSX.E
 
 	useEffect(() =>
 	{
-		if (state.map && state.markers != null)
+		if (state.map != null && state.markers != null)
 		{
 			let googleMarkers = state.gmarkers;
 			if (state.gmarkers == null)
 			{
-				googleMarkers = state.markers.map((pin: any) => buildMarker(pin));
+				googleMarkers = state.markers.map((pin: MapMarker) => buildMarker(pin)) as google.maps.Marker[];
 			}
 			else
 			{
-				state.markers.forEach((pin: any) =>
+				state.markers.forEach((pin: MapMarker) =>
 				{
 					const match = find(googleMarkers, { pin: { lat: pin.lat, lon: pin.lon } });
 					if (!match)
@@ -155,17 +179,17 @@ export const MapContextProvider = ({ children, googleMapsApiKey }: props): JSX.E
 						const newMarker = buildMarker(pin);
 						if (newMarker != null)
 						{
-							googleMarkers!.push(newMarker);
+							(googleMarkers as google.maps.Marker[]).push(newMarker);
 						}
 					}
 				});
 				if (googleMarkers != null)
 				{
-					const remain = googleMarkers.reduce((prev: google.maps.Marker[], current, index) =>
+					const remain = googleMarkers.reduce((prev: google.maps.Marker[], current: google.maps.Marker) =>
 					{
 						const match = find(
 							state.markers,
-							{ lat: (current as any).pin.lat, lon: (current as any).pin.lon }
+							{ lat: (current as MapMarkerPlus).pin?.lat, lon: (current as MapMarkerPlus).pin?.lon }
 						);
 						if (!match)
 						{
