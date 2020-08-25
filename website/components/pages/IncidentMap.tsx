@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { useMapContext, SET_MARKERS, ADD_MARKERS, REMOVE_MARKER, SET_CENTER, MapMarker } from "../../context/MapContext";
-import data from '../common/map.dataBetter.json';
+//import data from '../common/map.dataBetter.json';
 import styles from './IncidentMap.module.scss';
 import { getCenter } from '../common/MapUtils';
+import { useApi } from '../../hooks/useApi';
 
 export const IncidentMap = () =>
 {
 	const { loaded, mapRef, selectedMarker, dispatch, reset } = useMapContext();
+	const { getData } = useApi();
 	// const [current, setCurrent] = useState<any>(null);
 	useEffect(() =>
 	{
@@ -15,17 +17,30 @@ export const IncidentMap = () =>
 
 	useEffect(() =>
 	{
-		const center = getCenter(data);
+		const goGetIt = async () =>
+		{
+			const data = await getData({
+				url: `/api/getIncidents`
+			});
+			// eslint-disable-next-line no-console
+			console.log(data);
+			return data;
+		};
 
-		dispatch({
-			type: SET_CENTER,
-			value: center
+		goGetIt().then((data) =>
+		{
+			const center = getCenter(data);
+
+			dispatch({
+				type: SET_CENTER,
+				value: center
+			});
+			dispatch({
+				type: SET_MARKERS,
+				value: data as MapMarker[]
+			});
 		});
 
-		dispatch({
-			type: SET_MARKERS,
-			value: data as MapMarker[]
-		});
 	}, [loaded]);
 
 	const handleClick = () =>
