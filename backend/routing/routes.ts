@@ -15,10 +15,7 @@ router.get("/getIncident/:id", async (req: AugmentedRequest, res: Response, next
 router.get("/getIncidents", async (req: AugmentedRequest, res: Response, next: NextFunction) =>
 {
 	const result: any[] = await getIncidents();
-	const documents = result.map((r) =>
-	{
-		return r.doc;
-	});
+	const documents = result.map((r) => r.doc);
 	res.send(documents);
 });
 
