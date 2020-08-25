@@ -12,10 +12,14 @@ router.get("/getIncident/:id", async (req: AugmentedRequest, res: Response, next
 });
 
 // @ts-ignore don't know to get typescript to stop complaining about this
-router.get("/Incidents", async (req: AugmentedRequest, res: Response, next: NextFunction) =>
+router.get("/getIncidents", async (req: AugmentedRequest, res: Response, next: NextFunction) =>
 {
-	req.log.debug({ incidentId: req.params.id });
-	res.send(await getIncidents());
+	const result: any[] = await getIncidents();
+	const documents = result.map((r) =>
+	{
+		return r.doc;
+	});
+	res.send(documents);
 });
 
 // @ts-ignore don't know to get typescript to stop complaining about this
