@@ -134,17 +134,21 @@ As with any project of this nature, we also have a list of future enhancements w
 
 - Over time, if real-time video streaming was made available, along with feeds from other sources (e.g. scanners, social media feeds), it may be possible to create intervention procedures especially if the platform is linked to police systems.
 
-<img width="416" alt="image" src="https://user-images.githubusercontent.com/22552553/90105747-590daa00-dd3e-11ea-9af3-f7b8be165a10.png">
+**Additional use case scenarios**
+
+The diagrams below represent some of the additional scenarios which could be built into the mobile application and back-end.
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105747-590daa00-dd3e-11ea-9af3-f7b8be165a10.png">
 
 **Different scenarios (detailed)**
 
-<img width="416" alt="image" src="https://user-images.githubusercontent.com/22552553/90105790-67f45c80-dd3e-11ea-9f34-7ee4a01aa2cb.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105790-67f45c80-dd3e-11ea-9f34-7ee4a01aa2cb.png">
 
-<img width="416" alt="image" src="https://user-images.githubusercontent.com/22552553/90105846-7a6e9600-dd3e-11ea-9af7-51e6451be6b3.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105846-7a6e9600-dd3e-11ea-9af7-51e6451be6b3.png">
 
-<img width="416" alt="image" src="https://user-images.githubusercontent.com/22552553/90105867-822e3a80-dd3e-11ea-9c32-275f346ff081.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105867-822e3a80-dd3e-11ea-9c32-275f346ff081.png">
 
-<img width="416" alt="image" src="https://user-images.githubusercontent.com/22552553/90105893-8c503900-dd3e-11ea-9df6-db30b89e95c8.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105893-8c503900-dd3e-11ea-9df6-db30b89e95c8.png">
 
 **The team**
 
