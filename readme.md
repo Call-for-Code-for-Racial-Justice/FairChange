@@ -160,6 +160,10 @@ The diagrams below represent some of the additional scenarios which could be bui
 
 **Development:** Brandon Davis, Nial Cargill, Simeon Charles, Kyleni Rivers & David Zuniga
 
+**IP Development** Natalie Brooks
+
+**Special Thanks** Cedric Cook
+
 
 
 
