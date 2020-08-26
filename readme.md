@@ -120,7 +120,7 @@ The Vulnerable Citizen**
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105739-54e18c80-dd3e-11ea-9722-55e6f0d8f3ae.png">
 
-**Where next? Wireframes:**
+**Where next? And wireframes:**
 
 The code contained within this Git Repository is essentially a Minimum Viable Product (MVP). The team focused on getting the base functionality of being able to capture location details, timestamps, incident descriptions and video. Furthermore the incidents can be viewed in the map view and videos can also be accessed either via the COS instance or the web site.
 
