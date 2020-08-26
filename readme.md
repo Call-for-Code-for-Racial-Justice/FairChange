@@ -143,5 +143,14 @@ The Vulnerable Citizen**
 
 <img width="197" alt="image" src="https://user-images.githubusercontent.com/22552553/90105893-8c503900-dd3e-11ea-9df6-db30b89e95c8.png">
 
+**The team**
+
+Product Managers: Boz Handy Bosma & James Stewart
+Architects: Cyril Grant & Jodith Fecadu Tefferi
+User Research: Tessa Olson, Jan Sinclair, Chantelle Omotosho, Jimi Agoro, Antoinette Santos & Enoch Antwi
+Development: Brandon Davis, Nial Cargill, Simeon Charles, Kyleni Rivers & David Zuniga
+
+
+
 
 
