@@ -13,7 +13,7 @@ Law enforcement agencies have access to free technology which identifies both si
 
 In order to process the information captured, we will investigate the use of AI (video analytics, speech to text, natural language understanding, sentiment analysis, tone analysis and visual recognition).
 
-**The Vision:**
+**The Idea:**
 
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/22552553/90105423-ca009200-dd3d-11ea-80cc-637b21e6be54.png">
 
@@ -45,6 +45,14 @@ Ultimately, if this solution can prevent even one incident from escalating we vi
 
 **Solution:**
 
+**Skills & Technologies Required**
+
+1: The mobile application is built using React Native (it is possible to run in an emulator or Expo (https://expo.io).
+2: The backend is built using Node.js. This can be run locally or on the IBM Cloud (we currently run in an Openshift Cluster).
+3: The website is built using React and Google Maps (earlier versions used Leaflet maps). Again this can run locally or in an Openshift environment.
+4: The database is Cloudant (lite Tier) running on the IBM Cloud.
+5: The storage for videos is IBM Cloud Object Storage. A free tier is available.
+
 The solution itself focuses on the core functionality of being able to take incident alerts and video recordings from the mobile app and post them into the back-end system. Once posted, the incident will appear on the map view and can be clicked in order to reveal more information. Here is a high-level flow:
 
 1.	The user records an incident on their mobile device.
@@ -52,7 +60,7 @@ The solution itself focuses on the core functionality of being able to take inci
 3.	The incident can then be viewed on the map view which resides on a website.
 4.	The user can click on the popup link within the map view in order to view more detail related to that incident (the link will auto expire after a short period of time to prevent unauthorised sharing).
 
-<img width="346" alt="image" src="https://user-images.githubusercontent.com/22552553/90105539-fb795d80-dd3d-11ea-8575-a25f0fdc564c.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/22552553/90105539-fb795d80-dd3d-11ea-8575-a25f0fdc564c.png">
 
 **Mobile App:**
 
