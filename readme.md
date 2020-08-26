@@ -26,19 +26,29 @@ At the same time we recognised through interviews with police officers and poten
 **At a high level the solution aims to do the following:**
 
 o	Enable members of the public to record incidents (stop and search, car stop, observing an incident) in a quick, near real time and safe manner (e.g. using voice activation where necessary to avoid reaching into pockets).
+
 o	The data captured (geo-location, timestamp, incident description / type, video / audio and potentially details like the officer ID number(s)), will be sent to a “back-end system for reporting and longer term, AI based analysis.
+
 o	As you will see in some of the prototype videos, we are also considering how this information could be used in order to help provide advice and guidance to police officers.
 
 Whilst we recognise our solution cannot address all of the complex challenges which exist in the current law enforcement practices, we do see that change has to start somewhere. By providing the base functionality in this Minimum Viable Product (MVP) we hope that…..
 
 o	Members of the public are able to capture incidents which may otherwise go unwitnessed.
+
 o	Upstanders feel empowered to capture and report incidents they observe.
+
 o	By sending data straight to the back-end system there is less opportunity for data to be deleted, tampered with or “lost”.
+
 o	The advice given to many Black members of the public is to keep their own record of stop and search / similar activity and so the solution can effectively serve this purpose for individuals.
+
 o	Members of the public can receive real time guidance to help reduce the chances of escalation.
+
 o	Members of the public can potentially avoid areas in which high levels of police harassment occur.
+
 o	Incidents can be grouped by time / location / incident type in order for members of the public, police officials and NGO’s to better understand the spread or concentration of incidents.
+
 o	Comparisons between incidents captured by members of the public and other sources e.g. local authority / government can be cross examined.
+
 o	The data could be used to help with longer term education for police officers and feed into the reform process.
 
 Ultimately, if this solution can prevent even one incident from escalating we view that as success.
