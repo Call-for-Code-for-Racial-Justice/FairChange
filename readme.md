@@ -80,16 +80,16 @@ The main purpose of the website is to host the map view and search capability. T
 
 **Mobile app recording view:**
 
-<img width="232" alt="image" src="https://user-images.githubusercontent.com/22552553/90105555-ffa57b00-dd3d-11ea-9dc3-0c68cb86cb4f.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/22552553/90105555-ffa57b00-dd3d-11ea-9dc3-0c68cb86cb4f.png">
 
 **Map view with one record highlighted:**
 
-<img width="451" alt="image" src="https://user-images.githubusercontent.com/22552553/90105569-03d19880-dd3e-11ea-8a46-de4318ade459.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105569-03d19880-dd3e-11ea-8a46-de4318ade459.png">
 
-**The user:
-Citizen X**
+**User Research Examples:
+Member of the public who is subject to police harassment**
 
-<img width="215" alt="image" src="https://user-images.githubusercontent.com/22552553/90105648-2a8fcf00-dd3e-11ea-856e-315223084a53.png">
+<img width="450" alt="image" src="https://user-images.githubusercontent.com/22552553/90105648-2a8fcf00-dd3e-11ea-856e-315223084a53.png">
 
 **Lisa’s user journey:
 AS-IS Experience**
