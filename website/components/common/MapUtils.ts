@@ -49,15 +49,15 @@ export const IncidentReport = (data: IncidentResponse[]): any =>
 	// return reportOpj;
 };
 
-export const getCenter = (data: any[]) =>
+export const getCenter = (data: MapMarker[]): { lat: number, lng: number } =>
 {
 	let latSum = 0;
 	let lngSum = 0;
 
 	data.forEach(item =>
 	{
-		latSum += item.lat;
-		lngSum += item.lon;
+		latSum += item.lat || 0;
+		lngSum += item.lon || 0;
 	});
 
 	return { lat: latSum / data.length, lng: lngSum / data.length };

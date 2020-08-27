@@ -2,14 +2,13 @@ import React, { ChangeEvent, useState, useEffect } from "react";
 import { Pages } from "../pages/Pages";
 import styles from "./MainContentArea.module.scss";
 import { Link } from "react-router-dom";
-import data from './map.dataBetter.json';
 import { useMapContext, SET_MARKERS, SET_CENTER } from "../../context/MapContext";
 import { useMapData } from '../../hooks/useMapData';
 import { searchByCountryState, getCenter, searchRadius } from "./MapUtils";
 
 export const MainContentArea = (): JSX.Element =>
 {
-	const { countries, states } = useMapData(data);
+	const { data, countries, states } = useMapData();
 	const [selectedState, setSelectedState] = useState<string>(countries[0] || "");
 	const [selectedCountry, setSelectedCountry] = useState<string>("");
 

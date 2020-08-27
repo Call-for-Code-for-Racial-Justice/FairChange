@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { useMapContext, SET_MARKERS, ADD_MARKERS, REMOVE_MARKER, SET_CENTER, MapMarker } from "../../context/MapContext";
-//import data from '../common/map.dataBetter.json';
 import styles from './IncidentMap.module.scss';
 import { getCenter } from '../common/MapUtils';
-import { useApi } from '../../hooks/useApi';
+import { useMapData } from '../../hooks/useMapData';
 
 export const IncidentMap = () =>
 {
 	const { loaded, mapRef, selectedMarker, dispatch, reset } = useMapContext();
-	const { getData } = useApi();
-	// const [current, setCurrent] = useState<any>(null);
+	const { data, reload } = useMapData();
+
 	useEffect(() =>
 	{
 		reset();
@@ -17,17 +16,7 @@ export const IncidentMap = () =>
 
 	useEffect(() =>
 	{
-		const goGetIt = async () =>
-		{
-			const data = await getData({
-				url: `/api/getIncidents`
-			});
-			// eslint-disable-next-line no-console
-			console.log(data);
-			return data;
-		};
-
-		goGetIt().then((data) =>
+		if (loaded && data != null)
 		{
 			const center = getCenter(data);
 
@@ -39,9 +28,9 @@ export const IncidentMap = () =>
 				type: SET_MARKERS,
 				value: data as MapMarker[]
 			});
-		});
+		}
 
-	}, [loaded]);
+	}, [loaded, data]);
 
 	const handleClick = () =>
 	{
@@ -83,17 +72,19 @@ export const IncidentMap = () =>
 	return (
 		<>
 			<div ref={mapRef} className={styles.map}/>
-			<section>
-				{selectedMarker == null ? null : <>
-					<div>Description: {selectedMarker.description}</div>
+			{selectedMarker == null ? null
+				: <section className={styles.details}>
+					<div className={styles.longer}>Description: {selectedMarker.description}</div>
+					<div>Latitude: {selectedMarker.lat}</div>
+					<div>Longitude: {selectedMarker.lon}</div>
+					<div>Date: {selectedMarker.dateTime}</div>
 					<div>City: {selectedMarker.city}</div>
 					<div>State: {selectedMarker.state}</div>
 					<div>Country: {selectedMarker.country}</div>
-				</>
-				}
-			</section>
-			<button onClick={handleClick}>Add Marker</button>
-			<button onClick={handleClick2}>Remove Marker</button>
+				</section>
+			}
+			{/* <button onClick={handleClick}>Add Marker</button> */}
+			{/* <button onClick={handleClick2}>Remove Marker</button> */}
 		</>
 	);
 };
