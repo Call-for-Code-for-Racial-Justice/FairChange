@@ -254,6 +254,14 @@ The script file can be found here: (add link) and should be added to the "backen
 	}
 }
 
+**Step 4: Start the backend**
+
+**Step 5: Start the website**
+
+**Step 6: Start the mobile app in Expo**
+
+**Step 7: Test your deployment**
+
 **The team**
 
 **Product Managers:** Boz Handy Bosma & James Stewart
