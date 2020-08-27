@@ -144,7 +144,7 @@ export const MainContentArea = (): JSX.Element =>
 						<ul className={styles.list}>
 							<li><Link to="/incidents">Incident Map</Link></li>
 							<li><Link to="/viewIncident">Information</Link></li>
-							<li><a href="https://github.com/embrace-call-for-code/fairchange/blob/master/readme.txt" target="_blank" rel="noopener">About</a></li>
+							<li><a href="https://github.com/embrace-call-for-code/fairchange/blob/master/readme.md" target="_blank" rel="noopener">About</a></li>
 						</ul>
 					</section>
 
