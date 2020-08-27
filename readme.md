@@ -167,6 +167,68 @@ The diagrams below represent some of the additional scenarios which could be bui
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105893-8c503900-dd3e-11ea-9df6-db30b89e95c8.png">
 
+**Deployment Steps**
+
+1: Create a new bucket in Cloud Object Storage
+
+2: Create a Cloundant Database:
+
+a) Search for "Cloudant" within the IBM Cloud catalogue.
+
+<img width="571" alt="image" src="https://user-images.githubusercontent.com/22552553/91416485-597e6880-e847-11ea-8c54-1b64b8e5785d.png">
+
+b) Select the desired plan (the free tier "Lite" plan is fine and you can always use an existing Cloudant instance).
+
+<img width="1060" alt="image" src="https://user-images.githubusercontent.com/22552553/91416798-cb56b200-e847-11ea-953c-632f2bcd5bea.png">
+
+c) Click "create" and your new instance will deploy.
+
+<img width="336" alt="image" src="https://user-images.githubusercontent.com/22552553/91417046-1d97d300-e848-11ea-9948-adc76dd62eb2.png">
+
+**Update the config file with your Cloudant & COS credentials**
+
+The script file can be found here: (add link) and should be added to the "backend" folder. The credentials will automatically get picked up in ther backend config when you run the start script.
+
+{
+  "Your Cloudant DB Name": {
+    "apikey": "xxx",
+    "host": "xxx",
+    "iam_apikey_description": "Auto-generated for key xxx",
+    "iam_apikey_name": "your api key name",
+    "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+    "iam_serviceid_crn": "xxx",
+    "url": "xxx",
+    "username": "xxx",
+    "dbName": "your DB name"
+  },
+  "logging": {
+    "level": "debug",
+    "consoleEnabled": true,
+    "piiFilter": [
+      "decryptedToken",
+      "authorization",
+      "hostname"
+    ]
+	},
+	"cloudObjectStorage": {
+		"bucketName": "your bucket name",
+		"apikey": "xxx",
+		"apiKeyId": "xxx",
+		"cos_hmac_keys": {
+			"access_key_id": "xxx",
+			"secret_access_key": "xxx"
+		},
+		"endpoints": "xxx",
+		"endpoint": "xxx",
+		"iam_apikey_description": "xxx",
+		"iam_apikey_name": "your api key name",
+		"iam_role_crn": "xxx",
+		"iam_serviceid_crn": "xxx",
+		"resource_instance_id": "xxx",
+		"serviceInstanceId": "xxx"
+	}
+}
+
 **The team**
 
 **Product Managers:** Boz Handy Bosma & James Stewart
