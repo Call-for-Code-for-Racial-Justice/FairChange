@@ -179,9 +179,13 @@ b) Select the desired plan (the free tier "Lite" plan is fine and you can always
 
 <img width="1274" alt="image" src="https://user-images.githubusercontent.com/22552553/91419283-26d66f00-e84b-11ea-9e8b-d90cca9a8dc1.png">
 
-c) Navigate to the management screen for COS and create a new bucket.
+c) Navigate to the management screen for COS and create a new bucket (a quick start bucket is fine).
 
 <img width="180" alt="image" src="https://user-images.githubusercontent.com/22552553/91419419-4a99b500-e84b-11ea-98d4-d341bcd2430d.png">
+
+Be sure to grab your service credentials.
+
+<img width="1030" alt="image" src="https://user-images.githubusercontent.com/22552553/91420511-b7617f00-e84c-11ea-963b-dc12eb770437.png">
 
 
 **Step 2: Create a Cloundant Database:**
