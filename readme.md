@@ -169,9 +169,9 @@ The diagrams below represent some of the additional scenarios which could be bui
 
 **Deployment Steps**
 
-1: Create a new bucket in Cloud Object Storage
+**Step 1: Create a new bucket in Cloud Object Storage**
 
-2: Create a Cloundant Database:
+**Step 2: Create a Cloundant Database:**
 
 a) Search for "Cloudant" within the IBM Cloud catalogue.
 
@@ -181,11 +181,19 @@ b) Select the desired plan (the free tier "Lite" plan is fine and you can always
 
 <img width="1060" alt="image" src="https://user-images.githubusercontent.com/22552553/91416798-cb56b200-e847-11ea-953c-632f2bcd5bea.png">
 
-c) Click "create" and your new instance will deploy.
+c) Click "create" and your new instance will deploy. Remember to note the service ceedentials, you'll need those in order to update the config file (see step 3 below).
 
 <img width="336" alt="image" src="https://user-images.githubusercontent.com/22552553/91417046-1d97d300-e848-11ea-9948-adc76dd62eb2.png">
 
-**Update the config file with your Cloudant & COS credentials**
+d) Launch the Cloudant management dashboard using the button on the top right hand side of the screen. Then create a new database (the create database button is also on the top right of the screen).
+
+Name your database and choose non-partitioned.
+
+<img width="227" alt="image" src="https://user-images.githubusercontent.com/22552553/91418351-ed513400-e849-11ea-8903-00ee0eb147fe.png">
+<img width="169" alt="image" src="https://user-images.githubusercontent.com/22552553/91418536-2ee1df00-e84a-11ea-88c9-576c02170bc4.png">
+<img width="345" alt="image" src="https://user-images.githubusercontent.com/22552553/91418672-5f297d80-e84a-11ea-8e0d-5371b480e3d3.png">
+
+**Step 3: Update the config file with your Cloudant & COS credentials**
 
 The script file can be found here: (add link) and should be added to the "backend" folder. The credentials will automatically get picked up in ther backend config when you run the start script.
 
