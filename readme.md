@@ -171,6 +171,19 @@ The diagrams below represent some of the additional scenarios which could be bui
 
 **Step 1: Create a new bucket in Cloud Object Storage**
 
+a) Search for "Cloud Object Storage" within the IBM Cloud catalogue.
+
+<img width="537" alt="image" src="https://user-images.githubusercontent.com/22552553/91419088-e676f100-e84a-11ea-8966-915ba480f988.png">
+
+b) Select the desired plan (the free tier "Lite" plan is fine and you can always use an existing COS instance).
+
+<img width="1274" alt="image" src="https://user-images.githubusercontent.com/22552553/91419283-26d66f00-e84b-11ea-9e8b-d90cca9a8dc1.png">
+
+c) Navigate to the management screen for COS and create a new bucket.
+
+<img width="180" alt="image" src="https://user-images.githubusercontent.com/22552553/91419419-4a99b500-e84b-11ea-98d4-d341bcd2430d.png">
+
+
 **Step 2: Create a Cloundant Database:**
 
 a) Search for "Cloudant" within the IBM Cloud catalogue.
@@ -249,7 +262,7 @@ The script file can be found here: (add link) and should be added to the "backen
 
 **IP Development** Natalie Brooks
 
-**Special Thanks** Cedric Cook
+**Special Thanks to our Offering Manager** Cedric Cook
 
 
 
