@@ -3,8 +3,8 @@ Fairchange Web Application
 
 Visualization of colected data and location and date search.
 
-### Funtionalities:
--Create empty map (Leaflet)
+### Funtionality:
+-Create empty map 
 -Add markers to map
 -Re-locate map focus on user location change from user location(Mozilla API)
 -Search by Country
