@@ -256,11 +256,124 @@ The script file can be found here: (add link) and should be added to the "backen
 
 **Step 4: Start the backend**
 
+# Backend Node Server
+
+### Getting Started
+
+1) `cd backend`
+2) `npm ci`
+3) `npm run dev`
+
+### Endpoints
+
+#### /api/getIncident/\<incident id\>
+
+*method:* GET
+
+This endpoint allows you to retrieve the incident information from the Cloudant database. 
+
+**incident id** = the unique id of the incident.
+
+**returned value** - incident information in JSON format
+
+#### /api/storeIncident
+
+*method:* POST
+
+This endpoint allows you to create a new incident.  The body of the post should be a JSON object with the following structure:
+
+```js
+{
+    timestamp: string,
+    incidentCategory: string,
+    incidentId: string,
+    description: string,
+    location: string,
+    lat: number,
+    lon: number,
+    country: string,
+    state: string,
+    city: string,
+    topic: string
+}
+```
+
+**returned value** - confirmation of incident record having been created.
+
+#### /api/upload
+
+*method:* POST
+
+*Content-Type:* multipart/form-data;
+
+*query param:* incident - The ID of the incident record to attach the video to.
+
+*form-data:*
+
+> **key**: incidentVideo, **value**: the video
+
+**returned value**
+
+```js
+{
+    "Location": url,
+    "Bucket": "emb-race-fair-change",
+    "Key": Object Name in Cloud Object Storage,
+    "ETag": unique tag of uploaded object,
+    "ok": boolean - true indicates incident document successfully updated,
+    "id": id of the incident document in Cloudant,
+    "rev": revision of the incident documnt in Cloudant
+}
+```
+
+
+#### /api/getObject/\<key\>
+
+*method:* GET
+
+*key* - Object name of the video in Cloud Object Storage
+
+**returned value** - Direct Url to the video.  Url expires in 60 seconds.
+
 **Step 5: Start the website**
+
+Fairchange Web Application 
+======
+
+### Getting Started
+
+1) `cd website`
+2) `npm install`
+3) `npm run dev`
+
+Visualization of colected data and location and date search.
+
+### Functionality:
+-Create empty map
+-Add markers to map
+-Re-locate map focus on user location change from user location
+-Search by Country
+-Responsive website (BootStrap)
+-Use font-awesome icons 
 
 **Step 6: Start the mobile app in Expo**
 
+Dowlaod Expo (https://expo.io)
+
+1) `npm install expo-cli --global`
+2) `yarn add expo`
+3) `cd mobile`
+4) `expo start`
+
+You will see the following screen open.
+
+<img width="263" alt="image" src="https://user-images.githubusercontent.com/22552553/91533769-60b97b00-e908-11ea-8c00-31fd648a309e.png">
+
+You can now run the application using an emulator or by installing the Expo app on your mobile device and simply scanning the QR code.
+
 **Step 7: Test your deployment**
+
+
 
 **The team**
 
