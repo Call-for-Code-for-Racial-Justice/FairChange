@@ -367,13 +367,20 @@ Dowlaod Expo (https://expo.io)
 
 You will see the following screen open.
 
-<img width="263" alt="image" src="https://user-images.githubusercontent.com/22552553/91533769-60b97b00-e908-11ea-8c00-31fd648a309e.png">
+<img width="257" alt="image" src="https://user-images.githubusercontent.com/22552553/91534151-f2c18380-e908-11ea-98b4-e3e7ceb609cd.png">
 
 You can now run the application using an emulator or by installing the Expo app on your mobile device and simply scanning the QR code.
 
 **Step 7: Test your deployment**
 
+1) Start the app on your mobile device (note the camera will not work in some emulation packages).
+2) Hit the "in a situation" or "observing a situation" button.
 
+<img width="232" alt="image" src="https://user-images.githubusercontent.com/22552553/91534655-c9552780-e909-11ea-8187-504c5fe01f80.png">
+
+3) Hit the "start video capture" button.
+
+<img width="250" alt="image" src="https://user-images.githubusercontent.com/22552553/91534992-60ba7a80-e90a-11ea-8a8f-40c58863622b.png">
 
 **The team**
 
