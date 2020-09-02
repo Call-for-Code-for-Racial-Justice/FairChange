@@ -214,7 +214,7 @@ Name your database and choose non-partitioned.
 
 The script file can be found here: (add link) and should be added to the "backend" folder. The credentials will automatically get picked up in ther backend config when you run the start script.
 
-{
+`{
   "Your Cloudant DB Name": {
     "apikey": "xxx",
     "host": "xxx",
@@ -252,7 +252,7 @@ The script file can be found here: (add link) and should be added to the "backen
 		"resource_instance_id": "xxx",
 		"serviceInstanceId": "xxx"
 	}
-}
+}`
 
 **Step 4: Start the backend**
 
