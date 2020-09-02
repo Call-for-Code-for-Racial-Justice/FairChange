@@ -77,7 +77,7 @@ The solution itself focuses on the core functionality of being able to take inci
 
 4.	The user can click on the popup link within the map view in order to view more detail related to that incident (the link will auto expire after a short period of time to prevent unauthorised sharing).
 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/22552553/90105539-fb795d80-dd3d-11ea-8575-a25f0fdc564c.png">
+<img width="1068" alt="image" src="https://user-images.githubusercontent.com/22552553/91962139-09e6e380-ed04-11ea-8f25-0bc43842a07c.png">
 
 **Mobile App:**
 
