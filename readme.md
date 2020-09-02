@@ -1,3 +1,5 @@
+#### Call for Code - Police & Judicial Reform and Accountability
+
 1. [ Problem Statement. ](#problem)
 2. [ The Idea. ](#idea)
 3. [ The Solution. ](#sol)
@@ -5,8 +7,6 @@
 5. [ Next Steps. ](#next)
 6. [ Deployment Steps. ](#deploy)
 7. [ The Team. ](#team)
-
-**Call for Code - Police & Judicial Reform and Accountability**
 
 <a name="problem"></a>
 ## 1. Problem Statement
