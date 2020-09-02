@@ -1,6 +1,15 @@
+1. [ Problem Statement. ](#problem)
+2. [ The Idea. ](#idea)
+3. [ The Solution. ](#sol)
+4. [ Research. ](#research)
+5. [ Next Steps. ](#next)
+6. [ Deployment Steps. ](#deploy)
+7. [ The Team. ](#team)
+
 **Call for Code - Police & Judicial Reform and Accountability**
 
-**Problem Statement**
+<a name="problem"></a>
+## 1. Problem Statement
 
 From traffic stops and arrests to sentencing and parole decisions, use technology to better analyse real-world data, provide insights and make recommendations that will drive racial equality and reform across criminal justice and public safety. 
 
@@ -13,7 +22,8 @@ Law enforcement agencies have access to free technology which identifies both si
 
 In order to process the information captured, we will investigate the use of AI (video analytics, speech to text, natural language understanding, sentiment analysis, tone analysis and visual recognition).
 
-**The Idea:**
+<a name="idea"></a>
+# 2. The Idea
 
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/22552553/90105423-ca009200-dd3d-11ea-80cc-637b21e6be54.png">
 
@@ -53,7 +63,8 @@ o	The data could be used to help with longer term education for police officers 
 
 Ultimately, if this solution can prevent even one incident from escalating we view that as success.
 
-**Solution:**
+<a name="sol"></a>
+## 3. Solution
 
 **Skills & Technologies Required**
 
@@ -103,6 +114,9 @@ The main purpose of the website is to host the map view and search capability. T
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105569-03d19880-dd3e-11ea-8a46-de4318ade459.png">
 
+<a name="research"></a>
+## 4. Research
+
 **User Research Examples:
 Member of the public who is subject to police harassment**
 
@@ -137,6 +151,9 @@ The Vulnerable Citizen**
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105739-54e18c80-dd3e-11ea-9722-55e6f0d8f3ae.png">
 
+<a name="next"></a>
+## 5. Next Steps
+
 **Where next? And wireframes:**
 
 The code contained within this Git Repository is essentially a Minimum Viable Product (MVP). The team focused on getting the base functionality of being able to capture location details, timestamps, incident descriptions and video. Furthermore the incidents can be viewed in the map view and videos can also be accessed either via the COS instance or the web site.
@@ -167,7 +184,8 @@ The diagrams below represent some of the additional scenarios which could be bui
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/22552553/90105893-8c503900-dd3e-11ea-9df6-db30b89e95c8.png">
 
-**Deployment Steps**
+<a name="deploy"></a>
+## 6. Deployment Steps
 
 **Step 1: Create a new bucket in Cloud Object Storage**
 
@@ -400,8 +418,8 @@ The videos currently get stored in the COS bucket, one enhancement being worked 
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/22552553/91536053-0cb09580-e90c-11ea-89a3-a211388657d8.png">
 
-
-**The team**
+<a name="team"></a>
+## 7. The Team
 
 **Product Managers:** Boz Handy Bosma & James Stewart
 
