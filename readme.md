@@ -39,7 +39,7 @@ o	Enable members of the public to record incidents (stop and search, car stop, o
 
 o	The data captured (geo-location, timestamp, incident description / type, video / audio and potentially details like the officer ID number(s)), will be sent to a “back-end system for reporting and longer term, AI based analysis.
 
-o	As you will see in some of the prototype videos, we are also considering how this information could be used in order to help provide advice and guidance to police officers.
+o	As you will see in some of the prototype videos (https://ibm.box.com/s/9n3ahii6xc8272idkrrsoolqtxi6ys9t), we are also considering how this information could be used in order to help provide advice and guidance to police officers.
 
 Whilst we recognise our solution cannot address all of the complex challenges which exist in the current law enforcement practices, we do see that change has to start somewhere. By providing the base functionality in this Minimum Viable Product (MVP) we hope that…..
 
