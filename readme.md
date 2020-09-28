@@ -1,5 +1,7 @@
 #### Call for Code - Police & Judicial Reform and Accountability
+## Authors 
 
+## Contents
 1. [ Problem Statement. ](#problem)
 2. [ The Idea. ](#idea)
 3. [ The Solution. ](#sol)
