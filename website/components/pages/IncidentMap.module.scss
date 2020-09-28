@@ -1,0 +1,30 @@
+.map
+{
+	height: 500px;
+}
+
+.details
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	width: 80%;
+	margin: 1rem auto;
+	border: 1px solid black;
+	padding: 0.5rem;
+
+	div
+	{
+		flex: 0 0 35%;
+		white-space: nowrap;
+	}
+}
+
+.longer
+{
+	flex: 0 0 80%;
+	white-space: nowrap;
+	min-width: 80%;
+	text-align: center;
+	padding: 0.5rem;
+}

@@ -40,6 +40,24 @@ export const find = async (query) =>
 	return result.docs;
 };
 
+export const getAll = async () =>
+{
+	const db = getDatabase(dbName);
+	return new Promise((resolve, reject) =>
+	{
+		// eslint-disable-next-line camelcase
+		db.list({ include_docs: true }).
+			then(result =>
+			{
+				resolve(result.rows);
+			}).
+			catch(err =>
+			{
+				reject(err);
+			});
+	});
+};
+
 
 export const getById = async (id) =>
 {
