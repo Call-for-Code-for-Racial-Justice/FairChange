@@ -1,17 +1,44 @@
-#### Call for Code - Police & Judicial Reform and Accountability
+# Police , Judicial Reform and Accountability Starter Kit 
+
 ## Authors 
+**Product Managers:** 
+- Boz Andy Bosma 
+- James Stewart
+
+**Architects:**
+- Cyril Grant 
+- Jodith Fecadu Tefferi 
+
+**User Researchers:** 
+- Tessa Olson
+- Jan Sinclair
+- Chantelle Omotosho
+- Jimi Agoro
+- Antoinette Santos
+- Enoch Antwi
+
+**Development** 
+
 
 ## Contents
-1. [ Problem Statement. ](#problem)
-2. [ The Idea. ](#idea)
-3. [ The Solution. ](#sol)
-4. [ Research. ](#research)
-5. [ Next Steps. ](#next)
-6. [ Deployment Steps. ](#deploy)
-7. [ The Team. ](#team)
 
-<a name="problem"></a>
-## 1. Problem Statement
+1. [Overview](#overview)
+2. [Video](#video)
+3. [The idea](#the-idea)
+4. [How it works](#how-it-works)
+5. [Diagrams](#diagrams)
+6. [Documents](#documents)
+7. [Datasets](#datasets)
+8. [Technology](#technology)
+9. [Getting started](#getting-started)
+10. [Resources](#resources)
+11. [License](#license)
+
+
+
+## Overview
+
+### What's the problem?
 
 From traffic stops and arrests to sentencing and parole decisions, use technology to better analyse real-world data, provide insights and make recommendations that will drive racial equality and reform across criminal justice and public safety. 
 
@@ -24,8 +51,13 @@ Law enforcement agencies have access to free technology which identifies both si
 
 In order to process the information captured, we will investigate the use of AI (video analytics, speech to text, natural language understanding, sentiment analysis, tone analysis and visual recognition).
 
-<a name="idea"></a>
-# 2. The Idea
+### How can technology help ?
+
+## Video
+*** <INSERT-VIDEO> ***
+
+
+## The Idea
 
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/22552553/90105423-ca009200-dd3d-11ea-80cc-637b21e6be54.png">
 
@@ -37,7 +69,7 @@ At the same time we recognised through interviews with police officers and poten
 
 **At a high level the solution aims to do the following:**
 
-o	Enable members of the public to record incidents (stop and search, car stop, observing an incident) in a quick, near real time and safe manner (e.g. using voice activation where necessary to avoid reaching into pockets).
+o Enable members of the public to record incidents (stop and search, car stop, observing an incident) in a quick, near real time and safe manner (e.g. using voice activation where necessary to avoid reaching into pockets).
 
 o	The data captured (geo-location, timestamp, incident description / type, video / audio and potentially details like the officer ID number(s)), will be sent to a “back-end system for reporting and longer term, AI based analysis.
 
