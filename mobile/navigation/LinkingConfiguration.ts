@@ -8,12 +8,12 @@ export default {
         screens: {
           home: {
             screens: {
-              home: 'one',
+              home: 'home',
             },
           },
-          profile: {
+          incident: {
             screens: {
-              profile: 'two',
+              incident: 'incident',
             },
           },
         },

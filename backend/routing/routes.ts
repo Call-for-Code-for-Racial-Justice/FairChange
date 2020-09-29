@@ -144,6 +144,14 @@ const getIncidentsSwagger = {
 };
 
 // @ts-ignore don't know to get typescript to stop complaining about this
+router.get("/getIncidents", async (req: AugmentedRequest, res: Response, next: NextFunction) =>
+{
+	const result: any[] = await getIncidents();
+	const documents = result.map((r) => r.doc);
+	res.send(documents);
+});
+
+// @ts-ignore don't know to get typescript to stop complaining about this
 router.post("/storeIncident", async (req: AugmentedRequest, res: Response, next: NextFunction) =>
 {
 	const result = await storeIncident(req.body as Incident);
