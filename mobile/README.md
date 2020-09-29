@@ -1,4 +1,57 @@
-**Mobile app recording view:**
+# Building Mobile App
+
+
+## Learning objectives
+
+In this tutorial, you will:
+
+
+
+## Prerequisites
+
+To complete the steps in this tutorial you need:
+
+
+## Estimated Time 
+
+
+## Steps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/22552553/90105555-ffa57b00-dd3d-11ea-9dc3-0c68cb86cb4f.png">
 
