@@ -213,17 +213,14 @@ The script file can be found here: (add link) and should be added to the "backen
 	}
 }`
 
-**Step 4: Start the backend**
 
-
-**Mobile App:**
+### Mobile App
 
 The mobile application is built using React Native and will run on either iOS or Android. In the future it would be prudent to include voice activation for the mobile app (see prototype) in order to cater for scenarios where it is not safe or not legal for users to use their mobile device by hand.
 
 [Follow these instructions for setting up mobile app](./mobile/README.md)
 
-
-**Web Appliciation Back-end:**
+### Web Appliciation Back-end
 
 The back end is built in Node JS and handles the following:
 
@@ -233,7 +230,7 @@ o	Reading of data by the web site in order to populate the map view and also to 
 
 [Follow these instructions for setting up the web application's back end](./backend/README.md)
 
-****Web Appliciation Fron-end:****
+### Web Appliciation Front-end
 
 The main purpose of the website is to host the map view and search capability. The map is built using Leaflet and the site itself is built using React.
 
