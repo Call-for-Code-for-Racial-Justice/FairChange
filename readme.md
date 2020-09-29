@@ -22,7 +22,7 @@ This solution starter was created by technologists from IBM. The goals of this s
 7. [Datasets](#datasets)
 8. [Technology](#technology)
 9. [Getting started](#getting-started)
-10. [Resources](#resources)
+10. [Disclosures](#disclosures)
 11. [License](#license)
 
 
