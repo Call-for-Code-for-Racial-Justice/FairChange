@@ -234,7 +234,7 @@ o	Reading of data by the web site in order to populate the map view and also to 
 
 The main purpose of the website is to host the map view and search capability. The map is built using Leaflet and the site itself is built using React.
 
-[Follow these instructions for setting up the web application's front end](./backend/readme.md)
+[Follow these instructions for setting up the web application's front end](./website/readme.md)
 
 ## Disclosures
 
