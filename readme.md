@@ -125,7 +125,18 @@ The solution itself focuses on the core functionality of being able to take inci
 
 ### Set up an instance of Cloud Object Storage 
 
-**Step 1: Create a new bucket in Cloud Object Storage**
+### Prerequisite
+
+- Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
+
+### Set up an instance of Cloud Object Storage
+
+Log in to IBM Cloud and provision a Cloud Object Storage Service.
+
+**Step 1.** From the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant), provision an an instance of **Cloud Object Storagee**.
+  ![Watson Assistant Catalog](/starter-kit/assistant/WA-Photo1.png)
+
+
 *** Step 2 : Create a cloudant service ** 
 - Take note of api key for cloud object storage ---> backend service
 - Take note of api key for cloudant  --> used for backend service 
