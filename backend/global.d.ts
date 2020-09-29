@@ -1,1 +1,1 @@
-declare module 'configuration-master'
+declare module 'configuration-master';
