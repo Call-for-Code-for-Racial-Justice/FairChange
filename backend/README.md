@@ -30,29 +30,6 @@ To complete the steps in this tutorial you need:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.
-.
-.
-.
-.
-.
-.
-
-
-
 1) `cd backend`
 2) `npm ci`
 3) `npm run dev`
