@@ -141,15 +141,8 @@ Log in to IBM Cloud and provision a Cloud Object Storage Service.
 **Step 5.** Go to the `Service Credentials` tab and click on `New Credential`. Give your Service Credentials a name. Select role as `Writer` . Select Advanced Options and set `Include HMAC Credential` as ON. Add your service credentials. 
  ![](/images/img8.png)
 
- **Step 6.** Take a note of your Service Credentials for the [Web Appliciation Back-end]()
+ **Step 6.** Take a note of your Service Credentials for the [Web Appliciation Back-end](https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/readme.md#web-appliciation-back-end)
   ![](/images/img9.png)
-
-
-
-*** Step 2 : Create a cloudant service ** 
-- Take note of api key for cloud object storage ---> backend service
-- Take note of api key for cloudant  --> used for backend service 
-
 
 
 ### Web Appliciation Back-end
