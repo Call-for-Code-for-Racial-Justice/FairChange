@@ -123,18 +123,27 @@ The solution itself focuses on the core functionality of being able to take inci
 - Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 
 
-### Set up an instance of Cloud Object Storage 
-
-### Prerequisite
-
-- Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
-
-### Set up an instance of Cloud Object Storage
-
+### Provision Instance of Cloud Object Storage on IBM Cloud
 Log in to IBM Cloud and provision a Cloud Object Storage Service.
 
-**Step 1.** From the [IBM Cloud catalog](https://cloud.ibm.com/catalog/services/watson-assistant), provision an an instance of **Cloud Object Storagee**.
-  ![Watson Assistant Catalog](/starter-kit/assistant/WA-Photo1.png)
+**Step 1.** From the [IBM Cloud catalog](https://cloud.ibm.com/catalog/), search for  an instance of **Object Storage**.
+  ![](/images/img4.png)
+
+**Step 2.** Give your service a name and create a `Lite` version of the service 
+ ![](/images/img5.png)
+
+**Step 3.** Once you have the object storage service created go to your service in your `Dashboard` and  click on `Create a bucket` in the `Getting Started` tab  
+ ![](/images/img6.png)
+
+**Step 4.** Click on `Create a Custom Bucket` . Give your bucket a unique name and select `Smart Tier` 
+ ![](/images/img7.png)
+
+**Step 5.** Go to the `Service Credentials` tab and click on `New Credential`. Give your Service Credentials a name. Select role as `Writer` . Select Advanced Options and set `Include HMAC Credential` as ON. Add your service credentials. 
+ ![](/images/img8.png)
+
+ **Step 6.** Take a note of your Service Credentials for the [Web Appliciation Back-end]()
+  ![](/images/img9.png)
+
 
 
 *** Step 2 : Create a cloudant service ** 
