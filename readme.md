@@ -152,7 +152,7 @@ Log in to IBM Cloud and provision a Cloud Object Storage Service.
 
 
 
-### 1st. Web Appliciation Back-end
+### Web Appliciation Back-end
 
 The back end is built in Node JS and handles the following:
 
@@ -162,15 +162,13 @@ o	Reading of data by the web site in order to populate the map view and also to 
 
 [Follow these instructions for setting up the web application's back end](./backend/README.md)
 
-### 2nd  Web Appliciation Front-end
+### Web Appliciation Front-end
 
-The main purpose of the website is to host the map view and search capability. The map is built using Leaflet and the site itself is built using React.
+The main purpose of the website is to host the map view and search capability. The map is built using Google Maps and the site itself is built using React.
 
 [Follow these instructions for setting up the web application's front end ](./website/readme.md)
 
-
-
-### 3rd . Mobile App
+### Mobile App
 
 The mobile application is built using React Native and will run on either iOS or Android. In the future it would be prudent to include voice activation for the mobile app (see prototype) in order to cater for scenarios where it is not safe or not legal for users to use their mobile device by hand.
 
