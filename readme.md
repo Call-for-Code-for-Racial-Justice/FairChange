@@ -119,30 +119,57 @@ The solution itself focuses on the core functionality of being able to take inci
 ## Getting started
 
 ### Prerequisite
-
-- Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
-
+Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
 
 ### Provision Instance of Cloud Object Storage on IBM Cloud
 Log in to IBM Cloud and provision a Cloud Object Storage Service.
 
 **Step 1.** From the [IBM Cloud catalog](https://cloud.ibm.com/catalog/), search for  an instance of **Object Storage**.
+
   ![](/images/img4.png)
 
 **Step 2.** Give your service a name and create a `Lite` version of the service 
+
  ![](/images/img5.png)
 
-**Step 3.** Once you have the object storage service created go to your service in your `Dashboard` and  click on `Create a bucket` in the `Getting Started` tab  
+**Step 3.** Once you have the object storage service created go to your service in your `Dashboard` and  click on `Create a bucket` in the `Getting Started` tab
+
  ![](/images/img6.png)
 
-**Step 4.** Click on `Create a Custom Bucket` . Give your bucket a unique name and select `Smart Tier` 
+**Step 4.** Click on `Create a Custom Bucket` . Give your bucket a unique name and select `Smart Tier`. Create Bucket.
+
  ![](/images/img7.png)
 
 **Step 5.** Go to the `Service Credentials` tab and click on `New Credential`. Give your Service Credentials a name. Select role as `Writer` . Select Advanced Options and set `Include HMAC Credential` as ON. Add your service credentials. 
+
  ![](/images/img8.png)
 
  **Step 6.** Take a note of your Service Credentials for the [Web Appliciation Back-end](https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/readme.md#web-appliciation-back-end)
+
   ![](/images/img9.png)
+
+### Provision Instance of Cloudant on IBM Cloud
+**Step 1.** Go back to [IBM Cloud catalog](https://cloud.ibm.com/catalog/) and search for an instance of **Cloudant** 
+ 
+  ![](/images/img10.png)
+
+**Step2.** Give Service a name and create a `Lite` instance of Cloudant
+ 
+ ![](/images/img11.png)
+
+**Step 3.** Once your instance of Cloudant is created click on `Launch Dashboard`
+
+ ![](/images/img12.png)
+
+**Step 4.** Once Cloudant Dashboard is lauched click `Create Database` 
+
+![](/images/img13.png)
+
+**Step 5.** Give database a name and click `Create`. 
+
+![](/images/img14.png)
+
+**Step 6.** Go back to the cloudant service page and take a note of  your service credentials. 
 
 
 ### Web Appliciation Back-end
