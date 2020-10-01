@@ -35,9 +35,9 @@ This solution starter was created by technologists from IBM. The goals of this s
 
 The sad reality is that police interactions with members of the Black community disproportionately end in unnecessary and avoidable escalation. Unless such interactions are captured, documented and catalogued, true change and indeed true reform will not be possible.
 
-Whether related to routine traffic stops, stop and search or other scenarios, we aim to use technology to capture real-world data, provide insights and make recommendations that will drive racial equality. The key intentions behind this solution starter pack are to help enable transparency, re-education and reform as a matter of public interest and public safety.
+Whether related to routine traffic stops, stop and search or other scenarios, we aim to use technology to capture real-world data, provide insights and make recommendations that will drive racial equality. The key intentions behind this solution starter kit are to help enable transparency, re-education and reform as a matter of public interest and public safety.
 
-At the heart of the solution resides an intelligent visualisation system, based around a map view which makes it easy for users to find single or grouped incidents. In order to facilitate the capture of incidents, a mobile application has also been created with the ability to capture incidents on behalf of a person of interest or an observer (e.g. stop and search, car stops etc). The solution also contains an API which could be extended in order to capture data from additional sources such as existing mobile applications.
+At the heart of the solution resides an intelligent visualisation system, based around a map view which makes it easy for users to find single or grouped incidents. In order to facilitate the capture of incidents, a mobile application has also been created with the ability to capture incidents on behalf of a "contacted person" or an observer (e.g. stop and search, car stops etc). The solution also contains an API which could be used in order to capture data from additional sources such as existing mobile applications.
 
 ### How can technology help ?
 
