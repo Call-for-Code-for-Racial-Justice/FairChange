@@ -168,9 +168,9 @@ Log in to IBM Cloud and provision a Cloud Object Storage Service.
 <img width="300" height = "600" alt="image" src="https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/images/img14.png">
 </p>
 
-<!-- ![](/images/img14.png) -->
+**Step 6.** Go back to the cloudant service page and take a note of your service credentials for the [Web Appliciation Back-end](https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/readme.md#web-appliciation-back-end) 
 
-**Step 6.** Go back to the cloudant service page and take a note of  your service credentials. 
+![](/images/img15.png)
 
 
 ### Web Appliciation Back-end
