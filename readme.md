@@ -164,7 +164,11 @@ Log in to IBM Cloud and provision a Cloud Object Storage Service.
 
 **Step 5.** Give database a name and click `Create`. 
 
-![](/images/img14.png)
+<p align="center">
+<img width="700" alt="image" src="https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/images/img14.png">
+</p>
+
+<!-- ![](/images/img14.png) -->
 
 **Step 6.** Go back to the cloudant service page and take a note of  your service credentials. 
 
