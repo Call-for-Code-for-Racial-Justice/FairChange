@@ -31,16 +31,13 @@ This solution starter was created by technologists from IBM. The goals of this s
 
 ### What's the problem?
 
-From traffic stops and arrests to sentencing and parole decisions, use technology to better analyse real-world data, provide insights and make recommendations that will drive racial equality and reform across criminal justice and public safety. 
+"Racism isn't getting worse, it's getting filmed" - Will Smith.
 
-This solution addresses 2 hills related to the problem statement above:
+The sad reality is that police interactions with members of the Black community disproportionately end in unnecessary and avoidable escalation. Unless such interactions are captured, documented and catalogued, true change and indeed true reform will not be possible.
 
-1: The public will have access to factual data on police behavioural infractions so that police officers can be held publicly accountable for their actions.
-Law enforcement agencies have access to free technology which identifies both singular incidents and behavioural patterns so that regular data-driven evaluations of policing outcomes take place.
+Whether related to routine traffic stops, stop and search or other scenarios, we aim to use technology to capture real-world data, provide insights and make recommendations that will drive racial equality. The key intentions behind this solution starter kit are to help enable transparency, re-education and reform as a matter of public interest and public safety.
 
-2: At the heart of the solution resides an intelligent visualisation system, based around a map view which makes it easy for users to find single or grouped incidents. In order to facilitate the capture of incidents, a mobile application will also be created with the ability to recognise and react to different circumstances (e.g. stop and search, car stops etc). Over time API's could be developed in order to capture data from additional sources such as existing mobile applications and social media.
-
-In order to process the information captured, we will investigate the use of AI (video analytics, speech to text, natural language understanding, sentiment analysis, tone analysis and visual recognition).
+At the heart of the solution resides an intelligent visualisation system, based around a map view which makes it easy for users to find single or grouped incidents. In order to facilitate the capture of incidents, a mobile application has also been created with the ability to capture incidents on behalf of a "contacted person" or an observer (e.g. stop and search, car stops etc). The solution also contains an API which could be used in order to capture data from additional sources such as existing mobile applications.
 
 ### How can technology help ?
 
@@ -51,25 +48,25 @@ In order to process the information captured, we will investigate the use of AI 
 ## The Idea
 
 <p align="center">
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/22552553/90105423-ca009200-dd3d-11ea-80cc-637b21e6be54.png">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/22552553/94794799-4d507280-03d4-11eb-94bd-93bc5bef65b3.png">
 </p>
 
-We are team "Fair Change." The inspiration behind this starter kit comes from the lived experience of some of our team members who have been subject to unprovoked physical mistreatment, harassment, campaigns, and racial abuse from police officers. As we shared our experiences, it became evident to our diverse team residing in both the UK and US that the mistreatment of Black members by the police is widespread.
+We are team "Fair Change". The inspiration behind this starter kit comes from the lived experience of some of our team members who have been subject to unprovoked physical mistreatment, harassment, campaigns, and racial abuse from police officers or members of the public who intend to "weaponise" the police against Black individuals or communities. As we shared our experiences, it became evident to our diverse team residing in both the UK and US that the mistreatment of Black communities by the police is widespread.
 
-At the same time, we recognized this is a very complex issue. The job of police officers who genuinely want to serve and protect the community can inherently be made more difficult based on their peers' actions.  This overall can diminishes the trust between the police force and the public. 
+At the same time, we recognized this is a very complex issue. The job of police officers who genuinely want to serve and protect the community can inherently be made more difficult based on their peers' actions.  This overall can diminish the trust between the police force and the public. 
 
-This starter kit aims to create a solution that could aid in the avoidance and de-escalation of incidents and provide visibility and long-term education for reform.
+This starter kit aims to create a solution that could aid in the avoidance and de-escalation of incidents and provide visibility and opportunities for long-term education for reform.
 
 At a high level the Fair Change starter kit can : 
   - Enable members of the public to record incidents through a moble app in a quick, near real time and safe manner
   - Capture data such as geo-location, timestamp, incident description, video and audio recordings and potential details such as officer ID numbers
-  - Save and Map data on a web application for reporting and AI analysis 
+  - Save and Map data on a web application for reporting and future AI analysis (AI is a roadmap item at this stage)
 
-While we recognize that our solution cannot address all of the complex challenges in the current law enforcement practices, we hope that the solution presented in this starter kit can : 
+While we recognize that our solution cannot address all of the complex challenges in current law enforcement practices, we hope that the solution presented in this starter kit can : 
  - Encourage members of the public to capture incidents which may otherwise go unwitnessed.
  - Display patterns and correlations of incidents that can be grouped by time, location, and type to better understand the scenario. 
- - Inspire developers to shed light on this issue and provide them a starting point to develop future reform funtionalities 
- - Educate police officers, community members and corporate partners on the issues of racial injustice and police reform and accountibility
+ - Inspire developers to shed light on this issue and provide them a starting point to develop future reform functionalities.
+ - Educate police officers, community members and corporate partners on the issues of racial injustice, police reform and accountibility.
 
 
 
