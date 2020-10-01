@@ -164,7 +164,7 @@ Log in to IBM Cloud and provision a Cloud Object Storage Service.
 
 **Step 5.** Give database a name and click `Create`. 
 
-<p align="center">
+<p>
 <img width="300" height = "600" alt="image" src="https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/images/img14.png">
 </p>
 
