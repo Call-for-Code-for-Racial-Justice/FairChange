@@ -23,12 +23,12 @@ export const storeIncident = async (data: Incident): Promise<any> =>
 	});
 };
 
-export const getIncident = async (id: string): Promise<any> =>
+export const getIncident = async (id: string): Promise<Incident> =>
 {
 	return getById(id);
 };
 
-export const getIncidents = async (): Promise<any> =>
+export const getIncidents = async (): Promise<Incident[]> =>
 {
 	return getAll();
 };
