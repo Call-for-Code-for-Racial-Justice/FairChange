@@ -18,7 +18,9 @@ const options = {
 };
 
 (swaggerDoc as { [key: string]: any; }).paths = { ...require('./routing/routes').swagger };
+(swaggerDoc as { [key: string]: any; }).definitions = { ...require('./routing/routes').schemas };
 
+console.log(JSON.stringify(swaggerDoc));
 app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDoc, options));
 
 CloudantUtil().then(() =>

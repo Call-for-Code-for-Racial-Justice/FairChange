@@ -258,7 +258,6 @@ The script file can be found here: (add link) and should be added to the "backen
 	"cloudObjectStorage": {
 		"bucketName": "your bucket name",
 		"apikey": "xxx",
-		"apiKeyId": "xxx",
 		"cos_hmac_keys": {
 			"access_key_id": "xxx",
 			"secret_access_key": "xxx"
@@ -270,7 +269,6 @@ The script file can be found here: (add link) and should be added to the "backen
 		"iam_role_crn": "xxx",
 		"iam_serviceid_crn": "xxx",
 		"resource_instance_id": "xxx",
-		"serviceInstanceId": "xxx"
 	}
 }`
 
