@@ -177,21 +177,21 @@ Log in to IBM Cloud and provision a Cloud Object Storage Service.
 
 The back end is built in Node JS and handles the following:
 
-o	Writing of data from the mobile app to the Cloudant DB.
-o	Writing of video from the mobile app to IBM COS.
-o	Reading of data by the web site in order to populate the map view and also to view further data related to an incident / video URL.
+- Writing of data from the mobile app to the Cloudant DB.
+- Writing of video from the mobile app to IBM Cloud Object Storage (COS).
+- Reading of data by the Fair Change Website in order to populate the map view and also to view further data related to an incident / video URL.
 
 [Follow these instructions for setting up the web application's back end](./backend/README.md)
 
 ### Web Appliciation Front-end
 
-The main purpose of the website is to host the map view and search capability. The map is built using Google Maps and the site itself is built using React.
+The main purpose of the Fair Change website is to host the map view and search capability. The map is built using Google Maps and the site itself is built using React.
 
 [Follow these instructions for setting up the web application's front end ](./website/readme.md)
 
 ### Mobile App
 
-The mobile application is built using React Native and will run on either iOS or Android. In the future it would be prudent to include voice activation for the mobile app (see prototype) in order to cater for scenarios where it is not safe or not legal for users to use their mobile device by hand.
+The mobile application is built using React Native and will run on either iOS or Android.The purpose of the mobile app is to record real time incidents to and to submit this data to the Fair Change Incident directory.  
 
 [Follow these instructions for setting up mobile app](./mobile/README.md)
 

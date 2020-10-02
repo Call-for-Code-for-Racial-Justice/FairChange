@@ -1,22 +1,29 @@
 # Building Web Application Back-END 
+The back end is built in Node JS and handles the following:
 
-
+- Writing of data from the mobile app to the Cloudant DB.
+- Writing of video from the mobile app to IBM Cloud Object Storage (COS).
+- Reading of data by the Fair Change Website in order to populate the map view and also to view further data related to an incident / video URL.
 
 
 ## Learning objectives
 
 In this tutorial, you will:
-
+- Learn how to connect Cloud Object Storage and Cloudant services to the back-end application.
+- Populate data into Cloudant database
+- Test and run this app locally 
+- Deploy application to IBM Cloud 
 
 
 ## Prerequisites
 
 To complete the steps in this tutorial you need:
-
-
+1. Sign up for an [IBM Cloud Account](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917)
+2. [Provision Instance of Cloud Object Storage on IBM Cloud]()
+3. [Provision Instance of Cloudant on IBM Cloud]()
 
 ## Estimated Time 
-
+This tutorial will take you about 30 minutes to complete.
 
 ## Steps
 
@@ -29,167 +36,3 @@ To complete the steps in this tutorial you need:
 
 
 
-
-1) `cd backend`
-2) `npm ci`
-3) `npm run dev`
-
-### Endpoints
-
-#### /api/getIncident/\<incident id\>
-
-*method:* GET
-
-This endpoint allows you to retrieve the incident information from the Cloudant database. 
-
-**incident id** = the unique id of the incident.
-
-**returned value** - incident information in JSON format
-
-#### /api/storeIncident
-
-*method:* POST
-
-This endpoint allows you to create a new incident.  The body of the post should be a JSON object with the following structure:
-
-```js
-{
-    timestamp: string,
-    incidentCategory: string,
-    incidentId: string,
-    description: string,
-    location: string,
-    lat: number,
-    lon: number,
-    country: string,
-    state: string,
-    city: string,
-    topic: string
-}
-```
-
-**returned value** - confirmation of incident record having been created.
-
-#### /api/upload
-
-*method:* POST
-
-*Content-Type:* multipart/form-data;
-
-*query param:* incident - The ID of the incident record to attach the video to.
-
-*form-data:*
-
-> **key**: incidentVideo, **value**: the video
-
-**returned value**
-
-```js
-{
-    "Location": url,
-    "Bucket": "emb-race-fair-change",
-    "Key": Object Name in Cloud Object Storage,
-    "ETag": unique tag of uploaded object,
-    "ok": boolean - true indicates incident document successfully updated,
-    "id": id of the incident document in Cloudant,
-    "rev": revision of the incident documnt in Cloudant
-}
-```
-
-
-#### /api/getObject/\<key\>
-
-*method:* GET
-
-*key* - Object name of the video in Cloud Object Storage
-
-**returned value** - Direct Url to the video.  Url expires in 60 seconds.
-
-
------->
-
-**Step 4: Start the backend**
-
-# Backend Node Server
-
-### Getting Started
-
-1) `cd backend`
-2) `npm ci`
-3) `npm run dev`
-
-### Endpoints
-
-#### /api/getIncident/\<incident id\>
-
-*method:* GET
-
-This endpoint allows you to retrieve the incident information from the Cloudant database. 
-
-**incident id** = the unique id of the incident.
-
-**returned value** - incident information in JSON format
-
-#### /api/storeIncident
-
-*method:* POST
-
-This endpoint allows you to create a new incident.  The body of the post should be a JSON object with the following structure:
-
-```js
-{
-    timestamp: string,
-    incidentCategory: string,
-    incidentId: string,
-    description: string,
-    location: string,
-    lat: number,
-    lon: number,
-    country: string,
-    state: string,
-    city: string,
-    topic: string
-}
-```
-
-**returned value** - confirmation of incident record having been created.
-
-#### /api/upload
-
-*method:* POST
-
-*Content-Type:* multipart/form-data;
-
-*query param:* incident - The ID of the incident record to attach the video to.
-
-*form-data:*
-
-> **key**: incidentVideo, **value**: the video
-
-**returned value**
-
-```js
-{
-    "Location": url,
-    "Bucket": "emb-race-fair-change",
-    "Key": Object Name in Cloud Object Storage,
-    "ETag": unique tag of uploaded object,
-    "ok": boolean - true indicates incident document successfully updated,
-    "id": id of the incident document in Cloudant,
-    "rev": revision of the incident documnt in Cloudant
-}
-```
-
-
-#### /api/getObject/\<key\>
-
-*method:* GET
-
-*key* - Object name of the video in Cloud Object Storage
-
-**returned value** - Direct Url to the video.  Url expires in 60 seconds.
-
-
-
-
-<------
