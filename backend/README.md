@@ -74,7 +74,9 @@ The following assumes you have gone through the prerequisites.
           "resource_instance_id": "<cloudObjectStorage resource_instance_id>",
           "serviceInstanceId": "<cloudObjectStorage resource_instance_id>"
       }
-  } ```
+  } 
+  
+  ```
 
 4. Populate your database with data. Map data can be found [here](https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/website/components/common/map.dataBetter2.json)
 
@@ -82,7 +84,9 @@ The following assumes you have gone through the prerequisites.
 export COUCH_URL=<Cloudant url>
 export IAM_API_KEY=<Cloudant apikey>
 export COUCH_DATABASE=<Cloudant dbName>
-cat components/common/map.dataBetter2.json | ./node_modules/.bin/couchimport --database <Cloudant dbName> --type jsonl```
+cat components/common/map.dataBetter2.json | ./node_modules/.bin/couchimport --database <Cloudant dbName> --type jsonl
+
+```
 
 Once the data is populated you should see : 
 
