@@ -33,11 +33,11 @@ This solution starter was created by technologists from IBM. The goals of this s
 
 "Racism isn't getting worse, it's getting filmed" - Will Smith.
 
-The sad reality is that police interactions with members of the Black community disproportionately end in unnecessary and avoidable escalation. Unless such interactions are captured, documented and catalogued, true change and indeed true reform will not be possible.
+The sad reality is that police interactions with members of the Black community disproportionately end in unnecessary and avoidable escalation. Unless such interactions are captured, catalogued and analyzed, informed change, re-education and true reform will not be possible.
 
-Whether related to routine traffic stops, stop and search or other scenarios, we aim to use technology to capture real-world data, provide insights and make recommendations that will drive racial equality. The key intentions behind this solution starter kit are to help enable transparency, re-education and reform as a matter of public interest and public safety.
+Whether related to routine traffic stops, stop and search or other scenarios, we aim to use technology for good to capture real-world data, provide insights and make recommendations that will drive racial equality. The key intentions behind this solution starter kit are to help enable transparency, re-education and reform as a matter of public interest and public safety. Over time, equipping good officers with information to perform their duties without bias.
 
-At the heart of the solution resides an intelligent visualisation system, based around a map view which makes it easy for users to find single or grouped incidents. In order to facilitate the capture of incidents, a mobile application has also been created with the ability to capture incidents on behalf of a "contacted person" or an observer (e.g. stop and search, car stops etc). The solution also contains an API which could be used in order to capture data from additional sources such as existing mobile applications.
+At the heart of the solution resides an intelligent visualisation system, based around a map view which makes it easy for users to find single or grouped incidents. In order to facilitate the capture of incidents, a mobile application has also been created with the ability to capture incidents on behalf of a "contacted person" or an “upstander”. The solution also contains an API which could be used in order to capture data from additional sources such as existing mobile applications.
 
 ### How can technology help ?
 
@@ -48,7 +48,7 @@ At the heart of the solution resides an intelligent visualisation system, based 
 ## The Idea
 
 <p align="center">
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/22552553/94794799-4d507280-03d4-11eb-94bd-93bc5bef65b3.png">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/22552553/94920315-fae38480-04ad-11eb-8f66-3c09d060e427.png">
 </p>
 
 We are team "Fair Change". The inspiration behind this starter kit comes from the lived experience of some of our team members who have been subject to unprovoked physical mistreatment, harassment, campaigns, and racial abuse from police officers or members of the public who intend to "weaponise" the police against Black individuals or communities. As we shared our experiences, it became evident to our diverse team residing in both the UK and US that the mistreatment of Black communities by the police is widespread.
@@ -72,6 +72,11 @@ While we recognize that our solution cannot address all of the complex challenge
 
 ## How it Works
 The solution itself focuses on the core functionality of being able to take incident alerts and video recordings from the mobile app and post them into the back-end system. Once posted, the incident will appear on the map view and can be clicked in order to reveal more information. Here is a high-level flow:
+
+- The user captures video, geo-coordinates, timestamp and an incident description using the mobile application.
+- The video and other data is tranferred securely to the backend via the API.
+- Video is stored in Cloud Object Storage and the other data is stored in the Cloudant DB.
+- The web application facilitates the viewing of incident related data held in the DB via the API.
 
 ## Diagrams
 
