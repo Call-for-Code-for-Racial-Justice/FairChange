@@ -73,6 +73,11 @@ While we recognize that our solution cannot address all of the complex challenge
 ## How it Works
 The solution itself focuses on the core functionality of being able to take incident alerts and video recordings from the mobile app and post them into the back-end system. Once posted, the incident will appear on the map view and can be clicked in order to reveal more information. Here is a high-level flow:
 
+- The user captures video, geo-coordinates, timestamp and an incident description using the mobile application.
+- The video and other data is tranferred securely to the backend via the API.
+- Video is stored in Cloud Object Storage and the other data is stored in the Cloudant DB.
+- The web application facilitates the viewing of incident related data held in the DB via the API.
+
 ## Diagrams
 
 ### Mobile Application 
