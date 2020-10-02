@@ -1,4 +1,4 @@
-# Building Web Application Back-END 
+# Building Web Application Back-End
 The back end is built in Node JS and handles the following:
 
 - Writing of data from the mobile app to the Cloudant DB.
