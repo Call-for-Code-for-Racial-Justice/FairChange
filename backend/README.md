@@ -32,9 +32,10 @@ The following assumes you have gone through the prerequisites.
 1. Clone the repository and cd into backend folder.
 
 2. Make a `configuration.json` file
+
 ``` touch configuration.json ```
 
-3. Copy the following json into your newly created `configuration.json` file and add in the following information from your[Cloudant](https://github.com/embrace-call-for-code/fairchange/tree/starter-kit#provision-instance-of-cloudant-on-ibm-cloud) (Step 6) and your [Cloud Object Storage](https://github.com/embrace-call-for-code/fairchange/tree/starter-kit#provision-instance-of-cloud-object-storage-on-ibm-cloud) (Step 6) services   
+3. Copy the following json into your newly created `configuration.json` file and add in the following information from your [Cloudant](https://github.com/embrace-call-for-code/fairchange/tree/starter-kit#provision-instance-of-cloudant-on-ibm-cloud) (Step 6) and your [Cloud Object Storage](https://github.com/embrace-call-for-code/fairchange/tree/starter-kit#provision-instance-of-cloud-object-storage-on-ibm-cloud) (Step 6) services   
 
 ``` {
     "fairChangeDb": {
@@ -74,9 +75,7 @@ The following assumes you have gone through the prerequisites.
           "resource_instance_id": "<cloudObjectStorage resource_instance_id>",
           "serviceInstanceId": "<cloudObjectStorage resource_instance_id>"
       }
-  } 
-  
-  ```
+  } ```
 
 4. Populate your database with data. Map data can be found [here](https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/website/components/common/map.dataBetter2.json)
 
@@ -84,9 +83,7 @@ The following assumes you have gone through the prerequisites.
 export COUCH_URL=<Cloudant url>
 export IAM_API_KEY=<Cloudant apikey>
 export COUCH_DATABASE=<Cloudant dbName>
-cat components/common/map.dataBetter2.json | ./node_modules/.bin/couchimport --database <Cloudant dbName> --type jsonl
-
-```
+cat components/common/map.dataBetter2.json | ./node_modules/.bin/couchimport --database <Cloudant dbName> --type jsonl```
 
 Once the data is populated you should see : 
 
@@ -114,6 +111,7 @@ If you go back to your  cloudant database you should see that the data has been 
 Congratulations, you have the backend up and running locally! [Now you can follow these instructions for setting up the web application's front end ](./website/readme.md) 
 
 ## Deploy to IBM Cloud as a Cloud Foundry application
+
 
 
 

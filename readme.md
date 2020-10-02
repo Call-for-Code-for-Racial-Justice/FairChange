@@ -162,13 +162,13 @@ Log in to IBM Cloud and provision a Cloud Object Storage Service.
 
 ![](/images/img13.png)
 
-**Step 5.** Give database a name and click `Create`. 
+**Step 5.** Give database a name and select `Non-partitioned` . Click `Create`. 
 
 <p align="center">
 <img width="300" height = "600" alt="image" src="https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/images/img14.png">
 </p>
 
-**Step 6.** Go back to the cloudant service page and take a note of your service credentials for the [Web Appliciation Back-end](https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/readme.md#web-appliciation-back-end) 
+**Step 6.** Go back to the cloudant service page and create New Service Credentials. Select role as `Manager` and take a note of your service credentials for the [Web Appliciation Back-end](https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/readme.md#web-appliciation-back-end) 
 
 ![](/images/img15.png)
 
