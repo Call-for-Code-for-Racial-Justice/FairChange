@@ -48,7 +48,7 @@ At the heart of the solution resides an intelligent visualisation system, based 
 ## The Idea
 
 <p align="center">
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/22552553/94794799-4d507280-03d4-11eb-94bd-93bc5bef65b3.png">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/22552553/94920177-acce8100-04ad-11eb-87ff-3711eb1c557b.png">
 </p>
 
 We are team "Fair Change". The inspiration behind this starter kit comes from the lived experience of some of our team members who have been subject to unprovoked physical mistreatment, harassment, campaigns, and racial abuse from police officers or members of the public who intend to "weaponise" the police against Black individuals or communities. As we shared our experiences, it became evident to our diverse team residing in both the UK and US that the mistreatment of Black communities by the police is widespread.
