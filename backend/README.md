@@ -19,8 +19,8 @@ In this tutorial, you will:
 
 To complete the steps in this tutorial you need:
 1. Sign up for an [IBM Cloud Account](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917)
-2. [Provision Instance of Cloud Object Storage on IBM Cloud]()
-3. [Provision Instance of Cloudant on IBM Cloud]()
+2. [Provision Instance of Cloud Object Storage on IBM Cloud](https://github.com/embrace-call-for-code/fairchange/tree/starter-kit#provision-instance-of-cloud-object-storage-on-ibm-cloud)
+3. [Provision Instance of Cloudant on IBM Cloud](https://github.com/embrace-call-for-code/fairchange/tree/starter-kit#provision-instance-of-cloudant-on-ibm-cloud)
 
 ## Estimated Time 
 This tutorial will take you about 30 minutes to complete.
