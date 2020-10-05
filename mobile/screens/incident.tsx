@@ -103,7 +103,7 @@ export default function incident() {
     }
     const incidentResponse = await axios({
       method: 'POST',
-      url: 'https://fairchange-backend-embrace-fair-change.embrace-dev-ocp43-vpc-7ec5d722a0ab3f463fdc90eeb94dbc70-0000.us-east.containers.appdomain.cloud/api/storeIncident',
+      url: 'http://[::1]:3000/api/storeIncident',
       data: eventObject
     })
 
