@@ -88,7 +88,7 @@ const baseConfig = {
 
 const serverConfig = Object.assign({}, baseConfig, {
 	entry: {
-		server: path.join(__dirname, '../driver.js')
+		server: path.join(__dirname, '../driver.ts')
 	},
 	resolve: {
 		extensions: ['.js', '.ts']
