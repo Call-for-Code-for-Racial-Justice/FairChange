@@ -111,7 +111,7 @@ If you go back to your  cloudant database you should see that the data has been 
 ![](/images/img19.png)
 
 
-Congratulations, you have the backend up and running locally! [Now you can follow these instructions for setting up the web application's front end ](./website/readme.md) 
+Congratulations, you have the backend up and running locally! [Now you can follow these instructions for setting up the web application's front end ](https://github.com/embrace-call-for-code/fairchange/blob/master/website/readme.md) 
 
 ## Deploy to IBM Cloud as a Cloud Foundry application
 
