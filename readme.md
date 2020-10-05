@@ -1,4 +1,4 @@
-# Fair Change Starter Kit 
+# Fair Change Solution Starter
 This solution starter was created by technologists from IBM. The goals of this starter kit is to provide a solution for the theme of Police & Judicial Reform and Accountability. 
 
 ## Authors 
