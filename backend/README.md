@@ -61,7 +61,6 @@ The following assumes you have gone through the prerequisites.
       "cloudObjectStorage": {
           "bucketName": "<cloudObjectStorage bucketName>",
           "apikey": "<cloudObjectStorage apikey>",
-          "apiKeyId": "<cloudObjectStorage apikey>",
           "cos_hmac_keys": {
             "access_key_id": "<cloudObjectStorage access_key_id>",
             "secret_access_key": "<cloudObjectStorage secret_access_key>"
@@ -72,8 +71,8 @@ The following assumes you have gone through the prerequisites.
           "iam_apikey_name": "<cloudObjectStorage iam_apikey_name>",
           "iam_role_crn": "<cloudObjectStorage iam_role_crn>",
           "iam_serviceid_crn": "<cloudObjectStorage iam_serviceid_crn>",
-          "resource_instance_id": "<cloudObjectStorage resource_instance_id>",
-          "serviceInstanceId": "<cloudObjectStorage resource_instance_id>"
+          "resource_instance_id": "<cloudObjectStorage resource_instance_id>"
+         
       }
   } 
   
