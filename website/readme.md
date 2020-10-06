@@ -18,7 +18,7 @@ Here is a demo of the final application:
 
 To complete the steps in this tutorial you need to complete all the steps to get the back-end application running. 
 
-[Follow these instructions for setting up the web application's back end](./backend/README.md)
+[Follow these instructions for setting up the web application's back end](https://github.com/embrace-call-for-code/fairchange/blob/master/backend/README.md)
 
 
 ## Estimated Time 
