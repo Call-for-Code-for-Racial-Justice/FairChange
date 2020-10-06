@@ -108,7 +108,7 @@ If you go back to your  cloudant database you should see that the data has been 
 
 `http://localhost:3000/` should give you the Fairchange API docs 
 
-![](/images/img19.png)
+![](/images/img21.png)
 
 
 Congratulations, you have the backend up and running locally! [Now you can follow these instructions for setting up the web application's front end ](https://github.com/embrace-call-for-code/fairchange/blob/master/website/readme.md) 
