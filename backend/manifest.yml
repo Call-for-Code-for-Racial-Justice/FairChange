@@ -1,0 +1,5 @@
+---
+applications:
+ - name: fairchange-backend
+   instances: 1
+   memory: 512M

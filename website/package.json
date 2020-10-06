@@ -57,7 +57,7 @@
   "transform": {
     "^.+\\.(ts|tsx)$": "ts-jest"
   },
-  "devDependencies": {
+  "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
     "@babel/preset-env": "^7.9.5",
@@ -102,9 +102,7 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
-    "webpack-node-externals": "^1.7.2"
-  },
-  "dependencies": {
+    "webpack-node-externals": "^1.7.2",
     "@types/leaflet": "^1.5.17",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
