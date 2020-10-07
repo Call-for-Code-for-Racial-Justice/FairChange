@@ -103,7 +103,7 @@ export default function incident() {
     }
     const incidentResponse = await axios({
       method: 'POST',
-      url: 'http://[::1]:3000/api/storeIncident',
+      url: 'http://localhost:3000/api/storeIncident',
       data: eventObject
     })
 
@@ -122,7 +122,7 @@ export default function incident() {
     const payload = {
       method: 'post',
       headers: { 'content-type': 'multipart/form-data' },
-      url: 'https://fairchange-backend-embrace-fair-change.embrace-dev-ocp43-vpc-7ec5d722a0ab3f463fdc90eeb94dbc70-0000.us-east.containers.appdomain.cloud/api/upload',
+      url: 'http://localhost:3000/api/upload',
       params: { incident: incidentId },
       data: formData
     }
