@@ -32,15 +32,17 @@ This tutorial will take you about 30 minutes to complete.
    Your app should be running at ```http://localhost:3000/```  
     - See [these steps](https://github.com/embrace-call-for-code/fairchange/blob/master/backend/README.md#configuring-the-application) to learn how to run your back-end locally    
 
-- If you are running your backend application on the cloud make sure you take a note of the url that your app is running on. For example, [(<<name from manifest file>>).mybluemix.net](https://(<<name from manifest file>>).mybluemix.net/).
+- If you are running your backend application on the cloud make sure you take a note of the url that your app is running on. For example, [(name from manifest file).mybluemix.net](https://(name from manifest file).mybluemix.net/).
     - See [these steps](https://github.com/embrace-call-for-code/fairchange/blob/master/backend/README.md#deploy-to-ibm-cloud-as-a-cloud-foundry-application) to learn how to run your back-end on the cloud. 
 
 2. Once you have your app running locally or on the cloud go to `/mobile/screens/incident.tsx` 
-Change line `106` to include the local url or the cloud url 
+- Change line `106` to include the local url or the cloud url 
+
 ![](/images/img29.png)
 
 
-Change line `125` to also include the local url or the cloud url 
+- Change line `125` to also include the local url or the cloud url 
+
 ![](/images/img30.png)
 
 3. Go to the `mobile` folder and make sure you install [Expo](https://expo.io) 
@@ -53,8 +55,9 @@ yarn add expo
 expo start
 ```
 You will see the following screen open.
-
+<p align="center">
 <img width="257" alt="image" src="https://user-images.githubusercontent.com/22552553/91534151-f2c18380-e908-11ea-98b4-e3e7ceb609cd.png">
+</p>
 
 You can now run the application using an emulator or by installing the Expo app on your mobile device and simply scanning the QR code.
 
