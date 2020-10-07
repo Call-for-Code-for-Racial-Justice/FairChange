@@ -8,7 +8,7 @@ In this tutorial, you will:
 - Learn how to stand up a Node.js React App
 - Connect the back-end application with the front-end 
 - Test and run the application locally 
-- Deploy Deploy the application on IBM Cloud as a Cloud Foundry application.
+- Deploy the application on IBM Cloud as a Cloud Foundry application.
 
 Here is a demo of the final application:
 ![](/images/img20.png)
@@ -100,28 +100,3 @@ To connect the backend to the front end go to the `Runtime` tab and then go to t
 Congratulations, you have the front-end application up and running on IBM Cloud! 
 
 ![](/images/img28.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
