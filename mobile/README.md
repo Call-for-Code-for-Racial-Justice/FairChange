@@ -59,7 +59,7 @@ You will see the following screen open.
 <img width="257" alt="image" src="https://user-images.githubusercontent.com/22552553/91534151-f2c18380-e908-11ea-98b4-e3e7ceb609cd.png">
 </p>
 
-You can now run the application using an emulator or by installing the Expo app on your mobile device and simply scanning the QR code.
+You can now run the application using an iOS emulator or by installing the Expo app on your mobile device and simply scanning the QR code.
 
 ### Test your deployment
 
