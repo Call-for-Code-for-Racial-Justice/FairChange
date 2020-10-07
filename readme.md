@@ -98,7 +98,7 @@ The solution itself focuses on the core functionality of being able to take inci
 - [Getting started with IBM Cloudant](https://cloud.ibm.com/docs/Cloudant)
 
 ## Datasets
-- [Police Brutality Data Set]https://github.com/2020PB/police-brutality
+- [Police Brutality Data Set](https://github.com/2020PB/police-brutality)
 
 ## Technology
 
