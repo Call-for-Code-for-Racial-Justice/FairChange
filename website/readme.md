@@ -59,13 +59,45 @@ If your back end service running locally set that variable to `http://[::1]:3000
 
 
 
-
-
-
-
-
-
 ## Deploy to IBM Cloud as a Cloud Foundry application
+## Prerequisites
+[Install IBM CLI](https://cloud.ibm.com/docs/cli?topic=cli-getting-started) 
+
+## Steps
+
+1. Go to `website` folder and edit *manifest.yml* file. Change the **name** field to something uniqe. Once the name is changed run build.  
+
+    ```
+    npm run build
+    ```
+2. Log in to IBM Cloud with the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/index.html#overview):
+    ```
+    ibmcloud login --sso
+    ```
+
+3. Target a Cloud Foundry organization and space:
+
+    ```
+    ibmcloud target --cf
+    ```
+
+
+4. Deploy the application
+
+    ```
+    ibmcloud app push
+    ```
+
+
+5. View the application from IBM Cloud by searching for your app's name. 
+
+![](/images/img26.png)
+
+To connect the backend to the front end go to the `Runtime` tab and then go to the `Environments Variable` tab. You will need to add a environement variable called `API_Server` and set it to the URL for where your backend application is deployed. Once you have added your environment variable, you should refresh your page,restart your service and `Visit App URL` 
+
+![](/images/img27.png)
+
+Congratulations, you have the front-end application up and running on IBM Cloud! 
 
 
 

@@ -120,7 +120,7 @@ Congratulations, you have the backend up and running locally! [Now you can follo
 
 ## Steps
 
-1. Go to `backend` folder and edit *manifeest.yml* file. Change the **name** field to something uniqe. Once the name is changed run build.  
+1. Go to `backend` folder and edit *manifest.yml* file. Change the **name** field to something uniqe. Once the name is changed run build.  
 
     ```
     npm run build
@@ -152,5 +152,5 @@ Congratulations, you have the backend up and running locally! [Now you can follo
 ![](/images/img25.png)
 
 
-Congratulations, you have the backend up and running on IBM Cloud! [Now you can follow these instructions for setting up the web application's front end running on IBM Cloud](https://github.com/embrace-call-for-code/fairchange/blob/master/website/readme.md) 
+Congratulations, you have the backend up and running on IBM Cloud! [Now you can follow these instructions for setting up the web application's front end running on IBM Cloud](https://github.com/embrace-call-for-code/fairchange/tree/master/website#deploy-to-ibm-cloud-as-a-cloud-foundry-application) 
 
