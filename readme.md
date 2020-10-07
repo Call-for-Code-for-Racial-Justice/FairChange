@@ -82,7 +82,6 @@ The solution itself focuses on the core functionality of being able to take inci
  
 ![](/images/img23.png)
 
-
 1. User launches mobile application , records a video and submits incident data. 
 
 2. The geocode, timestamp, description and video are all passed to the backend with a POST `api/upload` call which writes json to the Cloudant database and video directly to IBM Cloud Object Storage. Video data is stored in the IBM Cloud Object Storage. Geocode,timestamp and description are all stored in the Cloudant database
@@ -94,7 +93,7 @@ The solution itself focuses on the core functionality of being able to take inci
 ## Documents
 
 ### Tutorials and documentation:
-- [Getting started with IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
+- [Getting started with IBM Cloud Object Storage] (https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
 - [Getting started with IBM Cloudant](https://cloud.ibm.com/docs/Cloudant)
 
 ## Datasets
@@ -199,6 +198,6 @@ The mobile application is built using React Native and will run on either iOS or
 
 ## License
 
-This solution starter is made available under the -----(LICENSE).
+This solution starter is made available under the Apache LICENSE.
 
 

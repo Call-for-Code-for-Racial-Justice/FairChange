@@ -111,15 +111,46 @@ If you go back to your  cloudant database you should see that the data has been 
 ![](/images/img21.png)
 
 
-Congratulations, you have the backend up and running locally! [Now you can follow these instructions for setting up the web application's front end ](https://github.com/embrace-call-for-code/fairchange/blob/master/website/readme.md) 
+Congratulations, you have the backend up and running locally! [Now you can follow these instructions for setting up the web application's front end running locally](https://github.com/embrace-call-for-code/fairchange/blob/master/website/readme.md) 
 
 ## Deploy to IBM Cloud as a Cloud Foundry application
 
+## Prerequisites
+[Install IBM CLI](https://cloud.ibm.com/docs/cli?topic=cli-getting-started) 
+
+## Steps
+
+1. Go to `backend` folder and edit *manifeest.yml* file. Change the **name** field to something uniqe. Once the name is changed run build.  
+
+    ```
+    npm run build
+    ```
+2. Log in to IBM Cloud with the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/index.html#overview):
+    ```
+    ibmcloud login --sso
+    ```
+
+3. Target a Cloud Foundry organization and space:
+
+    ```
+    ibmcloud target --cf
+    ```
 
 
+4. Deploy the application
+
+    ```
+    ibmcloud app push
+    ```
+
+5. View the application online at the app URL. For example, [<name from manifest file>.mybluemix.net](https://<name from manifest file>.mybluemix.net/).
+
+![](/images/img21.png)
+
+6. View the application from IBM Cloud by searching for your app's name and then `Visiting App URL`
+
+![](/images/img25.png)
 
 
-
-
-
+Congratulations, you have the backend up and running on IBM Cloud! [Now you can follow these instructions for setting up the web application's front end running on IBM Cloud](https://github.com/embrace-call-for-code/fairchange/blob/master/website/readme.md) 
 
