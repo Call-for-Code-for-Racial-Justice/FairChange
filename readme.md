@@ -39,7 +39,6 @@ Whether related to routine traffic stops, stop and search or other scenarios, we
 
 At the heart of the solution resides an intelligent visualisation system, based around a map view which makes it easy for users to find single or grouped incidents. In order to facilitate the capture of incidents, a mobile application has also been created with the ability to capture incidents on behalf of a "contacted person" or an “upstander”. The solution also contains an API which could be used in order to capture data from additional sources such as existing mobile applications.
 
-### How can technology help ?
 
 ## Video
 *** <INSERT-VIDEO> ***
@@ -80,41 +79,36 @@ The solution itself focuses on the core functionality of being able to take inci
 
 ## Diagrams
 
-### Mobile Application 
+ 
+![](/images/img22.png)
 
-****Insert  Mobile application Architecture Diagram ****  
 
 1. User launches mobile application and records a video
+
 2. The payload (geocode, timestamp, description / type of incident and video) are all passed to the backend which writes json to the Cloudant database and video directly to IBM Cloud Object Storage (COS).
 
+3. Incident captured by mobile device and save IBM Cloud Object Storage can be viewed on a map in a web application. 
 
-### Web Application 
-****Insert  Web application Architecture Diagram ****  
-( Include back end service with web application )
-
-1. Incident captured by mobile device and save IBM Cloud Object Storage can be viewed on a map in a web application. 
-2. User can click on the popup link within the map to view more detail related to that incident (the link will auto expire after a short period of time to prevent unauthorised sharing).
-
-<img width="1068" alt="image" src="https://user-images.githubusercontent.com/22552553/91962139-09e6e380-ed04-11ea-8f25-0bc43842a07c.png">
-
+4. User can click on the popup link within the map to view more detail related to that incident (the link will auto expire after a short period of time to prevent unauthorised sharing).
 
 ## Documents
 
 ### Tutorials and documentation:
-- ***** Add developer.ibm.com tutuorials and docs referenced ****
+- [Getting started with IBM Cloud Object Storage] (https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
+- [Getting started with IBM Cloudant](https://cloud.ibm.com/docs/Cloudant)
 
 ## Datasets
-- *****Add APIs used ****
+- [Police Brutality Data Set]https://github.com/2020PB/police-brutality
 
 ## Technology
 
 ### IBM technology
-- Video storage with IBM Cloud Object Storage (add link)
-- Data storage with IBM Cloudant (add link)
+- [IBM Cloud Object Storage](https://cloud.ibm.com/catalog/services/cloud-object-storage)
+- [IBM Cloudant](https://cloud.ibm.com/catalog/services/cloudant)
 
 ### Open source technology
-- Google Maps (Add link)
-- React Native (Add link)
+- [Google Maps](https://developers.google.com/maps/documentation/embed/get-api-key)
+- [React Native](https://reactnative.dev/)
 - [Expo](https://expo.io)
 - [Node.js](https://nodejs.org/en/)
 

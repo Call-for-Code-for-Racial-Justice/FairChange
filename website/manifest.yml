@@ -1,5 +1,5 @@
 ---
 applications:
- - name: fairchange-website
+ - name: fair-change-website
    instances: 1
    memory: 2048M
