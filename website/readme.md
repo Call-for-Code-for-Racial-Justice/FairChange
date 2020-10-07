@@ -99,6 +99,7 @@ To connect the backend to the front end go to the `Runtime` tab and then go to t
 
 Congratulations, you have the front-end application up and running on IBM Cloud! 
 
+![](/images/img28.png)
 
 
 
