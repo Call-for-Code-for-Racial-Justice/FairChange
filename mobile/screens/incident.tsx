@@ -111,7 +111,7 @@ export default function incident() {
     return incidentId
   }
 
-  async function uploadVideo(incidentId) {
+  async function uploadVideo(incidentId: String) {
     console.log("incidentId is:", incidentId)
 
     const type = `video/${video.codec}`;
@@ -162,18 +162,6 @@ export default function incident() {
           <Camera style={styles.cameraContainer} type={type} ref={ref => {
             setCameraRef(ref);
           }}>
-            {/* <View
-                    style={styles.buttonContainer}>
-                    <Button
-                        title="flip"
-                        onPress={() => {
-                            setType(
-                                type === Camera.Constants.Type.back
-                                    ? Camera.Constants.Type.front
-                                    : Camera.Constants.Type.back
-                            )
-                        }} />
-                </View> */}
           </Camera>
         </View>
       </View>
