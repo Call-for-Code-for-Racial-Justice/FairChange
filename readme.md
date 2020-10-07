@@ -80,16 +80,16 @@ The solution itself focuses on the core functionality of being able to take inci
 ## Diagrams
 
  
-![](/images/img22.png)
+![](/images/img23.png)
 
 
-1. User launches mobile application and records a video
+1. User launches mobile application , records a video and submits incident data. 
 
-2. The payload (geocode, timestamp, description / type of incident and video) are all passed to the backend which writes json to the Cloudant database and video directly to IBM Cloud Object Storage (COS).
+2. The geocode, timestamp, description and video are all passed to the backend with a POST `api/upload` call which writes json to the Cloudant database and video directly to IBM Cloud Object Storage. Video data is stored in the IBM Cloud Object Storage. Geocode,timestamp and description are all stored in the Cloudant database
 
-3. Incident captured by mobile device and save IBM Cloud Object Storage can be viewed on a map in a web application. 
+3. Incident captured by mobile device and the data saved IBM Cloud Object Storage and Cloudant can be viewed on a map in the Node.js web application. 
 
-4. User can click on the popup link within the map to view more detail related to that incident (the link will auto expire after a short period of time to prevent unauthorised sharing).
+4. User can click on the geocode data on the map in web application to view more detail related to that incident such as timestamp, description, location and video.
 
 ## Documents
 
