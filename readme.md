@@ -93,7 +93,7 @@ The solution itself focuses on the core functionality of being able to take inci
 ## Documents
 
 ### Tutorials and documentation:
-- [Getting started with IBM Cloud Object Storage] (https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
+- [Getting started with IBM Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
 - [Getting started with IBM Cloudant](https://cloud.ibm.com/docs/Cloudant)
 
 ## Datasets
