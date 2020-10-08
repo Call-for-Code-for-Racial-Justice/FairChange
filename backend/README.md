@@ -143,7 +143,7 @@ Congratulations, you have the backend up and running locally! [Now you can follo
     ibmcloud app push
     ```
 
-5. View the application online at the app URL. For example, [appName.mybluemix.net](https://appName.mybluemix.net/).
+5. View the application online at the app URL. For example, [appName-Backend.mybluemix.net](https://appName.mybluemix.net/).
 
 ![](/images/img21.png)
 
