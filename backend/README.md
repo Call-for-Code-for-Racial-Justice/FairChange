@@ -143,7 +143,7 @@ Congratulations, you have the backend up and running locally! [Now you can follo
     ibmcloud app push
     ```
 
-5. View the application online at the app URL. For example, [name from manifest file.mybluemix.net](https://name from manifest file.mybluemix.net/).
+5. View the application online at the app URL. For example, [appName.mybluemix.net](https://appName.mybluemix.net/).
 
 ![](/images/img21.png)
 
