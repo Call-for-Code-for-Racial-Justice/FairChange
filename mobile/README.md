@@ -12,8 +12,8 @@ In this tutorial, you will:
 
 To complete the steps in this tutorial you need to complete all the steps to get the back-end application running as well as the front end application running  
 
-- [Follow these instructions for setting up the web application's back end locally and on the cloud](https://github.com/embrace-call-for-code/fairchange/blob/master/backend/README.md)
-- [Follow these instructions for setting up the web application's front end locally and on the cloud](https://github.com/embrace-call-for-code/fairchange/blob/master/website/readme.md)
+- [Follow these instructions for setting up the web application's back end locally or on the cloud](https://github.com/embrace-call-for-code/fairchange/blob/master/backend/README.md)
+- [Follow these instructions for setting up the web application's front end locally or on the cloud](https://github.com/embrace-call-for-code/fairchange/blob/master/website/readme.md)
 
 You will also need to install [Expo](https://expo.io) 
 ```

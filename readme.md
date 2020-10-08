@@ -80,7 +80,7 @@ The solution itself focuses on the core functionality of being able to take inci
 ## Diagrams
 
  
-![](/images/img23.png)
+![](/images/img31.png)
 
 1. User launches mobile application , records a video and submits incident data. 
 
