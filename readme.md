@@ -69,14 +69,14 @@ At the heart of the solution resides an intelligent visualisation system, based 
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/22552553/94920315-fae38480-04ad-11eb-8f66-3c09d060e427.png">
 </p>
 
-We are team "Fair Change". The inspiration behind this starter kit comes from the lived experience of some of our team members who have been subject to unprovoked physical mistreatment, harassment, campaigns, and racial abuse from police officers or members of the public who intend to "weaponise" the police against Black individuals or communities. As we shared our experiences, it became evident to our diverse team residing in both the UK and US that the mistreatment of Black communities by the police is widespread.
+We are team "Fair Change". The inspiration behind this starter kit comes from the lived experience of some of our team members who have been subject to unprovoked physical mistreatment, harassment, campaigns, and racial abuse from police officers or members of the public who intend to "weaponise" the police against Black and minority individuals or communities. As we shared our experiences, it became evident to our diverse team residing in both the UK and US that the mistreatment of Black communities by the police is widespread.
 
-At the same time, we recognized this is a very complex issue. The job of police officers who genuinely want to serve and protect the community can inherently be made more difficult based on their peers' actions.  This overall can diminish the trust between the police force and the public. 
+At the same time, we recognized this is a very complex issue. The job of police officers who genuinely want to serve and protect the community can inherently be made more difficult based on their peers' actions.  This can diminish the overall trust between the police force and the public. 
 
 This starter kit aims to create a solution that could aid in the avoidance and de-escalation of incidents and provide visibility and opportunities for long-term education for reform.
 
 At a high level the Fair Change starter kit can : 
-  - Enable members of the public to record incidents through a moble app in a quick, near real time and safe manner
+  - Enable members of the public to record incidents through a mobile app in a quick, near real time and safe manner
   - Capture data such as geo-location, timestamp, incident description, video and audio recordings and potential details such as officer ID numbers
   - Save and Map data on a web application for reporting and future AI analysis (AI is a roadmap item at this stage)
 
@@ -89,7 +89,7 @@ While we recognize that our solution cannot address all of the complex challenge
 
 
 ## How it Works
-The solution itself focuses on the core functionality of being able to take incident alerts and video recordings from the mobile app and post them into the back-end system. Once posted, the incident will appear on the map view and can be clicked in order to reveal more information. Here is a high-level flow:
+The solution itself focuses on the core functionality of being able to take incident alerts and video recordings from the mobile app and post them into the back-end system. Once posted, the incident will appear on the map view and can be clicked in order to reveal more information. For privacy reasons, the intent is not to show the videos within the web application, just the location, time and type of incident. The video is however stored (encrypted on Cloud Object Storage) in order to enable future AI analysis to take place. Here is a high-level flow:
 
 - The user captures video, geo-coordinates, timestamp and an incident description using the mobile application.
 - The video and other data is tranferred securely to the backend via the API.
