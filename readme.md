@@ -3,13 +3,32 @@ This solution starter was created by technologists from IBM. The goals of this s
 
 ## Authors 
 **Product Managers:** 
+John Handy Bosma (Boz)
+James Stewart
 
 **Architects** 
+Jodith Fecadu Tefferi
+Cyril Grant
 
-**User Researchers:** 
+**User Researchers & SME's:** 
+Tessa Olson
+Jan Sinclair
+Chantelle Omotosho
+Denise Knorr
+Enoch Antwi
+Jimi Agoro
+Avian Briscoe
+Cedric Cook
+Sabine Justilien
 
 **Development** 
+Kyleni Rivers
+Nial Cargill
+Brandon Davis
+David Zuniga Rojas
+Simeon Charles
 
+Special thanks to Pooja Mistry Developer Advocate
 
 ## Contents
 
