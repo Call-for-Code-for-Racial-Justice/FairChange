@@ -107,7 +107,7 @@ The solution itself focuses on the core functionality of being able to take inci
 
 3. Incident captured by mobile device and the data saved IBM Cloud Object Storage and Cloudant can be viewed on a map in the Node.js web application. 
 
-4. User can click on the geocode data on the map in web application to view more detail related to that incident such as timestamp, description, location and video.
+4. User can click on the geocode data on the map in web application to view more detail related to that incident such as timestamp, description and location.
 
 ## Documents
 
