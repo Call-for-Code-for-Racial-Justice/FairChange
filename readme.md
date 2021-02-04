@@ -20,6 +20,7 @@ This solution starter was created by technologists from IBM. The goals of this s
 - Avian Briscoe
 - Cedric Cook
 - Sabine Justilien
+- Otis Smart
 
 **Development** 
 - Kyleni Rivers
