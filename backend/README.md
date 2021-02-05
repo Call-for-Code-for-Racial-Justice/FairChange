@@ -37,7 +37,8 @@ The following assumes you have gone through the prerequisites.
 
 3. Copy the following json into your newly created `configuration.json` file and add in the following information from your [Cloudant](https://github.com/embrace-call-for-code/fairchange/tree/starter-kit#provision-instance-of-cloudant-on-ibm-cloud) (Step 6) and your [Cloud Object Storage](https://github.com/embrace-call-for-code/fairchange/tree/starter-kit#provision-instance-of-cloud-object-storage-on-ibm-cloud) (Step 6) services   
 
-``` {
+``` 
+{
     "fairChangeDb": {
         "apikey": "<Cloudant apikey>",
         "host": "<Cloudant host> ",
