@@ -81,7 +81,8 @@ The following assumes you have gone through the prerequisites.
 
 4. Populate your database with data. Map data can be found [here](https://github.com/embrace-call-for-code/fairchange/blob/starter-kit/website/components/common/map.dataBetter2.json)
 
-```npm install couchimport
+```
+npm install couchimport
 export COUCH_URL=<Cloudant url>
 export IAM_API_KEY=<Cloudant apikey>
 export COUCH_DATABASE=<Cloudant dbName>
