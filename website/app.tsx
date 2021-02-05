@@ -4,7 +4,7 @@ import "./app.scss";
 import { MainContentArea } from './components/common/MainContentArea';
 import { BrowserRouter } from 'react-router-dom';
 import { MapContextProvider } from './context/MapContext';
-const googleMapsApiKey = "AIzaSyClzMUaK1lMgIQeOTdofdEV_-O9ys1n6j4";
+const googleMapsApiKey = "";
 
 
 const App = () =>

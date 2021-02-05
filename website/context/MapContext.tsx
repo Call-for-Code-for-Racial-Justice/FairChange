@@ -14,7 +14,6 @@ export {
 	SET_MAP
 } from "./MapContextReducer";
 
-// const googleMapsApiKey = "AIzaSyClzMUaK1lMgIQeOTdofdEV_-O9ys1n6j4";
 export type MapMarker = {
 	lat: number,
 	lon: number,
