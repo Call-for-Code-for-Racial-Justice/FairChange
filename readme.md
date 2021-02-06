@@ -59,6 +59,8 @@ Whether related to routine traffic stops, stop and search or other scenarios, we
 
 At the heart of the solution resides an intelligent visualisation system, based around a map view which makes it easy for users to find single or grouped incidents. In order to facilitate the capture of incidents, a mobile application has also been created with the ability to capture incidents on behalf of a "contacted person" or an “upstander”. The solution also contains an API which could be used in order to capture data from additional sources such as existing mobile applications.
 
+We're putting the tools in your hands, and our intention is for developers and adopters to use the solution in a responsible, safe and privacy preserving manner.
+
 
 ## Video
 *** <INSERT-VIDEO> ***
@@ -85,15 +87,18 @@ While we recognize that our solution cannot address all of the complex challenge
  - Encourage members of the public to capture incidents which may otherwise go unwitnessed.
  - Display patterns and correlations of incidents that can be grouped by time, location, and type to better understand the scenario. 
  - Inspire developers to shed light on this issue and provide them a starting point to develop future reform functionalities.
- - Educate police officers, community members and corporate partners on the issues of racial injustice, police reform and accountibility.
+ - Educate police officers, community members and corporate partners on the issues of racial injustice, police reform and accountability.
 
 
 
 ## How it Works
+
+To illustrate how the solution works, we have included explainations, diagrams and tutorials below that feature IBM Cloud Object Storage and IBM Cloudant DB. References to these and other IBM offerings are provided for illustrative purposes only. Additional work needs to be done for implementing the solution on the IBM Cloud.
+
 The solution itself focuses on the core functionality of being able to take incident alerts and video recordings from the mobile app and post them into the back-end system. Once posted, the incident will appear on the map view and can be clicked in order to reveal more information. For privacy reasons, the intent is not to show the videos within the web application, just the location, time and type of incident. The video is however stored (encrypted on Cloud Object Storage) in order to enable future AI analysis to take place. Here is a high-level flow:
 
 - The user captures video, geo-coordinates, timestamp and an incident description using the mobile application.
-- The video and other data is tranferred securely to the backend via the API.
+- The video and other data is transferred securely to the backend via the API.
 - Video is stored in Cloud Object Storage and the other data is stored in the Cloudant DB.
 - The web application facilitates the viewing of incident related data held in the DB via the API.
 
@@ -121,9 +126,11 @@ The solution itself focuses on the core functionality of being able to take inci
 
 ## Technology
 
-### IBM technology
+### IBM technology (for example purposes only)
 - [IBM Cloud Object Storage](https://cloud.ibm.com/catalog/services/cloud-object-storage)
 - [IBM Cloudant](https://cloud.ibm.com/catalog/services/cloudant)
+
+Adopters of the code can choose the deployment option that is right for them. We anticipate additional choices being made available as described [here] (
 
 ### Open source technology
 - [Google Maps](https://developers.google.com/maps/documentation/embed/get-api-key)
