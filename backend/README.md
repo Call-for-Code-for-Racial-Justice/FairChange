@@ -84,7 +84,7 @@ The following assumes you have gone through the prerequisites.
 export COUCH_URL=<Cloudant url>
 export IAM_API_KEY=<Cloudant apikey>
 export COUCH_DATABASE=<Cloudant dbName>
-cat components/common/map.dataBetter2.json | ./node_modules/.bin/couchimport --database <Cloudant dbName> --type jsonl
+cat ../website/components/common/map.dataBetter2.json | ./node_modules/.bin/couchimport --database <Cloudant dbName> --type jsonl
 
 ```
 
