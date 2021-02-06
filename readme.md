@@ -93,7 +93,7 @@ While we recognize that our solution cannot address all of the complex challenge
 
 ## How it Works
 
-To illustrate how the solution works, we have included explainations, diagrams and tutorials below that feature IBM Cloud Object Storage and IBM Cloudant DB. References to these and other IBM offerings are provided for illustrative purposes only. Additional work needs to be done for implementing the solution on the IBM Cloud.
+To illustrate how the solution works, we have included explanations, diagrams and tutorials below that feature IBM Cloud Object Storage and IBM Cloudant DB. References to these and other IBM offerings are provided for illustrative purposes only. Additional work needs to be done for implementing the solution on the IBM Cloud.
 
 The solution itself focuses on the core functionality of being able to take incident alerts and video recordings from the mobile app and post them into the back-end system. Once posted, the incident will appear on the map view and can be clicked in order to reveal more information. For privacy reasons, the intent is not to show the videos within the web application, just the location, time and type of incident. The video is however stored (encrypted on Cloud Object Storage) in order to enable future AI analysis to take place. Here is a high-level flow:
 
