@@ -141,7 +141,7 @@ Adopters of the code can choose the deployment option that is right for them. We
 ## Getting started
 
 ### Prerequisite
-Register for a cloud account. For the purpose of this example, we are using an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
+Register for a cloud account. For the purpose of this example, we are using an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-communication_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account with the associated IBM Cloud Services (Cloud Object Storage and Cloudant DB).
 
 ### Provision Instance of Cloud Object Storage on IBM Cloud
 Log in to IBM Cloud and provision a Cloud Object Storage Service.
