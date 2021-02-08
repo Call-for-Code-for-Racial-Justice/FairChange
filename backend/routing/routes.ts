@@ -334,7 +334,7 @@ router.post("/upload", async (request: Request, res: Response, next: NextFunctio
 const uploadSwagger = {
 	"/api/upload": {
 		post: {
-			summary: "Uploads an incident video and stores it in Cloud Objet Storage",
+			summary: "Uploads an incident video and stores it in Cloud Object Storage",
 			description: "Takes an incident ID and a video file as input.  Once video has uploaded, the retrieval key is attached to the incident record.",
 			tags: ["Fair Change API"],
 			requestBody: {
