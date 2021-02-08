@@ -2,7 +2,7 @@ export const swaggerDoc = {
 	"openapi": "3.0.0",
 	"info": {
 		"title": "Fairchange API",
-		"description": "This is the ackend component code for fairchange applicatiom.",
+		"description": "This is the backend component code for fairchange applicatiom.",
 		"version": "1.0.0"
 	},
 	"produces": ["application/json"],
