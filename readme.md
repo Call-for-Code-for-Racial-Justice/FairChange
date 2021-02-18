@@ -63,10 +63,9 @@ At the heart of the solution resides an intelligent visualisation system, based 
 
 We're putting the tools in your hands, and our intention is for developers and adopters to use the solution in a responsible, safe, and privacy-preserving manner.
 
-
 ## Video
-*** <INSERT-VIDEO> ***
-
+  
+  [![Introducing Fair Change](https://img.youtube.com/vi/btjmQkB3-_w/0.jpg)](https://youtu.be/btjmQkB3-_w)
 
 ## The idea
 
