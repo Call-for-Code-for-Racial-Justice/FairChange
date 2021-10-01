@@ -1,4 +1,4 @@
-name: greetings.yml
+name: stale
 
 on:
   schedule:
