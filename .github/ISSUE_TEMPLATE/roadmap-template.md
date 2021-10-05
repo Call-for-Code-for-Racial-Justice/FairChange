@@ -1,5 +1,5 @@
 ---
-name: Roadmap Template
+name: New Issue Template
 about: Template for issues we're pursuing
 title: Roadmap Template
 labels: ''
