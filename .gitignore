@@ -3,3 +3,4 @@ node_modules
 configuration.json
 dist
 cache
+**/coverage

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useMapContext, SET_MARKERS, ADD_MARKERS, REMOVE_MARKER, SET_CENTER, MapMarker } from "../../context/MapContext";
+import { useMapContext, SET_MARKERS, /* ADD_MARKERS, REMOVE_MARKER,*/ SET_CENTER, MapMarker } from "../../context/MapContext";
 import styles from './IncidentMap.module.scss';
 import { getCenter } from '../common/MapUtils';
 import { useMapData } from '../../hooks/useMapData';
@@ -7,7 +7,7 @@ import { useMapData } from '../../hooks/useMapData';
 export const IncidentMap = () =>
 {
 	const { loaded, mapRef, selectedMarker, dispatch, reset } = useMapContext();
-	const { data, reload } = useMapData();
+	const { data } = useMapData();
 
 	useEffect(() =>
 	{
@@ -32,6 +32,7 @@ export const IncidentMap = () =>
 
 	}, [loaded, data]);
 
+	/*
 	const handleClick = () =>
 	{
 		dispatch({
@@ -68,6 +69,7 @@ export const IncidentMap = () =>
 			}
 		});
 	};
+	*/
 
 	return (
 		<>

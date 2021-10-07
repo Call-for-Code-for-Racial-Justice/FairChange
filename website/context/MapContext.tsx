@@ -65,7 +65,7 @@ export interface IMapContext {
 	gmarkers: google.maps.Marker[] | null,
 	selectedMarker: MapMarker | null,
 	loaded: boolean,
-	error: any,
+	error: any | null,
 	mapRef: React.MutableRefObject<any> | null,
 
 	reset: Function,

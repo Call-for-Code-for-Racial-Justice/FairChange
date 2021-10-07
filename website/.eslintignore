@@ -1,0 +1,5 @@
+dist/
+files/
+node_modules/
+scripts/
+**/*.json

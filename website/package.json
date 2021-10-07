@@ -8,7 +8,8 @@
     "dev": "node_modules/.bin/webpack-dev-server --config scripts/webpack.config.js --host 0.0.0.0",
     "debug": "node_modules/.bin/webpack-dev-server --config scripts/webpack.config.js",
     "devall": "node_modules/.bin/webpack-dev-server --config scripts/webpack.config.js --host 0.0.0.0",
-    "lint": "eslint --ext .jsx,.js,.tsx,.ts ./website",
+    "lint": "eslint . --ext .jsx,.js,.tsx,.ts",
+    "lint:fix": "eslint . --ext .jsx,.js,.tsx,.ts --fix",
     "test": "npm run lint && jest",
     "test:watch": "jest --watchAll"
   },
@@ -33,8 +34,8 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "website/**/*.ts",
-      "website/**/*.tsx"
+      "<rootDir>/website/**/*.ts",
+      "<rootDir>/website/**/*.tsx"
     ],
     "verbose": true,
     "testURL": "http://localhost",

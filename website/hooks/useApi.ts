@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios, { AxiosRequestConfig } from 'axios';
 import get from 'lodash/get';
 

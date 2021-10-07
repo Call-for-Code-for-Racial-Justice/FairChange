@@ -35,7 +35,7 @@ export const ViewIncident = (): JSX.Element => {
 			const data = await getData({
 				url: `/api/getIncident/${incidentId}`
 			});
-			console.log(data);
+			//console.log(data);
 			setIncident(data);
 
 			return data;
@@ -49,7 +49,7 @@ export const ViewIncident = (): JSX.Element => {
 					url: link
 				});
 			}));
-			console.log(videoUrls);
+			//console.log(videoUrls);
 			setVideo(videoUrls);
 		});
 	}, []);

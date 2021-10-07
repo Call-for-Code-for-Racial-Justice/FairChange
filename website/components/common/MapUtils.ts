@@ -35,7 +35,7 @@ export const IncidentReport = (data: IncidentResponse[]): any =>
 		// eslint-disable-next-line no-undefined
 		return incident.doc.lat != undefined;
 	}).
-		forEach((incident) =>
+		forEach((/*incident*/) =>
 		{
 			// reportOpj.id.push(parseInt(incident.id, 10));
 			// reportOpj.lat.push(incident.doc.lat);

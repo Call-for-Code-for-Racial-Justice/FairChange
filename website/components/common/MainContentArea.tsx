@@ -1,10 +1,12 @@
-import React, { ChangeEvent, useState, useEffect } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Pages } from "../pages/Pages";
 import styles from "./MainContentArea.module.scss";
 import { Link } from "react-router-dom";
 import { useMapContext, SET_MARKERS, SET_CENTER } from "../../context/MapContext";
 import { useMapData } from '../../hooks/useMapData';
 import { searchByCountryState, getCenter, searchRadius } from "./MapUtils";
+
+const DEFAULT_RADIUS = 10;
 
 export const MainContentArea = (): JSX.Element =>
 {
@@ -38,7 +40,7 @@ export const MainContentArea = (): JSX.Element =>
 
 		const setLocation = (pos: Position) =>
 		{
-			const markers = searchRadius(data, pos?.coords?.latitude, pos?.coords?.longitude, 10);
+			const markers = searchRadius(data, pos?.coords?.latitude, pos?.coords?.longitude, DEFAULT_RADIUS);
 
 			dispatch({
 				type: SET_CENTER,
